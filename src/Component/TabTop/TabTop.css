@@ -1,0 +1,11 @@
+.tab-button {
+    padding: 65px 80px 0 0;
+    float: left;
+    background-color: rgb(243, 242, 242);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
