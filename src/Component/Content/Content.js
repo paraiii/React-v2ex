@@ -2,7 +2,6 @@ import React from 'react';
 import ContentTag from './ContentTag';
 import ContentList from './ContentList';
 import './Content.css';
- 
 import { AllTab, ContentTab } from './Tab';
 
  
@@ -13,7 +12,7 @@ function Content() {
                 <ContentTab />
                 <AllTab />
                 <ContentTag />
-                <ContentList />   
+                <ContentList />  
          </div>
      )
 };

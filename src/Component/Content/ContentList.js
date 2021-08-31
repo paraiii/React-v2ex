@@ -3,7 +3,7 @@ import Contents from './Contents';
 
 function ContentList() {
   return (
-    <div  style={{ backgroundColor: 'white' }}>
+    <div style={{ backgroundColor: 'white' }}>
       <Contents />
     </div>
   )
