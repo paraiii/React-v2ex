@@ -1,6 +1,4 @@
 import React, { Fragment } from 'react';
-import styled from 'styled-components';
-
 
 function TechTab() {
     return (

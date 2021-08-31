@@ -8,10 +8,12 @@ import HotTopics from '../HotTopics/HotTopics';
 function Home() {
     return ( 
         <div>
-            <Header />           
+            {/* <Header />            */}
             <div className="main">
-                <Content />
                 <HotTopics />
+                <Content />
+
+                
             </div>
         </div>
     )
