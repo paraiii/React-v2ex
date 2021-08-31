@@ -1,7 +1,7 @@
-// import HotList from './HotList';
-// import HotTab from './HotTab';
-// import HotTopics from './HotTopics';
+import HotList from './HotList';
+import HotTab from './HotTab';
+import HotTopics from './HotTopics';
 
-export * as HotList from './HotList';
-export * as HotTab from './HotTab';
-export * as HotTopics from './HotTopics';
+export { HotList };
+export { HotTab };
+export { HotTopics };
