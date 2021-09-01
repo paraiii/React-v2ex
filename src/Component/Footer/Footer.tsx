@@ -25,6 +25,7 @@ export const Footer = () => {
 const FooterContainer = styled.div`
     text-align: left;
     background-color: white;
+    font-family: "Times New Roman";
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
     font-size: 14px;
@@ -33,8 +34,7 @@ const FooterContainer = styled.div`
 `
 
 const FooterItem = styled.a`
-    margin-left: 10px;
-    font-family: "Times New Roman";
+    margin-right: 10px;
     word-break: "break word";
     font-weight:500;
     color: #375F8A;
