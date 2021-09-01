@@ -2,30 +2,39 @@ import React from 'react';
 import { Fragment } from 'react';
 import SearchIcon from "@material-ui/icons/Search";
 import InputBase from '@material-ui/core/InputBase';
-import { makeStyles } from "@material-ui/core/styles";
-
-
-const useStyles = makeStyles((theme) => ({
-    textField: {
-        border: "1px solid grey"
-        
-    }
-  }));
+import styled from 'styled-components';
 
 function Search() {
-    const classes = useStyles ();
     return (
-        <Fragment>
-            <SearchIcon style={{fill: "Grey"}}/>
-            <InputBase 
-                placeholder="Search..."
-                className={classes.textField} 
-            />
-            <button>
-                <SearchIcon style={{fill: "blue"}}/>
-            </button>
-        </Fragment>
+        <div>
+            <Fragment>
+                <SearchContainer>
+                    <SearchIcon style={{fill: "Grey"}}/>
+                    <Input>
+                        <InputBase placeholder="Search..."/>
+                    </Input>                
+                    <button>
+                        <SearchIcon style={{fill: "blue"}}/>
+                    </button>
+                </SearchContainer>
+            </Fragment>
+        </div>
     )
 };
 
-export default Search;
+const SearchContainer = styled.div`
+    text-align: left;
+`
+const Input = styled.a`
+    border: solid; 
+    border-width: 1px;
+    border-color: #A6A6B0;
+    background-color: #FAFAFA;
+    border-top-right-radius: 5px; 
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+
+
+`
+export default Search

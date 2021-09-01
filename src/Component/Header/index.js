@@ -1,4 +1,4 @@
-import Header from './Header';
+import { Header } from './Header';
 import Search from './Search';
 import Logo from './Logo';
 import SiteNav from './SiteNav';

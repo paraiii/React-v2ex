@@ -19,5 +19,4 @@ const LogoElement = styled.div`
     display: inline-block;
 `
 
-
 export default Logo;

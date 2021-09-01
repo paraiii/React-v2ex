@@ -24,7 +24,6 @@ const SideSignContainer = styled.div`
     padding: 15px 10px 20px 10px;  
     border-bottom: solid; 
     border-width: 1px;
-    text-align: left;
 `
 const SideSignTab = styled.a `
     color: #CCCCCC;
