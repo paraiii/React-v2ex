@@ -1,7 +1,8 @@
-.side-bar {
-    /* padding: 70px 10px 200px 500px; */
+/* .side-bar {
+    padding: 300px 10px 200px 500px;
     display: block;
     float: right;
-    width: 270px;
+    max-width: 300px;
     margin-right:20px;
-}    
+    background-color: blue;
+}     */

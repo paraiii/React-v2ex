@@ -35,8 +35,6 @@ const AllTabItem = styled.a`
     line-height: 14px;
     padding: 5px 8px;
     margin-right: 5px;
-    color: #555;
-    -webkit-tap-highlight-color: transparent;
     text-decoration: none;
     color: #778087;
     word-break: break-word;

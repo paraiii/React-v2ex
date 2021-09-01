@@ -4,7 +4,7 @@ import './SideBar.css';
 
 function SideBar() {
     return (
-        <div classNam="side-bar">
+        <div className="side-bar">
             <SideTab />
             <SideContent />
         </div>

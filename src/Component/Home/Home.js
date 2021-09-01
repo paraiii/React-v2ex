@@ -5,6 +5,7 @@ import { HotTopics } from '../HotTopics';
 import { Content } from '../Content';
 import { Ad } from '../Ad';
 import { SideBar } from '../SideBar';
+import RightSignin from '../RightSignin/RightSign';
 
 function Home() {
     return ( 
@@ -12,10 +13,12 @@ function Home() {
             {/* <Header />            */}
             <div className="main">
                 <HotTopics />
-                <Ad />
-               
+                {/* <RightSignin /> */}
+                {/* <Ad /> */}
+                {/* <SideBar /> */}
+                
+
                 <Content />
-                <SideBar />
                 
                 
             </div>

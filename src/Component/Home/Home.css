@@ -2,6 +2,7 @@
     background-color:#E2E2E2;
     display: block;
     margin-top: 64px;
-    width: 100%;
+    width: auto;
+    padding: 10px 70px;
     
 }
