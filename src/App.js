@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import './App.css';
-import { Header, Footer, Login, Home, SignUp } from "./Component";
+import { Header, Login, Footer, Home, SignUp } from "./Component";
  
 function App() {
   return (

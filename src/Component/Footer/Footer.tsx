@@ -2,7 +2,7 @@ import React from 'react';
 import './Footer.css';
 import styled from 'styled-components';
 
-function Footer() {
+export const Footer = () => {
     return (
         <div className="footer">   
                 <FooterContainer>
@@ -42,5 +42,4 @@ const FooterItem = styled.a`
     cursor: pointer;
 `
 
-export default Footer;
 

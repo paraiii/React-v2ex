@@ -13,7 +13,7 @@ function HotList() {
                 </HotListContent>
                 </td>
                 <td width="auto">
-                    <span class="item_hot_topic_title">
+                    <span>
                         <HotListContent href="/t/798550">edge 是真的可以啊，之前贴狗皮膏药广告，现在地址栏搜索引擎默认改成 bing 了</HotListContent>
                     </span>
                 </td>
@@ -25,7 +25,7 @@ function HotList() {
                 </HotListContent>
                 </td>
                 <td width="auto">
-                    <span class="item_hot_topic_title">
+                    <span>
                         <HotListContent href="/t/798726">看到体制内工作好在哪儿话题有感</HotListContent>
                     </span>
                 </td>
@@ -37,7 +37,7 @@ function HotList() {
                 </HotListContent>
                 </td>
                 <td width="auto">
-                    <span class="item_hot_topic_title">
+                    <span>
                         <HotListContent href="/t/798768">手持 iphoneX， 2021 年 9 月该换什么手机？</HotListContent>
                     </span>
                 </td>
@@ -56,6 +56,5 @@ const HotListContent = styled.a`
     color: Black;
     text-decoration: none;
 `
-
 export default HotList;
 

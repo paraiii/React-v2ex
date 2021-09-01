@@ -2,7 +2,6 @@ import React from 'react';
 import { Fragment } from 'react';
 import styled from 'styled-components';
 
-
 function HotTab() {
     return (
         <Fragment>
@@ -26,7 +25,6 @@ const HotTabTittle = styled.a `
     text-decoration: none;   
     font-weight: bold;
 `
-
-
 export default HotTab;
+
  
