@@ -1,8 +1,8 @@
 import React from 'react';
 import ContentList from './ContentList';
 import './Content.css';
-import { AllTab, ContentTab } from './Tab';
-
+import { AllTab } from './Tab';
+import { ContentTab } from './Tab';
  
 
 function Content() {

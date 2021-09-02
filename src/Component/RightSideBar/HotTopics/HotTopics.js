@@ -1,15 +1,14 @@
 import React from 'react';
 import HotList from './HotList';
-import './HotTopics.css';
 import HotTab from './HotTab';
 import { SideBar } from '../SideBar';
 import { Ad } from '../Ad';
 
 function HotTopics() {
     return (
-        <div className='hot-content'>
-                <SideBar />
-                <Ad />
+        <div>
+                {/* <SideBar />
+                <Ad /> */}
                 <HotTab />
                 <HotList />
   

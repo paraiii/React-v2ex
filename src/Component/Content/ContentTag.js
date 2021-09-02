@@ -8,4 +8,4 @@ function ContentTag() {
     )
 }
 
-export default ContentTag;
+export default ContentTag
