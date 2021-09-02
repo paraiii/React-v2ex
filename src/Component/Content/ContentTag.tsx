@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ContentTag() {
+export const ContentTag = () => {
     return (
         <div>
             
@@ -8,4 +8,3 @@ function ContentTag() {
     )
 }
 
-export default ContentTag
