@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-function TechTab() {
+export const TechTab = () => {
     return (
         <Fragment>
             <a href="/go/programmer">程序员</a>; 
@@ -15,4 +15,3 @@ function TechTab() {
     )
 };
 
-export default TechTab;
