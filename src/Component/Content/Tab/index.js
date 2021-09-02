@@ -1,5 +1,5 @@
 import { AllTab } from './AllTab';
-import ContentTab from './ContentTab';
+import { ContentTab } from './ContentTab';
 import { TechTab } from './TechTab';
  
 export { AllTab };
