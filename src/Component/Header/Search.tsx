@@ -4,7 +4,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import InputBase from '@material-ui/core/InputBase';
 import styled from 'styled-components';
 
-function Search() {
+export const Search = () => {
     return (
         <div>
             <Fragment>
@@ -37,4 +37,3 @@ const Input = styled.a`
 
 
 `
-export default Search

@@ -25,5 +25,4 @@ const SiteNavItem = styled.a`
     color: Black;
     text-decoration: none;
 `
-
 export default SiteNav;
