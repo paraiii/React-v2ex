@@ -1,6 +1,6 @@
 import React from 'react';
 import { Logo } from '.';
-import SiteNav from './SiteNav';
+import { SiteNav } from '.';
 import { Search } from './Search';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';

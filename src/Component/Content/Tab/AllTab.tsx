@@ -3,7 +3,7 @@ import { Fragment } from 'react';
 import styled from 'styled-components';
 
 
-function AllTab() {
+export const AllTab = () => {
     return (
         <Fragment>
             <AllTabContain>
@@ -41,5 +41,4 @@ const AllTabItem = styled.a`
     cursor: pointer;
 `
 
-export default AllTab;
  

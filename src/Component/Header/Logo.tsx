@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-function Logo() {
+export const Logo = () => {
     return (
         <Link to='/' className="header-link">
             <LogoElement />
@@ -19,4 +19,3 @@ const LogoElement = styled.div`
     display: inline-block;
 `
 
-export default Logo;

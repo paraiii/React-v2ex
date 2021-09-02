@@ -1,7 +1,7 @@
 import { Header } from './Header';
 import { Search } from './Search';
-import Logo from './Logo';
-import SiteNav from './SiteNav';
+import { Logo } from './Logo';
+import { SiteNav } from './SiteNav';
 
 export { Header };
 export { Logo };

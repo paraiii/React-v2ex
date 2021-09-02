@@ -1,4 +1,4 @@
-import AllTab from './AllTab';
+import { AllTab } from './AllTab';
 import ContentTab from './ContentTab';
 import TechTab from './TechTab';
  

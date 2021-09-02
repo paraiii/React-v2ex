@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 
-function SiteNav() {
+export const SiteNav = () => {
     return (
         <SiteNavContainer>
                 <SiteNavItem href="/">Home</SiteNavItem>
@@ -25,4 +25,3 @@ const SiteNavItem = styled.a`
     color: Black;
     text-decoration: none;
 `
-export default SiteNav;
