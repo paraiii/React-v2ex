@@ -2,7 +2,7 @@ import React from 'react';
 import './Ad.css';
 import styled from 'styled-components';
 
-function Ad() {
+export const Ad = () => {
     return (
         <div className="ad">
             <AdDes>
@@ -37,5 +37,3 @@ const AdDes = styled.a`
     text-align: left;
     background-color: white;
 `
-
-export default Ad;

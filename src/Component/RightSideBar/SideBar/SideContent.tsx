@@ -2,11 +2,11 @@ import { CenterFocusStrong } from '@material-ui/icons';
 import React from 'react';
 import styled from 'styled-components';
 
-function SideContent() {
+export const SideContent = () => {
   return (
     <div style={{ backgroundColor: 'white' }}>
         <SignContainer>
-            <button href="/signup">现在注册</button>
+            <button >现在注册</button>
             <div />
             <SideSignContent>已注册用户请 </SideSignContent>
             <SideSignContent href="/login">登录</SideSignContent>
@@ -32,5 +32,4 @@ const SideSignContent = styled.a `
 
 `
 
-export default SideContent;
 

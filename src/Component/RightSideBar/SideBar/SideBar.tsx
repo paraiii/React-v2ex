@@ -1,8 +1,9 @@
 import React from 'react';
-import { SideTab, SideContent } from '.';
+import { SideContent } from '.';
+import { SideTab } from '.';
 import './SideBar.css';
 
-function SideBar() {
+export const SideBar = () => {
     return (
         <div className="side-bar">
             <SideTab />
@@ -11,4 +12,3 @@ function SideBar() {
     )
 };
 
-export default SideBar;

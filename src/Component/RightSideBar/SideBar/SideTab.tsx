@@ -4,7 +4,7 @@ import { Fragment } from 'react';
 import styled from 'styled-components';
 
 
-function SideTab() {
+export const SideTab = () => {
     return (
         <Fragment>
             <SideSignContainer>
@@ -31,5 +31,4 @@ const SideSignTab = styled.a `
     text-decoration: none;   
     font-weight: bold;
 `
-export default SideTab;
  

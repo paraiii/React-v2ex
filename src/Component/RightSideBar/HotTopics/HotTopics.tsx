@@ -1,10 +1,10 @@
 import React from 'react';
-import HotList from './HotList';
-import HotTab from './HotTab';
+import { HotList } from './HotList';
+import { HotTab } from '.';
 import { SideBar } from '../SideBar';
 import { Ad } from '../Ad';
 
-function HotTopics() {
+export const HotTopics = () => {
     return (
         <div>
                 {/* <SideBar />
@@ -16,4 +16,3 @@ function HotTopics() {
     )
 };
 
-export default HotTopics;

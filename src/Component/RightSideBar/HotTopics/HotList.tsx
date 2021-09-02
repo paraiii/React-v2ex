@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function HotList() {
+export const HotList = () => {
   return (
     <div style={{ backgroundColor: 'white' }}>
         <table width="100%">
@@ -56,5 +56,4 @@ const HotListContent = styled.a`
     color: Black;
     text-decoration: none;
 `
-export default HotList;
 

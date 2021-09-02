@@ -1,6 +1,6 @@
-import HotList from './HotList';
-import HotTab from './HotTab';
-import HotTopics from './HotTopics';
+import { HotList } from './HotList';
+import { HotTab } from './HotTab';
+import { HotTopics } from './HotTopics';
 
 
 export { HotList };

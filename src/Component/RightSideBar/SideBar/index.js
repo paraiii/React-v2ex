@@ -1,6 +1,6 @@
-import SideBar from "./SideBar";
-import SideTab from "./SideTab";
-import SideContent from "./SideContent";
+import { SideBar } from "./SideBar";
+import { SideTab } from "./SideTab";
+import { SideContent } from "./SideContent";
 
 export { SideBar };
 export { SideTab };
