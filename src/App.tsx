@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import './App.css';
 import { Header, Login, Footer, Home, SignUp } from "./Component";
- 
-function App() {
+import './App.css'; 
+
+export const App = () => {
   return (
     <Router>
       <div className="App">
@@ -16,4 +16,3 @@ function App() {
   );
 }
 
-export default App;

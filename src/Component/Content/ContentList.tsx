@@ -3,11 +3,11 @@ import { Contents } from './Contents';
 import styled from 'styled-components';
 
 
-function ContentList() {
+export const ContentList = () => {
   return (
     <div style={{ backgroundColor: 'white' }}>
       <Contents />
-      <MoreContents href="/recent">» 更多新主题</MoreContents>
+      <MoreContents>» 更多新主题</MoreContents>
     </div>
   )
 };
@@ -19,5 +19,4 @@ const MoreContents = styled.div`
   cursor: pointer;
 `
 
-export default ContentList;
 

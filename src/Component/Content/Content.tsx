@@ -1,10 +1,10 @@
 import React from 'react';
-import ContentList from './ContentList';
+import { ContentList } from './ContentList';
 import { AllTab } from './Tab';
 import { ContentTab } from './Tab';
 import './Content.css';
 
-function Content() {
+export const Content = () => {
     return (
         <div className="main-content ">
                 <ContentTab />
@@ -15,4 +15,3 @@ function Content() {
 };
 
  
-export default Content;

@@ -1,5 +1,5 @@
-import Content from './Content';
-import ContentList from './ContentList';
+import { Content } from './Content';
+import { ContentList } from './ContentList';
 import { Contents } from './Contents';
 import { ContentTag } from './ContentTag';
 
