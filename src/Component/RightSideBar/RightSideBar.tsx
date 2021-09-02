@@ -4,7 +4,7 @@ import { Ad } from './Ad';
 import { HotTopics } from './HotTopics';
 import './RightSideBar.css';
 
-function RightSideBar() {
+export const RightSideBar = () => {
     return (
         <div className='side-content'>
             <SideBar />
@@ -14,4 +14,3 @@ function RightSideBar() {
     )
 };
 
-export default RightSideBar

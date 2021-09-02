@@ -2,7 +2,7 @@ import React from 'react';
 import { Fragment } from 'react';
 import styled from 'styled-components';
   
-function ContentTap() {
+function ContentTab() {
     return (
          <Fragment>   
                 <HeaderContainer>
@@ -45,4 +45,4 @@ const ContentItem = styled.a`
 `
 
 
-export default ContentTap;
+export default ContentTab;

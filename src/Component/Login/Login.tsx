@@ -4,7 +4,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import './Login.css';
 
-function Login() {
+export const Login = () => {
     return (
         <div className='login-style'>
           <Grid>
@@ -47,7 +47,6 @@ function Login() {
     )
 };
 
-export default Login;
 
 
 

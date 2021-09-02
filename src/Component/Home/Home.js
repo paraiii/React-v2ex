@@ -2,7 +2,7 @@ import React from 'react';
 import './Home.css';
 import { HotTopics } from '../RightSideBar/HotTopics';
 import { Content } from '../Content';
-import RightSideBar from '../RightSideBar/RightSideBar';
+import { RightSideBar } from '../RightSideBar';
 
 function Home() {
     return ( 

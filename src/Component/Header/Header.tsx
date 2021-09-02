@@ -1,5 +1,5 @@
 import React from 'react';
-import { Logo } from '.';
+import { Logo } from './Logo';
 import { SiteNav } from '.';
 import { Search } from './Search';
 import AppBar from '@material-ui/core/AppBar';
