@@ -6,8 +6,9 @@ export const SideContent = () => {
   return (
     <div style={{ backgroundColor: 'white' }}>
         <SignContainer>
-            <button >现在注册</button>
-            <div />
+            <button 
+            >现在注册</button>
+            <br />
             <SideSignContent>已注册用户请 </SideSignContent>
             <SideSignContent href="/login">登录</SideSignContent>
         </SignContainer>

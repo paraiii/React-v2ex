@@ -1,7 +1,6 @@
 import React from 'react';
 import { ContentList } from './ContentList';
-import { AllTab } from './Tab';
-import { ContentTab } from './Tab';
+import { AllTab, ContentTab } from './Tab';
 import './Content.css';
 
 export const Content = () => {

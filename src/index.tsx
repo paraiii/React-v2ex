@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import { App } from './App';
 
-export {App};
 
 ReactDOM.render(
   <React.StrictMode>
@@ -11,5 +10,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-
- 
