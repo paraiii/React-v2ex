@@ -1,10 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Fragment } from 'react';
 import SearchIcon from "@material-ui/icons/Search";
 import InputBase from '@material-ui/core/InputBase';
 import styled from 'styled-components';
 
+
 export const Search = () => {
+
+    // const [counter, setCounter] = useState(0)
+
     return (
         <div>
             <Fragment>

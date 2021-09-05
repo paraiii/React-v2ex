@@ -5,18 +5,20 @@ import styled from 'styled-components';
 
 export const ContentList = () => {
   return (
-    <div style={{ backgroundColor: 'white' }}>
+    <ListContainer>
       <Contents />
       <MoreContents>» 更多新主题</MoreContents>
-    </div>
+    </ListContainer>
   )
 };
 
-const MoreContents = styled.div`
-  font-family: "Times New Roman";
-  word-break: "break word";
+const MoreContents = styled.a`
   color: #778087;
   cursor: pointer;
 `
 
-
+const ListContainer = styled.div`
+  font-family: "Times New Roman";
+  word-break: "break word";
+  background-color: white;
+`

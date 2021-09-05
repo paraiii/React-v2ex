@@ -17,11 +17,10 @@ export const Ad = () => {
             </AdDes>
             <AdImgContainer>
                 <AdImg>
-                    <img src="https://apkplz.net/storage/images/com/readhub/readhub_flutter/com.readhub.readhub_flutter_1.png" style={{maxWidth:270, height:130, paddingTop:20, paddingBottom:20}}></img>
-                    {/* 需要改到下面写 */}
+                    <img src="images/11.png" ></img>
                 </AdImg>
                 <br />
-                <AdImg>每天三分钟的科技新闻聚合阅读</AdImg>
+                <AdImg>Priming us to never leave the house</AdImg>
             </AdImgContainer>
            
         </div>
@@ -35,6 +34,10 @@ const AdImgContainer = styled.div`
 `
 const AdImg = styled.a`
     font-size: 14px;
+    maxWidth:270px; 
+    height:130px; 
+    padding-top: 20px; 
+    padding-bottom: 20px;
  `
 
 const AdDes = styled.a`
