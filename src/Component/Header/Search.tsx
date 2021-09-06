@@ -10,19 +10,17 @@ export const Search = () => {
     // const [counter, setCounter] = useState(0)
 
     return (
-        <div>
-            <Fragment>
-                <SearchContainer>
-                    <SearchIcon style={{fill: "Grey"}}/>
-                    <Input>
-                        <InputBase placeholder="Search..."/>
-                    </Input>                
-                    <button>
-                        <SearchIcon style={{fill: "blue"}}/>
-                    </button>
-                </SearchContainer>
-            </Fragment>
-        </div>
+        <Fragment>
+            <SearchContainer>
+                <SearchIcon style={{fill: "Grey"}}/>
+                <Input>
+                    <InputBase placeholder="Search..."/>
+                </Input>                
+                <button>
+                    <SearchIcon style={{fill: "blue"}}/>
+                </button>
+            </SearchContainer>
+        </Fragment>
     )
 };
 

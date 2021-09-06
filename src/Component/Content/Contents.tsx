@@ -53,7 +53,7 @@ export const Contents = () => {
                     <td>
                         <FormContent>
                             <ContentTitle href={state.contents[2].url}>{state.contents[2].title}</ContentTitle>
-                            <br />
+                            <div />
                             <ContentNode>{state.contents[2].node} </ContentNode>               
                             <ContentUser href={state.contents[2].member}>{state.contents[2].username} </ContentUser>
                             <ContentText>6分钟前 </ContentText> 

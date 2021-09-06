@@ -1,5 +1,4 @@
 import React from 'react';
-import './Footer.css';
 import styled from 'styled-components';
 
 export const Footer = () => {
@@ -14,9 +13,9 @@ export const Footer = () => {
                     <FooterItem href="/tech">广告投放</FooterItem> 
                     <FooterItem href="/tech">感谢</FooterItem> 
                     <FooterItem href="/tech">实用小工具</FooterItem> 
-                    <div />
+                    <br />
                     <text>创意工作者们的社区</text>
-                    <div />
+                    <br />
                     <text>World is powered by solitude</text>
                 </FooterContainer>  
         </div>
@@ -31,6 +30,8 @@ const FooterContainer = styled.div`
     font-size: 14px;
     padding: 10px 10px 10px 20px; 
     line-height: 150%;
+    color: #999999;
+    float: bottom;
 `
 
 const FooterItem = styled.a`

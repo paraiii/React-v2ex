@@ -1,26 +1,24 @@
-import React from 'react';
-import './Ad.css';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
+import V2exContext3 from '../../../Mock3';
 
 export const Ad = () => {
 
-    // const state = useContext(V2exContext)
-    // const ad = state.ad;
+    const state = useContext(V2exContext3)
 
     return (
-        <div className="ad">
+        <div>
             <AdDes>
                 <text>
-                    广告
-                    {/* {ad.title} */}
+                    {state.ad[0].title}
                 </text>
             </AdDes>
             <AdImgContainer>
                 <AdImg>
-                    <img src="images/11.png" ></img>
+                    <img src={state.ad[0].image}></img>
                 </AdImg>
                 <br />
-                <AdImg>Priming us to never leave the house</AdImg>
+                <AdImg>{state.ad[0].content}</AdImg>
             </AdImgContainer>
            
         </div>
@@ -44,4 +42,6 @@ const AdDes = styled.a`
     font-size:10px;
     text-align: left;
     background-color: white;
+    margin-top: 10px;
+    margin-bottom: 20px;
 `
