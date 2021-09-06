@@ -35,8 +35,8 @@ export const Contents = () => {
                     <td>
                         <FormContent>
                             <ContentTitle href={state.contents[1].url}>{state.contents[1].title}</ContentTitle>
-                            <div />
-                            <FormContent>{state.contents[1].node} </FormContent>               
+                            <br/>
+                            <ContentNode>{state.contents[1].node} </ContentNode>               
                             <ContentUser href={state.contents[1].member}>{state.contents[1].username} </ContentUser>
                             <ContentText>1分钟前 </ContentText> 
                             <ContentText>最后回复来自 </ContentText>
@@ -53,7 +53,7 @@ export const Contents = () => {
                     <td>
                         <FormContent>
                             <ContentTitle href={state.contents[2].url}>{state.contents[2].title}</ContentTitle>
-                            <div />
+                            <br />
                             <ContentNode>{state.contents[2].node} </ContentNode>               
                             <ContentUser href={state.contents[2].member}>{state.contents[2].username} </ContentUser>
                             <ContentText>6分钟前 </ContentText> 
@@ -71,7 +71,7 @@ export const Contents = () => {
                     <td>
                         <FormContent>
                             <ContentTitle href={state.contents[3].url}>{state.contents[3].title}</ContentTitle>
-                            <div />
+                            <br />
                             <ContentNode>{state.contents[3].node} </ContentNode>               
                             <ContentUser href={state.contents[3].member}>{state.contents[3].username} </ContentUser>
                             <ContentText>4分钟前 </ContentText> 
@@ -89,7 +89,7 @@ export const Contents = () => {
                     <td>
                         <FormContent>
                             <ContentTitle href={state.contents[4].url}>{state.contents[4].title}</ContentTitle>
-                            <div />
+                            <br />
                             <ContentNode>{state.contents[4].node} </ContentNode>               
                             <ContentUser href={state.contents[4].member}>{state.contents[4].username} </ContentUser>
                             <ContentText>4分钟前 </ContentText> 
@@ -114,9 +114,6 @@ const FormContent = styled.div`
     font-weight:500;
     font-family: "Helvetica Neue";
     width: 100%;
-`
-const ContentContainer = styled.div`
-    width: 800px;
 `
 const ContentTitle = styled.a`
     margin: left;

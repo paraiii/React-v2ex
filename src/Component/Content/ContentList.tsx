@@ -1,6 +1,6 @@
 import React from 'react';
-import { Contents } from './Contents';
 import styled from 'styled-components';
+import { Contents } from './Contents';
 
 
 export const ContentList = () => {
