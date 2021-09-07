@@ -2,19 +2,20 @@ import React from 'react'
 import { Grid,Paper, Avatar, TextField, Button, Typography,Link } from '@material-ui/core'
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import './Login.css';
+import styled from 'styled-components';
 
 export const Login = () => {
     return (
-        <div className='login-style'>
+        <div>
+          <LoginContainer>
           <Grid>
               <Paper>
-                <div className="avatar">
+                <LoginAvatar>
                   <Grid>
                       <Avatar />
                       <h2>Sign In</h2>
                   </Grid>
-                </div>
+                </LoginAvatar>
                 <TextField 
                      variant="outlined"
                      label='Username' 
@@ -31,9 +32,9 @@ export const Login = () => {
                     control={<Checkbox/>}
                     label="Remember me"
                   />
-                <div className='sign-button'>
+                <SignButton>
                   <Button fullWidth>Sign in</Button>
-                </div>
+                </SignButton>
                 <Typography >
                       <Link href="#" >Forgot password ?</Link>
                 </Typography>
@@ -43,11 +44,24 @@ export const Login = () => {
                 </Typography>
               </Paper>
           </Grid>
+          </LoginContainer>
         </div>
     )
 };
 
-
-
+const LoginContainer = styled.div`
+  padding: 30px 0 0 0 ;
+  width: 500px;
+  position:absolute;
+  top:20%;
+  left:30%;
+`
+const LoginAvatar = styled.div`
+  align: center;
+  background-color:lavenderblush;
+`
+const SignButton = styled.div`
+ background-color: rgb(151, 184, 255);
+`
 
 

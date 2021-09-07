@@ -1,27 +1,24 @@
-import React from 'react';
-import './Ad.css';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
+import V2exContext3 from '../../../Mock3';
 
 export const Ad = () => {
 
-    // const state = useContext(V2exContext)
-    // const ad = state.ad;
+    const state = useContext(V2exContext3)
 
     return (
-        <div className="ad">
+        <div>
             <AdDes>
                 <text>
-                    广告
-                    {/* {ad.title} */}
+                    {state.ad[0].title}
                 </text>
             </AdDes>
             <AdImgContainer>
                 <AdImg>
-                    <img src="https://apkplz.net/storage/images/com/readhub/readhub_flutter/com.readhub.readhub_flutter_1.png" style={{maxWidth:270, height:130, paddingTop:20, paddingBottom:20}}></img>
-                    {/* 需要改到下面写 */}
+                    <img src={state.ad[0].image}></img>
                 </AdImg>
                 <br />
-                <AdImg>每天三分钟的科技新闻聚合阅读</AdImg>
+                <AdImg>{state.ad[0].content}</AdImg>
             </AdImgContainer>
            
         </div>
@@ -35,10 +32,16 @@ const AdImgContainer = styled.div`
 `
 const AdImg = styled.a`
     font-size: 14px;
+    maxWidth:270px; 
+    height:130px; 
+    padding-top: 20px; 
+    padding-bottom: 20px;
  `
 
 const AdDes = styled.a`
     font-size:10px;
     text-align: left;
     background-color: white;
+    margin-top: 10px;
+    margin-bottom: 20px;
 `

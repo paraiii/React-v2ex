@@ -9,7 +9,7 @@ export const SideTab = () => {
         <Fragment>
             <SideSignContainer>
                 <SideSignTab style={{color:"black"}}>V2EX = way to explore</SideSignTab> 
-                <div />
+                <br />
                 <SideSignTab>V2EX 是一个关于分享和探索的地方</SideSignTab>
             </SideSignContainer>
         </Fragment>
