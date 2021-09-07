@@ -1,5 +1,6 @@
 .footer {
-    color: mediumslateblue;
+    color: #999999;
     border: none;
     float: bottom;
+    padding-top: 760px;
 }
