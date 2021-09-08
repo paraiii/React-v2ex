@@ -41,3 +41,4 @@ export interface Ad {
 export interface AllData {
     ad: Ad []
 }
+

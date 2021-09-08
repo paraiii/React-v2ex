@@ -1,11 +1,12 @@
-import React, { useContext } from 'react';
+import React, {useContext} from 'react';
 import styled from 'styled-components';
 import { useContents } from '../../hooks/useContents';
-import { V2exContext } from '../../V2exContextProvider';
+import { LocalizationContext } from '../../LocalizationContextProvider';
 
 export const Contents = () => {
 
     const contents = useContents ();
+    const translations = useContext(LocalizationContext)
 
     return (
         <div>
@@ -19,8 +20,8 @@ export const Contents = () => {
                             <br />
                             <ContentNode>{contents[0].node} </ContentNode>               
                             <ContentUser href={contents[0].member}>{contents[0].username} </ContentUser>
-                            <ContentText>2分钟前 </ContentText> 
-                            <ContentText>最后回复来自 </ContentText>
+                            <ContentText>{translations.en[0].reply_time} </ContentText> 
+                            <ContentText>{translations.en[0].last_reply_from} </ContentText>
                             <ContentUser>{contents[0].last_modified}</ContentUser> 
                         </FormContent>
                     </td>
@@ -37,8 +38,8 @@ export const Contents = () => {
                             <br/>
                             <ContentNode>{contents[1].node} </ContentNode>               
                             <ContentUser href={contents[1].member}>{contents[1].username} </ContentUser>
-                            <ContentText>1分钟前 </ContentText> 
-                            <ContentText>最后回复来自 </ContentText>
+                            <ContentText>{translations.cn[0].reply_time} </ContentText> 
+                            <ContentText>{translations.cn[0].last_reply_from} </ContentText>
                             <ContentUser>{contents[1].last_modified}</ContentUser> 
                         </FormContent>
                     </td>
@@ -55,8 +56,8 @@ export const Contents = () => {
                             <br/>
                             <ContentNode>{contents[2].node} </ContentNode>               
                             <ContentUser href={contents[2].member}>{contents[2].username} </ContentUser>
-                            <ContentText>6分钟前 </ContentText> 
-                            <ContentText>最后回复来自 </ContentText>
+                            <ContentText>{translations.cn[0].reply_time} </ContentText> 
+                            <ContentText>{translations.cn[0].last_reply_from} </ContentText>
                             <ContentUser>{contents[2].last_modified}</ContentUser> 
                         </FormContent>
                     </td>
@@ -73,8 +74,8 @@ export const Contents = () => {
                             <br />
                             <ContentNode>{contents[3].node} </ContentNode>               
                             <ContentUser href={contents[3].member}>{contents[3].username} </ContentUser>
-                            <ContentText>4分钟前 </ContentText> 
-                            <ContentText>最后回复来自</ContentText>
+                            <ContentText>{translations.cn[0].reply_time} </ContentText> 
+                            <ContentText>{translations.cn[0].last_reply_from}</ContentText>
                             <ContentUser>{contents[3].last_modified}</ContentUser> 
                         </FormContent>
                     </td>
@@ -91,8 +92,8 @@ export const Contents = () => {
                             <br />
                             <ContentNode>{contents[4].node} </ContentNode>               
                             <ContentUser href={contents[4].member}>{contents[4].username} </ContentUser>
-                            <ContentText>4分钟前 </ContentText> 
-                            <ContentText>最后回复来自 </ContentText>
+                            <ContentText>{translations.cn[0].reply_time} </ContentText> 
+                            <ContentText>{translations.cn[0].last_reply_from} </ContentText>
                             <ContentUser>{contents[4].last_modified}</ContentUser> 
                         </FormContent>
                     </td>
