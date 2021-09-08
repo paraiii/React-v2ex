@@ -47,7 +47,7 @@ export const Contents = () => {
                     </td>
                 </tr>
 
-                {/* <tr>         
+                <tr>         
                     <img src={state.contents[2].image} alt={state.contents[2].username}/>
                     <td>
                         <FormContent>
@@ -63,9 +63,9 @@ export const Contents = () => {
                     <td>
                         <button>{state.contents[3].replies}</button>
                     </td>
-                </tr> */}
+                </tr>
 
-                {/* <tr>         
+                <tr>         
                     <img src={state.contents[3].image} alt={state.contents[3].username}/>
                     <td>
                         <FormContent>
@@ -81,9 +81,9 @@ export const Contents = () => {
                     <td>
                         <button>{state.contents[3].replies}</button>
                     </td>
-                </tr> */}
+                </tr>
 
-                {/* <tr>         
+                <tr>         
                     <img src={state.contents[4].image} alt={state.contents[4].username}/>
                     <td>
                         <FormContent>
@@ -99,7 +99,7 @@ export const Contents = () => {
                     <td>
                         <button>{state.contents[4].replies}</button>
                     </td>
-                </tr> */}
+                </tr>
                 
                 </tbody>
             </StyledTable>
