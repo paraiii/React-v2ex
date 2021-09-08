@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { V2exContext } from '../../../V2exContextProvider';
+import { useHotList } from '../../../hooks/useHotList';
 
 export const HotList = () => {
 
-    const state = useContext(V2exContext)
+    const hotList = useHotList ();
     return (
     <div>
         <HotListContainer>
@@ -13,21 +13,21 @@ export const HotList = () => {
                 <tr>
                     <td>
                     <HotListContent>
-                        <img src={state.hotList[0].image} alt={state.hotList[0].username}></img>
+                        <img src={hotList[0].image} alt={hotList[0].username}></img>
                     </HotListContent>
                     </td>
                     <td>
-                        <HotListContent href={state.hotList[0].url}>{state.hotList[0].title}</HotListContent>
+                        <HotListContent href={hotList[0].url}>{hotList[0].title}</HotListContent>
                     </td>
                 </tr>
                 <tr>
                     <td>
                     <HotListContent>
-                        <img src={state.hotList[1].image} alt={state.hotList[1].username}></img>
+                        <img src={hotList[1].image} alt={hotList[1].username}></img>
                     </HotListContent>
                     </td>
                     <td>
-                        <HotListContent href={state.hotList[1].url}>{state.hotList[1].title}</HotListContent>
+                        <HotListContent href={hotList[1].url}>{hotList[1].title}</HotListContent>
                     </td>
                 </tr>
                 </tbody>

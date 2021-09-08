@@ -15,7 +15,7 @@ export interface Content {
 export interface AllData {
     contents: Content []
 }
-//
+
 export interface HotList {
     id: number,
     title: string,
@@ -31,7 +31,7 @@ export interface HotList {
 export interface AllData {
     hotList: HotList []
 }
-//
+
 export interface Ad {
     title: string,
     image: string,
