@@ -1,10 +1,15 @@
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import React, { useContext, Provider } from "react";
+import React, { Provider } from "react";
 import { Header, Login, Footer, Home, SignUp } from "./Component";
 import './App.css'; 
+import Mock from './Mock';
 
-function App() {
+
+export const V2exContext = React.createContext(Mock)
+
+export const App = () => {
   return (
+    <V2exContext.Provider value={Mock}>
       <Router>
         <div className="App">
             <Header />
@@ -13,7 +18,8 @@ function App() {
             <Route exact path="/" component={Home} />
             <Footer />
         </div>
-      </Router>
+        </Router>
+    </V2exContext.Provider>
   );
 }
- export default App;
+export default App;

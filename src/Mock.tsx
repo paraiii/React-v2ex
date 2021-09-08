@@ -1,8 +1,8 @@
-import React, { createContext } from "react";
+import React from "react";
 import App from './App';
 
-const hotList = {
-    "hotList": [
+const Mock = {
+    hotList: [
         {   
             id: 369998,
             title: '求教：如果想挖优秀的 Python ，什么才算是有吸引力的条件?',
@@ -31,14 +31,16 @@ const hotList = {
 }
 
 
-  const V2exContext = createContext (hotList);
+  // const V2exContext = createContext (hotList);
 
-  function Mock() {
-    return (
-      <V2exContext.Provider value={hotList}>
-            <App />
-      </V2exContext.Provider>
+  // function Mock() {
+  //   return (
+  //     <V2exContext.Provider value={hotList}>
+  //           <App />
+  //     </V2exContext.Provider>
 
-    );
-  }
-export default V2exContext;
+  //   );
+  // }
+// export default V2exContext;
+export const V2exContext = React.createContext(Mock)
+export default Mock;

@@ -1,16 +1,19 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import V2exContext3 from '../../../Mock3';
+// import V2exContext3 from '../../../Mock3';
+import V2exContext from '../../../Context/V2exContext';
 
 export const Ad = () => {
 
-    const state = useContext(V2exContext3)
+    const state = useContext(V2exContext)
+    const ad = state.ad;
 
     return (
         <div>
             <AdDes>
                 <text>
                     {state.ad[0].title}
+                    {/* {ad.title} */}
                 </text>
             </AdDes>
             <AdImgContainer>

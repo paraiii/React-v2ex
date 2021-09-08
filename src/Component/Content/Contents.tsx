@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import V2exContext2 from '../../Mock2';
-import './Content.css';
 
 
 export const Contents = () => {
@@ -10,7 +9,7 @@ export const Contents = () => {
 
     return (
         <div>
-            <table className="contents">
+            <StyledTable>
                 <tbody>
                 <tr>         
                     <img src={state.contents[0].image} alt={state.contents[0].username}/>
@@ -103,11 +102,14 @@ export const Contents = () => {
                 </tr>
                 
                 </tbody>
-            </table>
+            </StyledTable>
         </div>
     )
 };
 
+const StyledTable = styled.table`
+    width: 100%;
+`
 const FormContent = styled.div`
     margin: left;
     word-break: "break word";
