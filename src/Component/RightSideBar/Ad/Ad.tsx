@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 // import V2exContext3 from '../../../Mock3';
-import V2exContext from '../../../Context/V2exContext';
+// import mock from '../../../Mock';
+import { V2exContext } from '../../../V2exContextProvider';
 
 export const Ad = () => {
 

@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import V2exContext from '../../../Context/V2exContext';
-
+import { V2exContext } from '../../../V2exContextProvider';
 
 export const HotList = () => {
 

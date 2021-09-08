@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import V2exContext2 from '../../Mock2';
-
+// import V2exContext2 from '../../Mock2';
+import { V2exContext } from '../../V2exContextProvider';
 
 export const Contents = () => {
 
-    const state = useContext(V2exContext2)
+    const state = useContext(V2exContext)
 
     return (
         <div>
@@ -47,12 +47,12 @@ export const Contents = () => {
                     </td>
                 </tr>
 
-                <tr>         
+                {/* <tr>         
                     <img src={state.contents[2].image} alt={state.contents[2].username}/>
                     <td>
                         <FormContent>
                             <ContentTitle href={state.contents[2].url}>{state.contents[2].title}</ContentTitle>
-                            <div />
+                            <br/>
                             <ContentNode>{state.contents[2].node} </ContentNode>               
                             <ContentUser href={state.contents[2].member}>{state.contents[2].username} </ContentUser>
                             <ContentText>6分钟前 </ContentText> 
@@ -63,9 +63,9 @@ export const Contents = () => {
                     <td>
                         <button>{state.contents[3].replies}</button>
                     </td>
-                </tr>
+                </tr> */}
 
-                <tr>         
+                {/* <tr>         
                     <img src={state.contents[3].image} alt={state.contents[3].username}/>
                     <td>
                         <FormContent>
@@ -81,9 +81,9 @@ export const Contents = () => {
                     <td>
                         <button>{state.contents[3].replies}</button>
                     </td>
-                </tr>
+                </tr> */}
 
-                <tr>         
+                {/* <tr>         
                     <img src={state.contents[4].image} alt={state.contents[4].username}/>
                     <td>
                         <FormContent>
@@ -99,7 +99,7 @@ export const Contents = () => {
                     <td>
                         <button>{state.contents[4].replies}</button>
                     </td>
-                </tr>
+                </tr> */}
                 
                 </tbody>
             </StyledTable>
