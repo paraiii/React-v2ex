@@ -42,3 +42,10 @@ export interface AllData {
     ad: Ad []
 }
 
+export interface Translations {
+    reply_time: string,
+    last_reply_from: string,
+}
+export interface English {
+    translations: Translations []
+}

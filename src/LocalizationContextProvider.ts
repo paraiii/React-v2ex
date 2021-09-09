@@ -8,7 +8,7 @@ export const translations: Translation = {
     }],
     en: [{
         reply_time: '2 minutes ago',
-        last_reply_from: 'last reply from'
+        last_reply_from: 'Last replied by'
     }]
 }
 
