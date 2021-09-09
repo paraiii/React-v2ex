@@ -11,18 +11,3 @@ export interface Translation {
     cn: TranslationItem []
     en: TranslationItem []
 }
-// export interface Translations {
-//     reply_time: string,
-//     last_reply_from: string,
-// }
-// export interface English {
-//     translations: Translations []
-// }
-
-// export interface Translations {
-//     reply_time: string,
-//     last_reply_from: string,
-// }
-// export interface Chinese {
-//     translations: Translations []
-// }
