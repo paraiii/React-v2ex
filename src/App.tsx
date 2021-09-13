@@ -2,13 +2,13 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import React  from "react";
 import { Header, Login, Footer, Home, SignUp } from "./Component";
 import './App.css'; 
-import { mock, V2exContext } from './V2exContextProvider';
-import { translations, LocalizationContext } from "./LocalizationContextProvider";
+import { LocalizationContextProvider } from "./LocalizationContextProvider";
+import { V2exContextProvider } from './V2exContextProvider';
 
 export const App = () => {
   return ( 
-    <V2exContext.Provider value={mock}>
-      <LocalizationContext.Provider value={translations}>
+    <V2exContextProvider>
+      <LocalizationContextProvider>
         <Router>
           <div className="App">
               <Header />
@@ -18,7 +18,7 @@ export const App = () => {
               <Footer />
           </div>
           </Router>
-        </LocalizationContext.Provider>
-    </V2exContext.Provider>
+        </LocalizationContextProvider>
+    </V2exContextProvider>
   );
 }

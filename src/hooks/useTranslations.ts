@@ -6,5 +6,5 @@ export const useTranslations = () => {
 
     const state = useContext(LocalizationContext)
 
-    // return state.translations;
+    return state.cn
 }

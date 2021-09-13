@@ -102,3 +102,17 @@ export const mock: AllData = {
 }
 
 export const V2exContext = React.createContext(mock)
+
+interface V2exContextProviderProps {
+    children: object
+}
+
+export const V2exContextProvider= (props: V2exContextProviderProps) => {
+    const {children} = props
+
+    return (
+        <V2exContext.Provider value= {mock}>
+            {{children}}
+        </V2exContext.Provider>
+    )
+}

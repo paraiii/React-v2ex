@@ -1,13 +1,11 @@
-export interface TranslationItems {
-    // key: string,
-    // value:string,
-    // default: string,
+export interface Translation {
     reply_time: string,
     last_reply_from: string,
+    translation_key: string
 }
 
-export interface Translation {
+export interface TranslationItems {
     // data: Map<string, TranslationItem>
-    cn: TranslationItems
-    en: TranslationItems
+    cn: Translation
+    en: Translation
 }
