@@ -1,14 +1,13 @@
-import React, {useContext, Fragment} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { useContents } from '../../hooks/useContents';
 import { useTranslations } from '../../hooks/useTranslations';
-import { LocalizationContext } from '../../LocalizationContextProvider';
 import { ContentLine } from './ContentLine';
 
 export const Contents = () => {
 
     const contents = useContents ();
-    const {translations, setLanguageCode} = useTranslations ();
+    const translations = useTranslations ();
 
     let rows = []
 

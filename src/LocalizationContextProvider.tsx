@@ -19,7 +19,7 @@ export const translations: TranslationItems = {
 
 
 
-export const LocalizationContext = React.createContext(translations, setLanguageCode)
+export const LocalizationContext = React.createContext(translations)
 
 interface LocalizationContextProviderProps {
     children: object
@@ -27,7 +27,7 @@ interface LocalizationContextProviderProps {
 
 export const LocalizationContextProvider = (props: LocalizationContextProviderProps) => {
     const {children} = props
-    const [languageCode, setLanguageCode] = useState ("cn")
+    const [languageCode] = useState ("cn")
 
         if (languageCode === "cn") {
             translations.cn= {
@@ -44,7 +44,7 @@ export const LocalizationContextProvider = (props: LocalizationContextProviderPr
         }
 
     return (
-        <LocalizationContext.Provider value= {translations, setLanguageCode}>
+        <LocalizationContext.Provider value= {translations}>
             {{children}}
         </LocalizationContext.Provider>
     )
