@@ -112,7 +112,7 @@ export const V2exContextProvider= (props: V2exContextProviderProps) => {
 
     return (
         <V2exContext.Provider value= {mock}>
-            {{children}}
+            {children}
         </V2exContext.Provider>
     )
 }
