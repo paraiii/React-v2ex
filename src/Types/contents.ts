@@ -43,24 +43,13 @@ export interface AllData {
     ad: Ad []
 }
 
-// export interface Translations {
-//     reply_time: string,
-//     last_reply_from: string,
-// }
-// export interface English {
-//     translations: Translations []
-// }
 export interface Translation {
-    // key: string,
-    // value:string,
-    // default: string,
     reply_time: string,
     last_reply_from: string,
     translation_key: string
 }
 
 export interface TranslationItems {
-    // data: Map<string, TranslationItem>
     cn: Translation
     en: Translation
 }

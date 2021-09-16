@@ -5,8 +5,8 @@ import { HotTab } from '.';
 export const HotTopics = () => {
     return (
         <div>
-                <HotTab />
-                <HotList />
+            <HotTab />
+            <HotList />
   
         </div>
     )

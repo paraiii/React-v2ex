@@ -5,9 +5,6 @@ export interface Translation {
 }
 
 export interface TranslationItems {
-    // data: Map<string, TranslationItem>
     cn: Translation
     en: Translation
-
-    // type TranslationItems=Map<string, TranslationItem>
 }
