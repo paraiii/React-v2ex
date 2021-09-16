@@ -1,53 +1,39 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import V2exContext from '../../../Mock';
-
+import { useHotList } from '../../../hooks/useHotList';
+import { HotLine } from './HotLine';
 
 export const HotList = () => {
 
-    const state = useContext(V2exContext)
+    const hotList = useHotList ();
+
+    let rows = []
+
+    for(var i=0; i < hotList.length; i++){
+        rows.push(
+            <HotLine hotList={hotList[i]}></HotLine>
+        )
+        
+    }
+
     return (
-    <div>
-        <HotListContainer>
-            <table>
-                <tbody>
-                <tr>
-                    <td>
-                    <HotListContent>
-                        <img src={state.hotList[0].image} alt={state.hotList[0].username}></img>
-                    </HotListContent>
-                    </td>
-                    <td>
-                        <HotListContent href={state.hotList[0].url}>{state.hotList[0].title}</HotListContent>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                    <HotListContent>
-                        <img src={state.hotList[1].image} alt={state.hotList[1].username}></img>
-                    </HotListContent>
-                    </td>
-                    <td>
-                        <HotListContent href={state.hotList[1].url}>{state.hotList[1].title}</HotListContent>
-                    </td>
-                </tr>
-                </tbody>
-            </table>    
-        </HotListContainer>
-    </div>
+        <div>
+            <HotListContainer>
+                <table>
+                    <tbody>
+                        {
+                            rows.map((row) => {
+                                return row;
+                            })
+                        }
+                    </tbody>
+                </table>
+            </HotListContainer>
+        </div>
     )
 };
 
 const HotListContainer = styled.div`
 background-color: white;
 `
-const HotListContent = styled.a`
-    margin-left: 10px;
-    font-family: "Times New Roman"
-    word-break: "break word"
-    font-weight:500;
-    color: Black;
-    text-decoration: none;
-    background-color: white;
-`
-
+ 

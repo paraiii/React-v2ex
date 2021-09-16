@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { ContentList } from './ContentList';
 import { AllTab, ContentTab } from './Tab';
-import './Content.css';
 
 export const Content = () => {
     return (

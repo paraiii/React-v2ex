@@ -1,3 +1,12 @@
+
+import { V2exContext } from '../V2exContextProvider';
+import { useContext } from 'react';
+
+
 export const useContents = () => {
-    // const state = uesContext(V2exContext)
+
+    const state = useContext(V2exContext)
+
+    return state.contents;
+
 }
