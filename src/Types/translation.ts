@@ -1,3 +1,4 @@
+
 export interface Translation {
     reply_time: string,
     last_reply_from: string,
@@ -7,4 +8,8 @@ export interface Translation {
 export interface TranslationItems {
     cn: Translation
     en: Translation
+
+
+
+
 }
