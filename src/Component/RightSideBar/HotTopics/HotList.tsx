@@ -7,7 +7,6 @@ import { HotLine } from './HotLine';
 function getHotData() {
     return axios({
         method: "GET",
-        // url: "https://www.reddit.com/r/reactjs.json"
         url: "https://jsonplaceholder.typicode.com/todos"
     });
  }
@@ -26,12 +25,10 @@ export const HotList = () => {
 
     let rows = []
     
-
     for(var i=0; i < hotList.length; i++){
         rows.push(
             <HotLine hotList={hotList[i]}></HotLine>
-        )
-        
+        )    
     }
 
     return (
