@@ -16,11 +16,15 @@ export const HotLine = (props: hotLineProps) => {
             <tr>
                 <td>
                 <HotListContent>
-                    <img src={hotList.image} alt={hotList.member}></img>
+                    <img src={hotList.member.avatar_normal} alt={hotList.member.avatar_normal}></img>
                 </HotListContent>
                 </td>
                 <td>
                     <HotListContent href={hotList.url}>{hotList.title}</HotListContent>
+                    {/* <HotListContent>
+                        {hotList.title} from {hotList.id}
+                    </HotListContent>
+                     */}
                 </td>
             </tr>
         </Fragment>

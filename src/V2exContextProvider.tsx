@@ -4,8 +4,14 @@ import { AllData } from './Types/contents';
 export const mock: AllData = {
     hotList: [{   
         id: 369998,
-        node: 'Python',
-        member: '131452p',
+        member: {
+            username: '',
+            url: '',
+            avatar_large: 'string',
+            avatar_mini: 'string',
+            avatar_normal: 'string',
+            id: 123
+        },
         title: '求教：如果想挖优秀的 Python ，什么才算是有吸引力的条件?',
         image: 'https://cdn.v2ex.com/avatar/111a/37f8/160862_normal.png?m=1496204932',
         url:'http://www.v2ex.com/t/369998',
@@ -18,8 +24,14 @@ export const mock: AllData = {
     },
     {
         id: 799959,
-        node: '问与答',
-        member: 'YangXiaoming  ',
+        member: {
+            username: '',
+            url: '',
+            avatar_large: 'string',
+            avatar_mini: 'string',
+            avatar_normal: 'string',
+            id: 12334
+        },
         title: '微信迁移wechat的朋友注意了， 转到wechat就无法登录网页版微信了，fuck',
         image: 'https://cdn.v2ex.com/avatar/cd15/3421/455199_normal.png?m=1630490634',
         url:'http://www.v2ex.com/t/799959',

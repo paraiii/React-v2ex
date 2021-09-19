@@ -16,9 +16,17 @@ export interface AllData {
     contents: Content []
 }
 
+export interface Member {
+    username: string,
+    url: string,
+    avatar_large: string,
+    avatar_mini: string,
+    avatar_normal: string,
+    id: number
+}
+
 export interface HotList {
-    node: string,
-    member: string,
+    member: Member,
     last_reply_by: string
     last_touched: string
     title: string,

@@ -1,33 +1,24 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { useHotList } from '../../../hooks/useHotList';
 import { HotLine } from './HotLine';
-
-function getHotData() {
-    return axios({
-        method: "GET",
-        url: "https://jsonplaceholder.typicode.com/todos"
-    });
- }
+import { GetHotData } from '../../../Api/HotData';
 
 export const HotList = () => {
     
+    const rows: JSX.Element[] = [];
     const [hotDatas, setHotData] = useState([]);
-        useEffect(
-            function() {
-                getHotData().then(res => {
-                    setHotData(res.data);
-                });
-            }, []);
-    
-    const hotList = useHotList ();
 
-    let rows = []
+    // render output，state发生变化是触发re-render,
+    useEffect(
+        function() {
+            GetHotData().then(res => {
+                setHotData(res.data);
+            });
+        }, []);
     
-    for(var i=0; i < hotList.length; i++){
+    for(var i=0; i < hotDatas.length; i++){
         rows.push(
-            <HotLine hotList={hotList[i]}></HotLine>
+            <HotLine hotList={hotDatas[i]}></HotLine>
         )    
     }
 
@@ -37,14 +28,14 @@ export const HotList = () => {
                 <table>
                     <tbody>
                         {
-                            // rows.map((row) => {
-                            //     return row;
-                            // })
-                            <>
-                                {hotDatas.map(hotData => (
-                                    <p>{JSON.stringify(hotData)}</p>
-                                ))}
-                            </>
+                            rows.map((row) => {
+                                return row;
+                            })
+                            // <>
+                            //     {hotDatas.slice(0, 10).map(hotData => (
+                            //         <p>{JSON.stringify(hotData.title)} from {hotData.id}</p>
+                            //     ))}
+                            // </>
                         }
                     </tbody>
                 </table>
