@@ -41,4 +41,5 @@ const HotListContent = styled.a`
 
 const HotEach = styled.a`
     border-bottom: 1px solid;
+    color: #C7C7C7;
 `
