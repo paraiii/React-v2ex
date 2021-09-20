@@ -4,11 +4,11 @@ import { HotLine } from './HotLine';
 import { GetHotData } from '../../../Api/HotData';
 
 export const HotList = () => {
-    
+
     const rows: JSX.Element[] = [];
     const [hotDatas, setHotData] = useState([]);
 
-    // render output，state发生变化是触发re-render,
+    // render output，state发生变化触发re-render,
     useEffect(
         function() {
             GetHotData().then(res => {
@@ -31,11 +31,6 @@ export const HotList = () => {
                             rows.map((row) => {
                                 return row;
                             })
-                            // <>
-                            //     {hotDatas.slice(0, 10).map(hotData => (
-                            //         <p>{JSON.stringify(hotData.title)} from {hotData.id}</p>
-                            //     ))}
-                            // </>
                         }
                     </tbody>
                 </table>

@@ -4,6 +4,7 @@ import { Header, Login, Footer, Home, SignUp } from "./Component";
 import './App.css'; 
 import { LocalizationContextProvider } from "./LocalizationContextProvider";
 import { V2exContextProvider } from './V2exContextProvider';
+import styled from "styled-components";
 
 export const App = () => {
   return ( 
@@ -15,6 +16,7 @@ export const App = () => {
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={SignUp} />
               <Route exact path="/" component={Home} />
+              <Line />
               <Footer />
           </div>
           </Router>
@@ -22,3 +24,9 @@ export const App = () => {
     </V2exContextProvider>
   );
 }
+
+
+const Line = styled.hr`
+  color: #C7C7C7;
+  border-bottom: 1px solid;
+`;

@@ -32,6 +32,9 @@ const FooterContainer = styled.div`
     line-height: 150%;
     color: #999999;
     float: bottom;
+    min-width: 600px;
+    max-width: 1100px;
+    margin: 0 auto;
 `
 
 const FooterItem = styled.a`

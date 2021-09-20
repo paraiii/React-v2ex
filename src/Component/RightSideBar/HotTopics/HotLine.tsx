@@ -13,20 +13,18 @@ export const HotLine = (props: hotLineProps) => {
 
     return (
         <Fragment>
-            <tr>
-                <td>
-                <HotListContent>
-                    <img src={hotList.member.avatar_normal} alt={hotList.member.avatar_normal}></img>
-                </HotListContent>
-                </td>
-                <td>
-                    <HotListContent href={hotList.url}>{hotList.title}</HotListContent>
-                    {/* <HotListContent>
-                        {hotList.title} from {hotList.id}
+            <HotEach>
+                <tr>
+                    <td>
+                    <HotListContent>
+                        <img src={hotList.member.avatar_normal} alt={hotList.member.avatar_normal}></img>
                     </HotListContent>
-                     */}
-                </td>
-            </tr>
+                    </td>
+                    <td>
+                        <HotListContent href={hotList.url}>{hotList.title}from {hotList.id} </HotListContent>
+                    </td>
+                </tr>
+            </HotEach>
         </Fragment>
     )
 }
@@ -41,3 +39,6 @@ const HotListContent = styled.a`
     background-color: white;
 `
 
+const HotEach = styled.a`
+    border-bottom: 1px solid;
+`

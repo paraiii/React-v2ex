@@ -26,7 +26,8 @@ const AllTabContain = styled.div `
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;    
     padding: 10px 10px 10px 20px;  
-
+    border-bottom: 1px solid;
+    color: #C7C7C7;
 `
 const AllTabItem = styled.a`
     display: inline-block;

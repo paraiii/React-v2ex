@@ -16,14 +16,14 @@ export const ContentLine = (props: contentLineProps) => {
 
     return (
         <Fragment>
+            <ContentEach>
                 <tr>         
-                    <img src={content.image} alt={content.username}/>
+                    <img src={content.member.avatar_normal} alt={content.member.avatar_normal}/>
                     <td>
                         <FormContent>
                             <ContentTitle href={content.url}>{content.title}</ContentTitle>
-                            <br />
-                            <ContentNode>{content.node} </ContentNode>               
-                            <ContentUser href={content.member}>{content.username} </ContentUser>
+                            <br />              
+                            <ContentUser> {content.member}</ContentUser>
                             <ContentText>{translation.reply_time} </ContentText> 
                             <ContentText>{translation.last_reply_from} </ContentText>
                             <ContentUser>{content.last_modified}</ContentUser> 
@@ -33,7 +33,8 @@ export const ContentLine = (props: contentLineProps) => {
                         <button>{content.replies}</button>
                     </td>
                 </tr>
-            </Fragment>
+            </ContentEach>
+        </Fragment>
     )
 }
 
@@ -76,3 +77,7 @@ const ContentText = styled.a`
 
 `
 
+const ContentEach = styled.hr`
+    border-bottom: 1px solid;
+    color: #C7C7C7;
+`

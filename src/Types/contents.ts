@@ -3,11 +3,10 @@ export interface Content {
     title: string,
     image: string,
     url: string,
-    member: string,
+    member: Member,
     content: string,
     content_rendered: string,
     replies: number,
-    node: string,
     username: string,
     last_modified: string
 }
@@ -23,6 +22,9 @@ export interface Member {
     avatar_mini: string,
     avatar_normal: string,
     id: number
+}
+export interface ContentData {
+    members: Member []
 }
 
 export interface HotList {

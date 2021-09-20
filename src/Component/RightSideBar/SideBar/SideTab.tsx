@@ -21,8 +21,8 @@ const SideSignContainer = styled.div`
     border-top-left-radius: 3px;
     border-top-right-radius: 3px; 
     padding: 15px 10px 20px 10px;  
-    border-bottom: solid; 
-    border-width: 1px;
+    border-bottom: 1px solid;
+    color: #C7C7C7;
 `
 const SideSignTab = styled.a `
     color: #CCCCCC;

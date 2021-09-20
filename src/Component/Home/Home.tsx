@@ -17,7 +17,7 @@ export const Home = () => {
 const HomeContainer = styled.div`
     background-color:#E2E2E2;
     display: block;
-    margin: 70px 0 0 0;
+    margin: 70px 0 0 90px;
     width: auto;
     padding: 10px 70px;
     min-width: 600px;

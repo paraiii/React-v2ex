@@ -15,6 +15,7 @@ export const SiteNav = () => {
 const SiteNavContainer = styled.div`
     flex: 1 1 200px;
     text-align: right;
+    align-items: center;
 `
 
 const SiteNavItem = styled.a`
