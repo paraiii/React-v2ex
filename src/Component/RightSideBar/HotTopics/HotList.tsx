@@ -8,7 +8,7 @@ export const HotList = () => {
     const rows: JSX.Element[] = [];
     const [hotDatas, setHotData] = useState([]);
 
-    // render output，state发生变化触发re-render,
+    // render output，state发生变化触发re-render,当用到setHotData的时候，hotDatas就变更
     useEffect(
         function() {
             GetHotData().then(res => {
@@ -40,5 +40,9 @@ export const HotList = () => {
 };
 
 const HotListContainer = styled.div`
-background-color: white;
+    background-color: white;
+`
+const BorderTr = styled.tr`
+    border-bottom: 1px solid;
+    color: #C7C7C7;
 `

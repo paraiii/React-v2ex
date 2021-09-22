@@ -1,5 +1,6 @@
 export interface Content {
     id: number,
+    node: Node,
     title: string,
     image: string,
     url: string,
@@ -8,11 +9,25 @@ export interface Content {
     content_rendered: string,
     replies: number,
     username: string,
-    last_modified: string
+    last_modified: number,
+    last_reply_from: string,
+    last_reply_by: string
 }
 
 export interface AllData {
     contents: Content []
+}
+export interface Node {
+    avatar_large: string,
+    avatar_mini: string,
+    avatar_normal: string,
+    name: string,
+    title: string,
+    url: string,
+    id: number
+}
+export interface NodeData {
+    nodes: Node []
 }
 
 export interface Member {

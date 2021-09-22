@@ -10,7 +10,6 @@ export const Contents = () => {
     const rows: JSX.Element[] = [];
     const [contentDatas, setContentData] = useState([]);
 
-
     useEffect(
         function() {
             GetContentData().then(res => {
@@ -41,5 +40,6 @@ export const Contents = () => {
 
 const StyledTable = styled.table`
     width: 100%;
+    border-collapse: collapse;
 `
 

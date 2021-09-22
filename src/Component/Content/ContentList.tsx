@@ -15,10 +15,12 @@ export const ContentList = () => {
 const MoreContents = styled.a`
   color: #778087;
   cursor: pointer;
+  padding: 10px;
+  line-height: 250%;
 `
 
 const ListContainer = styled.div`
-  font-family: "Times New Roman";
+  font-family: "Microsoft Yahei";
   word-break: "break word";
   background-color: white;
 `

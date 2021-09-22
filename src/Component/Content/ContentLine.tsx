@@ -13,27 +13,35 @@ interface contentLineProps {
 export const ContentLine = (props: contentLineProps) => {
 
     const { content, translation } = props;
+    const replyTime = (tiemstamp:number): string => {
+        var diff = Date.now()/1000 - tiemstamp
+
+        return `${(diff/60).toPrecision(1)} minutes ago`
+    }
 
     return (
         <Fragment>
-            <ContentEach>
-                <tr>         
-                    <img src={content.member.avatar_normal} alt={content.member.avatar_normal}/>
+                <StyledTr> 
+                    <td>
+                        <ContentImg src={content.member.avatar_normal} alt={content.member.avatar_normal}/>
+                   </td>
                     <td>
                         <FormContent>
                             <ContentTitle href={content.url}>{content.title}</ContentTitle>
-                            <br />              
-                            <ContentUser> {content.member}</ContentUser>
-                            <ContentText>{translation.reply_time} </ContentText> 
-                            <ContentText>{translation.last_reply_from} </ContentText>
-                            <ContentUser>{content.last_modified}</ContentUser> 
+                            <br />      
+                            <ContentNode> {content.node.title}</ContentNode>        
+                            <ContentUser> {content.member.username}</ContentUser>
+                            <ContentText>{(translation.reply_time)}</ContentText> 
+                            <ContentText>{translation.last_reply_from}</ContentText>
+                            <ContentUser>{content.last_reply_from}</ContentUser> 
+                            <ContentUser>{content.last_reply_by}</ContentUser>
                         </FormContent>
                     </td>
                     <td>
-                        <button>{content.replies}</button>
+                            <ContentReply href={content.content}>{content.replies}</ContentReply>
+
                     </td>
-                </tr>
-            </ContentEach>
+                </StyledTr>
         </Fragment>
     )
 }
@@ -50,23 +58,27 @@ const ContentTitle = styled.a`
     word-break: "break word"
     font-weight:500;
     text-decoration: none;
-    color: #4D5256;
+    color: #666A6F;
 `
 const ContentNode = styled.a`
-    margin: left;
-    word-break: "break word"
-    font-weight:500;
-    color: #777777;
-    background-color:#B8B8B8;
+    background-color: #f5f5f5;
     font-size: 12px;
+    line-height: 12px;
+    display: inline-block;
+    padding: 4px;
+    border-radius: 2px;
+    text-decoration: none;
+    color: #777777;
 `
 const ContentUser = styled.a`
     margin: left;
     word-break: "break word"
     font-weight:500;
-    color: #4D5256;
+    color: #50555A;
     text-decoration: none;
     font-weight: bold;
+    padding: 2px;
+    font-size: 12px;
 `
 const ContentText = styled.a`
     word-break: "break word"
@@ -74,10 +86,30 @@ const ContentText = styled.a`
     color: #999;
     text-decoration: none;
     font-size: 13px;
-
+    padding: 2px;
 `
-
-const ContentEach = styled.hr`
+const StyledTr = styled.tr`
     border-bottom: 1px solid;
     color: #C7C7C7;
+    padding: 10px;
+    line-height: 150%;
+    width: 90%;
+`
+const ContentImg = styled.img`
+    border-radius: 4px;
+    vertical-align: bottom;
+    width: 60px;
+    padding: 10px;
+`
+const ContentReply = styled.a`
+    line-height: 12px;
+    font-weight: 700;
+    color: #fff;
+    background-color: #aab0c6;
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 12px;
+    text-decoration: none;
+    margin-right: 5px;
+    text-decoration: none;
 `

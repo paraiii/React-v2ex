@@ -14,9 +14,9 @@ export const Footer = () => {
                     <FooterItem href="/tech">感谢</FooterItem> 
                     <FooterItem href="/tech">实用小工具</FooterItem> 
                     <br />
-                    <text>创意工作者们的社区</text>
+                    <text>♥ Do have faith in what you're doing.</text>
                     <br />
-                    <text>World is powered by solitude</text>
+                    <text>V2EX Clone Made By Paraiii</text>
                 </FooterContainer>  
         </div>
     )

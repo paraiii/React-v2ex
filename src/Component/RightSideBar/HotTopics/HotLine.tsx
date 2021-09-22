@@ -13,33 +13,40 @@ export const HotLine = (props: hotLineProps) => {
 
     return (
         <Fragment>
-            <HotEach>
+            <HotContainer>
                 <tr>
                     <td>
-                    <HotListContent>
-                        <img src={hotList.member.avatar_normal} alt={hotList.member.avatar_normal}></img>
-                    </HotListContent>
+                        <HotListImg src={hotList.member.avatar_normal} alt={hotList.member.avatar_normal}></HotListImg>
                     </td>
                     <td>
-                        <HotListContent href={hotList.url}>{hotList.title}from {hotList.id} </HotListContent>
+                        <HotListContent href={hotList.url}>{hotList.title}</HotListContent>
                     </td>
                 </tr>
-            </HotEach>
+            </HotContainer>
         </Fragment>
     )
 }
 
 const HotListContent = styled.a`
-    margin-left: 10px;
-    font-family: "Times New Roman"
+    font-family: "Helvetica Neue"
     word-break: "break word"
     font-weight:500;
-    color: Black;
+    color: #778087;;
     text-decoration: none;
     background-color: white;
+    font-size: 14px;
+    vertical-align: middle;
 `
-
-const HotEach = styled.a`
+const HotContainer = styled.div`
     border-bottom: 1px solid;
     color: #C7C7C7;
+    padding: 2px;
+    line-height: 12px;
+    vertical-align: middle;
+`
+const HotListImg = styled.img`
+    border-radius: 14px;
+    vertical-align: bottom;
+    padding: 5px;
+    width: 24px;
 `
