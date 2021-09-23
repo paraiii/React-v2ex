@@ -1,19 +1,20 @@
-import React from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import {MainTopic} from './MainTopic';
 import {Replies} from './Replies';
 import {Comment} from './Comment';
 import styled from 'styled-components';
 
 export default function Topic() {
+
     return (
-        <div>
+        <Fragment>
             <TopicContainer>
-                <MainTopic /> 
+                <MainTopic/> 
                 <br />
                 <Replies />
                 <Comment />
             </TopicContainer>
-        </div>
+        </Fragment>
     )
 }
 const TopicContainer = styled.div`

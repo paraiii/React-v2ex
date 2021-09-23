@@ -1,22 +1,14 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
-import { Content } from '../Types/contents';
-
-// interface mainTopicProps {
-//     content: Content,
-// }
-
 
 export const  MainTopic = () => {
-
-    // const { content } = props;
 
     return (
         <Fragment>
             <MainTopicContainer>
                 <tbody>
                     <TopicNode>
-                        node
+                        Node
                     </TopicNode>
                     <TopicHeader>
                     <tr>
