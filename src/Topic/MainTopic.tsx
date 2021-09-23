@@ -14,36 +14,37 @@ export const  MainTopic = () => {
     return (
         <Fragment>
             <MainTopicContainer>
+                <tbody>
                     <TopicNode>
                         node
                     </TopicNode>
                     <TopicHeader>
                     <tr>
                         <TopicTitle>
-                            <p>[深圳龙岗]有 Flutter 研发工程师吗[智能情趣硬件][18~20k][早 10 晚 6 不加班]</p>
+                            <p>你们的 iphone13 发货了吗</p>
                         </TopicTitle>
                         <TopicImg>
                             <img src="https://cdn.v2ex.com/avatar/1464/5347/541295_normal.png?m=1621663374" alt="chaleoch" />
                         </TopicImg>
                     </tr>
                     <tr>
-                        <button> ^ </button>
-                        <TopicTab>username</TopicTab>
-                        <TopicTab>创建时间</TopicTab>
-                        <TopicTab>views</TopicTab>
+                        <TopicTab>
+                            <button> ^ </button>
+                            <TabItem>Add to Favorites</TabItem>
+                            <TabItem>username</TabItem>
+                            <TabItem>创建时间</TabItem>
+                            <TabItem>views</TabItem>
+                        </TopicTab>
                     </tr>
                     </TopicHeader>
                     <tr>
                         <TopicContent>
-                            <h1>
-                                你们是谁？
-我们是位于深圳龙岗区的智能成人用品研发公司，主打产品是一系列基于 IoT 的成人用品与传感器配件，产品间通过蓝牙组网并且可以按照用户自定义的逻辑进行交互和自动工作。
-
-依靠高度可玩性和优秀的产品设计，我们已经在国内外建立了稳定的用户群体，现金流完全自洽，为了保证产品的质量，同时加快新品开发周期，希望扩招研发团队，寻找志同道合的小伙伴。
-                            </h1>
+                            <p>
+                            官网 appstore 购买，订单一直显示准备发货，但是预计送达时间是明天，我明天是不是大概率收不到货了
+                            </p>
                         </TopicContent>
                     </tr>
-                    <tr>
+                    </tbody>
                         <TopicFooterContainer>
                             <TopicFooter> Add to Favorites</TopicFooter>
                             <TopicFooter> Tweet</TopicFooter>
@@ -52,7 +53,6 @@ export const  MainTopic = () => {
                             <TopicFooter> Views</TopicFooter>
                             <TopicFooter> Likes</TopicFooter>
                         </TopicFooterContainer>
-                    </tr>
             </MainTopicContainer>
         </Fragment>
     )
@@ -60,23 +60,25 @@ export const  MainTopic = () => {
 
 const TopicNode = styled.tr`
     color: #778087;
-    text-decoration: none;
+    text-decoration: none;、
     word-break: break-word;
 `
 const MainTopicContainer = styled.div`
     background-color: white;
     font-family: "Microsoft Yahei";
-    margin: 0 300px 0 0;
+    display: block;
+    margin: 10px 300px 0 0;
+    width: auto;
+    font-size: 12px;
 `
 const TopicTitle = styled.td`
     font-size: 24px;
     font-weight: 500;
     line-height: 150%;
-    padding: 0;
     font-family: "Helvetica Neue";
 `
 const TopicHeader = styled.div`
-    border-bottom: 1px solid;
+    border-bottom: 1px solid #E2E2E2;
     padding: 10px;
 `
 
@@ -89,21 +91,16 @@ const TopicImg = styled.a`
     vertical-align: bottom;
 
 `
-const TopicTab = styled.a`
-    color:grey;
-    line-height: 120%;
+const TopicTab = styled.div`
     text-align: left;
-    padding: 10px 20px;
-    cursor: pointer;
-`
-const TopicContent = styled.div`
+    background-color: white;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
     font-size: 14px;
-    color: #000;
-    word-break: break-word;
-    border-bottom: 1px solid;
-    margin-left: 10px;
+    padding: 10px 10px 10px 20px; 
+    line-height: 150%;
 `
-const TopicFooter = styled.a`
+const TabItem = styled.a`
     margin-left: 10px;
     font-family: "Times New Roman";
     word-break: "break word";
@@ -112,13 +109,26 @@ const TopicFooter = styled.a`
     text-decoration: none;
     cursor: pointer;
 `
+const TopicContent = styled.div`
+    font-size: 14px;
+    color: #000;
+    word-break: break-word;
+    border-bottom: 1px solid #E2E2E2;
+`
+const TopicFooter = styled.a`
+    margin-left: 10px;
+    font-weight:500;
+    color: #555;
+    text-decoration: none;
+    cursor: pointer;
+`
 
 const TopicFooterContainer = styled.a`
-    font-size: 14px;
-    line-height: 120%;
     text-align: left;
-    background-color: #eee;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;    
-    padding: 10px 10px 10px 20px;  
+    background-color: #F9F9F9;
+    color: #C7C7C7;
+    font-family: "Times New Roman";
+    font-size: 12px;
+    line-height: 150%;
+
 `

@@ -17,12 +17,13 @@ export default function Topic() {
     )
 }
 const TopicContainer = styled.div`
-    width: auto;
-    background-color: #FFB800;
     display: block;
-    padding: 10px 10px;
-    margin: 70px auto 0;
     min-height: 600px;
+    background-color:#E2E2E2;
+    display: block;
+    margin: 70px auto 0;
+    width: auto;
+    padding: 10px 70px;
     min-width: 600px;
-
+    max-width: 1100px;
 `
