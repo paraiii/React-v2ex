@@ -1,10 +1,11 @@
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import React  from "react";
-import { Header, Login, Footer, Home, SignUp } from "./Component";
 import './App.css'; 
+import styled from "styled-components";
+import { Header, Login, Footer, Home, SignUp } from "./Component";
 import { LocalizationContextProvider } from "./LocalizationContextProvider";
 import { V2exContextProvider } from './V2exContextProvider';
-import styled from "styled-components";
+import Topic from "./Topic/Topic";
 
 export const App = () => {
   return ( 
@@ -16,6 +17,7 @@ export const App = () => {
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={SignUp} />
               <Route exact path="/" component={Home} />
+              <Route exact path="/topic" component={Topic} />
               <Line />
               <Footer />
           </div>
@@ -29,4 +31,4 @@ export const App = () => {
 const Line = styled.hr`
   color: #C7C7C7;
   border-bottom: 1px solid;
-`;
+`

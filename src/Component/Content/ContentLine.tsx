@@ -13,10 +13,11 @@ interface contentLineProps {
 export const ContentLine = (props: contentLineProps) => {
 
     const { content, translation } = props;
+    //计算最后回复时间距离多久
     const replyTime = (tiemstamp:number): string => {
-        var diff = Date.now()/1000 - tiemstamp
+        var diff = Date.now() / 1000 - tiemstamp
 
-        return `${(diff/60).toPrecision(1)} minutes ago`
+        return `${Math.floor(diff/60)} minutes ago`
     }
 
     return (
@@ -31,7 +32,7 @@ export const ContentLine = (props: contentLineProps) => {
                             <br />      
                             <ContentNode> {content.node.title}</ContentNode>        
                             <ContentUser> {content.member.username}</ContentUser>
-                            <ContentText>{(translation.reply_time)}</ContentText> 
+                            <ContentText>{replyTime(content.last_modified)}</ContentText> 
                             <ContentText>{translation.last_reply_from}</ContentText>
                             <ContentUser>{content.last_reply_from}</ContentUser> 
                             <ContentUser>{content.last_reply_by}</ContentUser>
@@ -39,7 +40,6 @@ export const ContentLine = (props: contentLineProps) => {
                     </td>
                     <td>
                             <ContentReply href={content.content}>{content.replies}</ContentReply>
-
                     </td>
                 </StyledTr>
         </Fragment>
