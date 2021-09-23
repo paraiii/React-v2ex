@@ -7,9 +7,13 @@ export const Replies = () => {
             <ReplyContaioner>
                 <ReplyTab>
                     <tr>
-                    <TopicReply>18 replies</TopicReply>
-                    <TopicNode>蓝牙</TopicNode>
-                    <TopicNode>flutter</TopicNode>
+                        <td>
+                        <TopicReply>18 replies</TopicReply>
+                        </td>
+                        <td>
+                        <TopicNode>蓝牙</TopicNode>
+                        <TopicNode>flutter</TopicNode>
+                        </td>
                     </tr>
                 </ReplyTab>
                 <ReplyList>
@@ -32,6 +36,8 @@ export const Replies = () => {
 
 const ReplyContaioner = styled.div`
   background-color: white;
+  font-family: "Microsoft Yahei";
+  margin: 0 300px 0 0;
 `
 
 const TopicReply = styled.a`
@@ -39,13 +45,15 @@ const TopicReply = styled.a`
 `
 const TopicNode = styled.a`
   color: #C7C7C7;
+  align-text: right;
+  display: inline-block;
 `
 const ReplyTab = styled.div`
-    padding: 10px;
     font-size: 14px;
     line-height: 150%;
     text-align: left;
     border-bottom: 1px solid;
+    padding: 5px 20px;
 `
 const ReplyList = styled.div`
     margin: left;
