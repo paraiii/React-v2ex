@@ -50,10 +50,11 @@ export const  MainTopic = () => {
     )
 };
 
-const TopicNode = styled.tr`
+const TopicNode = styled.a`
     color: #778087;
-    text-decoration: none;、
+    text-decoration: none;
     word-break: break-word;
+    padding: 20px;
 `
 const MainTopicContainer = styled.div`
     background-color: white;
