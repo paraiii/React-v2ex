@@ -28,10 +28,10 @@ export const ContentLine = (props: contentLineProps) => {
                    </td>
                     <td>
                         <FormContent>
-                            <ContentTitle href={content.url}>{content.title}</ContentTitle>
+                            <ContentTitle href="/topic">{content.title}</ContentTitle>
                             <br />      
-                            <ContentNode> {content.node.title}</ContentNode>        
-                            <ContentUser> {content.member.username}</ContentUser>
+                            <ContentNode href={content.node.url}> {content.node.title}</ContentNode>        
+                            <ContentUser href={content.member.url}> {content.member.username}</ContentUser>
                             <ContentText>{replyTime(content.last_modified)}</ContentText> 
                             <ContentText>{translation.last_reply_from}</ContentText>
                             <ContentUser>{content.last_reply_from}</ContentUser> 
