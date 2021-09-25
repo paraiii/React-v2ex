@@ -2,17 +2,19 @@ import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import { Content } from '../../Types/contents';
 import { Translation } from '../../Types/translation';
+import { Node, Member } from '../../Types/common';
 
 
 interface contentLineProps {
     content: Content,
     translation: Translation,
+    node: Node,
 }
 
 
 export const ContentLine = (props: contentLineProps) => {
 
-    const { content, translation } = props;
+    const { content, translation, node } = props;
     //计算最后回复时间距离多久
     const replyTime = (tiemstamp:number): string => {
         var diff = Date.now() / 1000 - tiemstamp
@@ -28,9 +30,9 @@ export const ContentLine = (props: contentLineProps) => {
                    </td>
                     <td>
                         <FormContent>
-                            <ContentTitle href="/topic">{content.title}</ContentTitle>
+                            <ContentTitle href={`/topic/${content.id}`}>{content.title}</ContentTitle>
                             <br />      
-                            <ContentNode href={content.node.url}> {content.node.title}</ContentNode>        
+                            {/* <ContentNode href={node.url}> {node.title}</ContentNode>         */}
                             <ContentUser href={content.member.url}> {content.member.username}</ContentUser>
                             <ContentText>{replyTime(content.last_modified)}</ContentText> 
                             <ContentText>{translation.last_reply_from}</ContentText>

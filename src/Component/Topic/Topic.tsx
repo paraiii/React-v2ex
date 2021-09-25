@@ -3,15 +3,21 @@ import {MainTopic} from './MainTopic';
 import {Replies} from './Replies';
 import {Comment} from './Comment';
 import styled from 'styled-components';
+import { useParams } from 'react-router';
 
-export default function Topic() {
+export interface topicParams {
+    id: string,
+}
+
+export const Topic = () => {
+    const { id } = useParams<topicParams>();
 
     return (
         <Fragment>
             <TopicContainer>
-                <MainTopic/> 
+                <MainTopic topicId={id}/> 
                 <br />
-                <Replies />
+                <Replies topicId={id}/>
                 <Comment />
             </TopicContainer>
         </Fragment>

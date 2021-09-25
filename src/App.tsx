@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { Header, Login, Footer, Home, SignUp } from "./Component";
 import { LocalizationContextProvider } from "./LocalizationContextProvider";
 import { V2exContextProvider } from './V2exContextProvider';
-import Topic from "./Topic/Topic";
+import {Topic} from "./Component/Topic/Topic";
 
 export const App = () => {
   return ( 
@@ -17,7 +17,7 @@ export const App = () => {
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={SignUp} />
               <Route exact path="/" component={Home} />
-              <Route exact path="/topic" component={Topic} />
+              <Route exact path="/topic/:id" component={Topic} />
               <Line />
               <Footer />
           </div>

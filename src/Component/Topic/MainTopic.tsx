@@ -1,7 +1,27 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect, useState,  } from 'react';
 import styled from 'styled-components';
+import { TopicData } from '../../Api/TopicData';
+import { useTranslations } from '../../hooks/useTranslations';
+import { Topic } from '../../Types/topic';
 
-export const  MainTopic = () => {
+export interface MainTopicProps {
+    topicId: string
+}
+
+export const  MainTopic = (props: MainTopicProps) => {
+
+    const { topicId } = props;
+    const [topicData, setTopicData] = useState<Topic>();
+
+useEffect (
+    function() {
+        TopicData(topicId).then(res => {
+            setTopicData(res.data);
+        });
+    }, []);
+
+    
+
 
     return (
         <Fragment>
@@ -13,10 +33,11 @@ export const  MainTopic = () => {
                     <TopicHeader>
                     <tr>
                         <TopicTitle>
-                            <p>你们的 iphone13 发货了吗</p>
+                            <p>{topicData?.title}</p>
                         </TopicTitle>
                         <TopicImg>
-                            <img src="https://cdn.v2ex.com/avatar/1464/5347/541295_normal.png?m=1621663374" alt="chaleoch" />
+                            <img src="https://cdn.v2ex.com/avatar/1464/5347/541295_normal.png?m=1621663374" alt="{topicData?.username}" />
+                            {/* 这里有问题怎么改 */}
                         </TopicImg>
                     </tr>
                     <tr>
@@ -31,9 +52,7 @@ export const  MainTopic = () => {
                     </TopicHeader>
                     <tr>
                         <TopicContent>
-                            <p>
-                            官网 appstore 购买，订单一直显示准备发货，但是预计送达时间是明天，我明天是不是大概率收不到货了
-                            </p>
+                            <p>{topicData?.content}</p>
                         </TopicContent>
                     </tr>
                     </tbody>

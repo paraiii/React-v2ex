@@ -1,14 +1,23 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import styled from 'styled-components';
+import { Topic } from '../../Types/topic';
 
-export const Replies = () => {
+
+export interface MainTopicProps {
+    topicId: string
+}
+
+export const Replies = (props: MainTopicProps) => {
+    const { topicId } = props;
+    const [topicData, setTopicData] = useState<Topic>();
+
     return (
         <Fragment>
             <ReplyContaioner>
                 <ReplyTab>
                     <tr>
                         <td>
-                            <TopicReply>18 replies</TopicReply>
+                            <TopicReply>{topicData?.replies}</TopicReply>
                         </td>
                         <td>
                             <TopicNode>蓝牙</TopicNode>
@@ -23,7 +32,7 @@ export const Replies = () => {
                         </td>
                         <td>
                             <ReplyContent>
-                                <ReplyUser>member</ReplyUser>
+                                <ReplyUser>{topicData?.username}</ReplyUser>
                                 <ReplyComment>huifu</ReplyComment>
                             </ReplyContent>
                         </td>
