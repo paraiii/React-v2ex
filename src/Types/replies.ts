@@ -1,7 +1,6 @@
-import { Member } from "./common";
+import { Member} from "./common";
 
-
-export interface Topic {
+export interface Replies {
     id: number,
     thanks: number,
     member: Member,
@@ -10,4 +9,6 @@ export interface Topic {
     created: number,
     last_modified: number,
 }
-
+export interface RepliesData {
+    replies: Replies []
+}

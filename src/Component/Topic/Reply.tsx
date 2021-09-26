@@ -1,15 +1,23 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { Topic } from '../../Types/topic';
+import { RepliesData } from '../../Api/RepliesData';
+import { Replies } from '../../Types/replies';
 
-
-export interface MainTopicProps {
-    topicId: string
+export interface ReplyProps {
+    replyId: string
 }
 
-export const Replies = (props: MainTopicProps) => {
-    const { topicId } = props;
-    const [topicData, setTopicData] = useState<Topic>();
+export const  Reply = (props: ReplyProps) => {
+
+    const { replyId } = props;
+    const [replyData, setReplyData] = useState<Replies>();
+
+    useEffect (
+        function() {
+            RepliesData(replyId).then(res => {
+                setReplyData(res.data);
+            });
+        }, []);
 
     return (
         <Fragment>
@@ -17,23 +25,25 @@ export const Replies = (props: MainTopicProps) => {
                 <ReplyTab>
                     <tr>
                         <td>
-                            <TopicReply>{topicData?.replies}</TopicReply>
+                            <TopicReply>{replyData?.thanks} replies</TopicReply>
                         </td>
                         <td>
-                            <TopicNode>蓝牙</TopicNode>
-                            <TopicNode>flutter</TopicNode>
+                            <TopicReply>{replyData?.created} </TopicReply>
+                        </td>
+                        <td>
+                            {/* <TopicNode href={replyData?.node.url}>{replyData?.node.name}</TopicNode> */}
                         </td>
                     </tr>
                 </ReplyTab>
-                <ReplyList>
+                <ReplyList> 
                     <tr>
                         <td>
-                            <ReplyImg src="https://cdn.v2ex.com/avatar/1464/5347/541295_normal.png?m=162166337" alt="aa" />
+                            {/* <ReplyImg src={replyData?.member.    avatar_normal} alt="aa" /> */}
                         </td>
                         <td>
                             <ReplyContent>
-                                <ReplyUser>{topicData?.username}</ReplyUser>
-                                <ReplyComment>huifu</ReplyComment>
+                                {/* <ReplyUser href={replyData?.member.url}>{replyData?.member.username}</ReplyUser> */}
+                                <ReplyComment>{replyData?.content}</ReplyComment>
                             </ReplyContent>
                         </td>
                     </tr>

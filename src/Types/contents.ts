@@ -1,4 +1,4 @@
-import { Member } from "./common";
+import { Member, Node } from "./common";
 
 export interface Content {
     id: number,

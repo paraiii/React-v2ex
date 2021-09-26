@@ -1,7 +1,6 @@
 import React, { Fragment, useEffect, useState,  } from 'react';
 import styled from 'styled-components';
 import { TopicData } from '../../Api/TopicData';
-import { useTranslations } from '../../hooks/useTranslations';
 import { Topic } from '../../Types/topic';
 
 export interface MainTopicProps {
@@ -13,22 +12,23 @@ export const  MainTopic = (props: MainTopicProps) => {
     const { topicId } = props;
     const [topicData, setTopicData] = useState<Topic>();
 
-useEffect (
-    function() {
-        TopicData(topicId).then(res => {
-            setTopicData(res.data);
-        });
-    }, []);
-
-    
+    useEffect (
+        function() {
+            TopicData(topicId).then(res => {
+                setTopicData(res.data);
+            });
+        }, []);
 
 
     return (
         <Fragment>
             <MainTopicContainer>
                 <tbody>
-                    <TopicNode>
-                        Node
+                    <TopicNode href="/">
+                    V2EX  ›
+                    </TopicNode>
+                    <TopicNode href={topicData?.node.url}>
+                    {topicData?.node.name}
                     </TopicNode>
                     <TopicHeader>
                     <tr>
@@ -36,15 +36,14 @@ useEffect (
                             <p>{topicData?.title}</p>
                         </TopicTitle>
                         <TopicImg>
-                            <img src="https://cdn.v2ex.com/avatar/1464/5347/541295_normal.png?m=1621663374" alt="{topicData?.username}" />
-                            {/* 这里有问题怎么改 */}
+                            <img src={topicData?.member.avatar_normal} alt={topicData?.member.username} />
                         </TopicImg>
                     </tr>
                     <tr>
                         <TopicTab>
                             <button> ^ </button>
                             <TabItem>Add to Favorites</TabItem>
-                            <TabItem>username</TabItem>
+                            <TabItem>{topicData?.member.username}</TabItem>
                             <TabItem>创建时间</TabItem>
                             <TabItem>views</TabItem>
                         </TopicTab>
@@ -100,8 +99,7 @@ const TopicImg = styled.a`
     width: 60px;
     margin-right: 5px;
     padding: 10px;
-    vertical-align: bottom;
-
+    float: right;
 `
 const TopicTab = styled.div`
     text-align: left;

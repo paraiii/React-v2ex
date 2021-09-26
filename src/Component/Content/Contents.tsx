@@ -9,7 +9,6 @@ export const Contents = () => {
     const translations = useTranslations ();
     const rows: JSX.Element[] = [];
     const [contentDatas, setContentData] = useState([]);
-    const [CommonNodes, setCommonNode] = useState ([]);
 
 
     useEffect(
@@ -21,7 +20,7 @@ export const Contents = () => {
     
     for(var i=0; i < contentDatas.length; i++){
         rows.push(
-            <ContentLine content={contentDatas[i]} translation={translations} node={CommonNodes[i]}></ContentLine>
+            <ContentLine content={contentDatas[i]} translation={translations}></ContentLine>
         )    
     }
 
