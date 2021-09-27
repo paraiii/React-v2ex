@@ -2,7 +2,7 @@ import { Member} from "./common";
 
 export interface Replies {
     id: number,
-    thanks: number,
+    member_id: number,
     member: Member,
     content: string,
     content_rendered: string,

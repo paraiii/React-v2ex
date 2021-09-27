@@ -1,16 +1,18 @@
+import { RowingSharp } from '@material-ui/icons';
 import React, { Fragment, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { RepliesData } from '../../Api/RepliesData';
 import { Replies } from '../../Types/replies';
 
-export interface ReplyProps {
+export interface ReplysComponentProps {
     replyId: string
 }
 
-export const  Reply = (props: ReplyProps) => {
+export const  ReplysComponent = (props: ReplysComponentProps) => {
 
     const { replyId } = props;
-    const [replyData, setReplyData] = useState<Replies>();
+    const [replyData, setReplyData] = useState<Replies[]>([]);
+    const rows: JSX.Element[] = [];
 
     useEffect (
         function() {
@@ -19,16 +21,34 @@ export const  Reply = (props: ReplyProps) => {
             });
         }, []);
 
+    for (var i=0; i < replyData.length; i++){
+        let replyRecord = replyData[i];
+
+        rows.push(
+            <tr>
+                <td>
+                    {/* <ReplyImg src={replyData?.member.avatar_normal} alt={replyData?.member.username} /> */}
+                </td>
+                <td>
+                    <ReplyContent>
+                        {/* <ReplyUser href={replyData?.member.url}>{replyData?.member.username}</ReplyUser> */}
+                        <ReplyComment>{replyRecord.content}</ReplyComment>
+                    </ReplyContent>
+                </td>
+            </tr>
+        )
+    }
+
     return (
         <Fragment>
             <ReplyContaioner>
                 <ReplyTab>
                     <tr>
                         <td>
-                            <TopicReply>{replyData?.thanks} replies</TopicReply>
+                            {/* <TopicReply>{replyData?} replies</TopicReply> */}
                         </td>
                         <td>
-                            <TopicReply>{replyData?.created} </TopicReply>
+                            {/* <TopicReply>{replyRecord.created} </TopicReply> */}
                         </td>
                         <td>
                             {/* <TopicNode href={replyData?.node.url}>{replyData?.node.name}</TopicNode> */}
@@ -36,17 +56,11 @@ export const  Reply = (props: ReplyProps) => {
                     </tr>
                 </ReplyTab>
                 <ReplyList> 
-                    <tr>
-                        <td>
-                            {/* <ReplyImg src={replyData?.member.    avatar_normal} alt=replyData?.member.username} /> */}
-                        </td>
-                        <td>
-                            <ReplyContent>
-                                {/* <ReplyUser href={replyData?.member.url}>{replyData?.member.username}</ReplyUser> */}
-                                <ReplyComment>{replyData?.content}</ReplyComment>
-                            </ReplyContent>
-                        </td>
-                    </tr>
+                    {
+                        rows.map((row)=> {
+                            return row;
+                        })
+                    }
                 </ReplyList>
             </ReplyContaioner>
     </Fragment>

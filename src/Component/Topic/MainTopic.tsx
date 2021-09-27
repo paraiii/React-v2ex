@@ -49,8 +49,10 @@ export const  MainTopic = (props: MainTopicProps) => {
                     </TopicTab>
                 </TopicHeader>
                 <TopicContent>
-                    <p>{topicData?.content}</p>
+                    <div dangerouslySetInnerHTML={{__html: topicData?.content_rendered ?? ''}}>
+                    </div>
                 </TopicContent>
+                {/* 把帖子内容按照格式显示出来，需要找更好的写法，这个只是替代写法 */}
                 <TopicFooterContainer>
                     <TopicFooter> Add to Favorites</TopicFooter>
                     <TopicFooter> Tweet</TopicFooter>
@@ -144,3 +146,11 @@ const TopicFooterContainer = styled.a`
     line-height: 150%;
 
 `
+function ReactHtmlParser(content_rendered: string | undefined): React.ReactNode {
+    throw new Error('Function not implemented.');
+}
+
+function parse(content_rendered: string | undefined): React.ReactNode {
+    throw new Error('Function not implemented.');
+}
+
