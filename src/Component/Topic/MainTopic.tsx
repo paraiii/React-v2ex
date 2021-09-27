@@ -23,46 +23,42 @@ export const  MainTopic = (props: MainTopicProps) => {
     return (
         <Fragment>
             <MainTopicContainer>
-                <tbody>
+                <TopicNodeContainer>
                     <TopicNode href="/">
-                    V2EX  ›
+                        V2EX  
+                    </TopicNode>
+                    <TopicNode>
+                        ›
                     </TopicNode>
                     <TopicNode href={topicData?.node.url}>
-                    {topicData?.node.name}
+                        {topicData?.node.name}
                     </TopicNode>
-                    <TopicHeader>
+                </TopicNodeContainer>
+                <TopicHeader>
                     <tr>
                         <TopicTitle>
                             <p>{topicData?.title}</p>
                         </TopicTitle>
-                        <TopicImg>
-                            <img src={topicData?.member.avatar_normal} alt={topicData?.member.username} />
-                        </TopicImg>
+                        <TopicImg src={topicData?.member.avatar_normal} alt={topicData?.member.username} />
                     </tr>
-                    <tr>
-                        <TopicTab>
-                            <button> ^ </button>
-                            <TabItem>Add to Favorites</TabItem>
-                            <TabItem>{topicData?.member.username}</TabItem>
-                            <TabItem>创建时间</TabItem>
-                            <TabItem>views</TabItem>
-                        </TopicTab>
-                    </tr>
-                    </TopicHeader>
-                    <tr>
-                        <TopicContent>
-                            <p>{topicData?.content}</p>
-                        </TopicContent>
-                    </tr>
-                    </tbody>
-                        <TopicFooterContainer>
-                            <TopicFooter> Add to Favorites</TopicFooter>
-                            <TopicFooter> Tweet</TopicFooter>
-                            <TopicFooter> Ignore</TopicFooter>
-                            <TopicFooter> Thank</TopicFooter>
-                            <TopicFooter> Views</TopicFooter>
-                            <TopicFooter> Likes</TopicFooter>
-                        </TopicFooterContainer>
+                    <TopicTab>
+                        <button> ^ </button>
+                        <TabItem>Add to Favorites</TabItem>
+                        <TabItem href={topicData?.member.url}>{topicData?.member.username}</TabItem>
+                        <TabItem>views</TabItem>
+                    </TopicTab>
+                </TopicHeader>
+                <TopicContent>
+                    <p>{topicData?.content}</p>
+                </TopicContent>
+                <TopicFooterContainer>
+                    <TopicFooter> Add to Favorites</TopicFooter>
+                    <TopicFooter> Tweet</TopicFooter>
+                    <TopicFooter> Ignore</TopicFooter>
+                    <TopicFooter> Thank</TopicFooter>
+                    <TopicFooter> Views</TopicFooter>
+                    <TopicFooter> Likes</TopicFooter>
+                </TopicFooterContainer>
             </MainTopicContainer>
         </Fragment>
     )
@@ -72,7 +68,12 @@ const TopicNode = styled.a`
     color: #778087;
     text-decoration: none;
     word-break: break-word;
-    padding: 20px;
+    padding: 10px;
+`
+const TopicNodeContainer = styled.div`
+    padding: 10px;
+    size: 15px;
+    margin-top: 10px;
 `
 const MainTopicContainer = styled.div`
     background-color: white;
@@ -80,7 +81,6 @@ const MainTopicContainer = styled.div`
     display: block;
     margin: 10px 300px 0 0;
     width: auto;
-    font-size: 12px;
 `
 const TopicTitle = styled.td`
     font-size: 24px;
@@ -92,8 +92,7 @@ const TopicHeader = styled.div`
     border-bottom: 1px solid #E2E2E2;
     padding: 10px;
 `
-
-const TopicImg = styled.a`
+const TopicImg = styled.img`
     border-radius: 4px;
     vertical-align: bottom;
     width: 60px;
@@ -101,13 +100,13 @@ const TopicImg = styled.a`
     padding: 10px;
     float: right;
 `
-const TopicTab = styled.div`
+const TopicTab = styled.tr`
     text-align: left;
     background-color: white;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
     font-size: 14px;
-    padding: 10px 10px 10px 20px; 
+    padding: 0 10px 10px 20px; 
     line-height: 150%;
 `
 const TabItem = styled.a`
@@ -124,6 +123,9 @@ const TopicContent = styled.div`
     color: #000;
     word-break: break-word;
     border-bottom: 1px solid #E2E2E2;
+    line-height: 1.6;
+    text-align: left;
+    padding: 10px;
 `
 const TopicFooter = styled.a`
     margin-left: 10px;

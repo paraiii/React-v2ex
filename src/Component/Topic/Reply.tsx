@@ -38,7 +38,7 @@ export const  Reply = (props: ReplyProps) => {
                 <ReplyList> 
                     <tr>
                         <td>
-                            {/* <ReplyImg src={replyData?.member.    avatar_normal} alt="aa" /> */}
+                            {/* <ReplyImg src={replyData?.member.    avatar_normal} alt=replyData?.member.username} /> */}
                         </td>
                         <td>
                             <ReplyContent>

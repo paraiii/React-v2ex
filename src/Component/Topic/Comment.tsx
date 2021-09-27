@@ -5,22 +5,23 @@ export const  Comment = () => {
     return (
         <Fragment>
             <CommentContainer>
-                <CommentHeader>
-                    <td>Add a New Comment</td>
-                    <td> Back to Top</td>
-                </CommentHeader>
+                <tr>
+                    <CommentHeader>Add a New Comment</CommentHeader>
+                </tr>
                 <CommentText />
                 <CommentSubmit>
-                    <td>
-                        <button>Reply</button>
-                    </td>
-                    <CommentTip>
-                        <p>请尽量让自己的回复能够对别人有帮助</p>
-                    </CommentTip>
+                    <tr>
+                        <td>
+                            <button>Reply</button>
+                        </td>
+                        <td>
+                            <CommentTip>请尽量让自己的回复能够对别人有帮助</CommentTip>
+                        </td>
+                    </tr>
                 </CommentSubmit>
-                <CommentBack>                        
-                    <a href='/'>← V2EX</a>
-                </CommentBack>
+                <CommentBackContainer>                        
+                    <CommentBack href='/'>← V2EX</CommentBack>
+                </CommentBackContainer>
             </CommentContainer>
         </Fragment>
     )
@@ -31,7 +32,6 @@ const CommentContainer = styled.div`
     display: block;
     margin: 10px 300px 0 0;
     width: auto;
-    font-size: 12px;
 `
 const CommentHeader = styled.div`
     border-bottom: 1px solid #E2E2E2;
@@ -40,17 +40,22 @@ const CommentHeader = styled.div`
 const CommentSubmit = styled.div`
     border-bottom: 1px solid #E2E2E2;
     padding: 10px;
+    font-size: 14px;
 `
 const CommentText = styled.textarea`
     width: 95%;
     border-radius: 3px;
     padding: 5px;
-    font-size: 14px;
     border: 1px solid #ccc;
 `
-const CommentBack = styled.div`
+const CommentBackContainer = styled.div`
     text-align: right;
 `
-const CommentTip = styled.div`
+const CommentBack= styled.a`
+    text-decoration: none;
+    color: #778087;
+`
+const CommentTip = styled.a`
     text-align: right;
+    color: grey;
 `
