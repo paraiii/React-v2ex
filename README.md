@@ -14,7 +14,7 @@
 - TypeScript
 - [API integration](https://v2ex.com/p/7v9TEc53)
 - [React](https://reactjs.org)
-- [React Hooks](https://reactjs.org/docs/hooks-intro.html).
+- [React Hooks](https://reactjs.org/docs/hooks-intro.html)
 - [axios](https://github.com/axios/axios)
 
 
