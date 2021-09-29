@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import {MainTopic} from './MainTopic';
-import { ReplysComponent } from './Replys';
+import { RepliesComponent } from './Replies';
 import {Comment} from './Comment';
 import styled from 'styled-components';
 import { useParams } from 'react-router';
@@ -8,9 +8,7 @@ import { useParams } from 'react-router';
 export interface topicParams {
     id: string,
 }
-export interface ReplyParams {
-    topic_id: string,
-}
+
 
 
 export const Topic = () => {
@@ -21,7 +19,7 @@ export const Topic = () => {
             <TopicContainer>
                 <MainTopic topicId={id}/> 
                 <br />
-                <ReplysComponent replyId={id}/>
+                <RepliesComponent replyId={id}/>
                 <Comment />
             </TopicContainer>
         </Fragment>

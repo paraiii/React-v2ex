@@ -23,15 +23,4 @@ export interface ContentData {
     members: Member []
 }
 
-// export interface Replies {
-//     username: string,
-//     url: string,
-//     avatar_large: string,
-//     avatar_mini: string,
-//     avatar_normal: string,
-//     id: number
-// }
-// export interface RepliesData {
-//     replies: Replies []
-// }
 

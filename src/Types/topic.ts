@@ -1,5 +1,5 @@
 import { Member, Node } from "./common";
-import { Replies } from "./replies";
+import { Reply } from "./reply";
 
 
 export interface Topic {
@@ -11,7 +11,7 @@ export interface Topic {
     member: Member,
     content: string,
     content_rendered: string,
-    replies: Replies,
+    replies: Reply,
     username: string,
     last_modified: number,
     last_reply_from: string,
