@@ -1,9 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { RepliesData } from '../../Api/RepliesData';
 import { Reply } from '../../Types/reply';
-import { topicParams } from './Topic';
 
 export interface RepliesComponentProps {
     replyId: string

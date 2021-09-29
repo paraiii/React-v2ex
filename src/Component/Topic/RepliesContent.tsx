@@ -42,19 +42,14 @@ export const  RepliesContent = (props: RepliesContentProps) => {
 
     return (
         <div>
-            
-                {
-                    rows.map((row) => {
-                        return row;
-                    })
-                } 
-               
+            {
+                rows.map((row) => {
+                    return row;
+                })
+            } 
         </div>
     )
 }
-
-
-
 
 const ReplyUser = styled.a`
     margin: left;
