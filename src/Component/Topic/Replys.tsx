@@ -27,11 +27,11 @@ export const  ReplysComponent = (props: ReplysComponentProps) => {
         rows.push(
             <tr>
                 <td>
-                    {/* <ReplyImg src={replyData?.member.avatar_normal} alt={replyData?.member.username} /> */}
+                    <ReplyImg src={replyRecord.member.avatar_normal} alt={replyRecord.member.username} />
                 </td>
                 <td>
                     <ReplyContent>
-                        {/* <ReplyUser href={replyData?.member.url}>{replyData?.member.username}</ReplyUser> */}
+                        <ReplyUser href={replyRecord.member.url}>{replyRecord.member.username}</ReplyUser>
                         <ReplyComment>{replyRecord.content}</ReplyComment>
                     </ReplyContent>
                 </td>
@@ -48,7 +48,7 @@ export const  ReplysComponent = (props: ReplysComponentProps) => {
                             {/* <TopicReply>{replyData?} replies</TopicReply> */}
                         </td>
                         <td>
-                            {/* <TopicReply>{replyRecord.created} </TopicReply> */}
+                            {/* <TopicReply>{replyData?.created} </TopicReply> */}
                         </td>
                         <td>
                             {/* <TopicNode href={replyData?.node.url}>{replyData?.node.name}</TopicNode> */}
