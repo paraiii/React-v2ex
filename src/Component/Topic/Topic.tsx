@@ -1,15 +1,13 @@
 import React, { Fragment } from 'react';
 import {MainTopic} from './MainTopic';
-import { RepliesComponent } from './Replies';
 import {Comment} from './Comment';
 import styled from 'styled-components';
 import { useParams } from 'react-router';
+import ReplyPart from './ReplyPart';
 
 export interface topicParams {
     id: string,
 }
-
-
 
 export const Topic = () => {
     const { id } = useParams<topicParams>();
@@ -19,7 +17,7 @@ export const Topic = () => {
             <TopicContainer>
                 <MainTopic topicId={id}/> 
                 <br />
-                <RepliesComponent replyId={id}/>
+                <ReplyPart />
                 <Comment />
             </TopicContainer>
         </Fragment>

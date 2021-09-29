@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { RepliesContent } from './RepliesContent';
 import { topicParams } from './Topic';
-// import { RepliesComponent } from './Replies';
+import { RepliesComponent } from './RepliesTab';
 
 export interface RepliesComponentProps {
     replyId: string
@@ -16,7 +16,7 @@ export default function ReplyPart() {
         <Fragment>
             <ReplyContainer>
                 <ReplyTab>
-                    {/* <RepliesComponent replyId={id} /> */}
+                    <RepliesComponent replyId={id} />
                 </ReplyTab>
                 <ReplyList> 
                     <RepliesContent replyId={id} />
