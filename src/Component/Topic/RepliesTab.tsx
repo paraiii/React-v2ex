@@ -41,7 +41,6 @@ export const  RepliesComponent = (props: RepliesComponentProps) => {
     )
 };
 
-
 const TopicReply = styled.a`
     color: #C7C7C7;
 `

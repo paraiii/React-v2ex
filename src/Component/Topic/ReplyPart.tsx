@@ -25,6 +25,7 @@ export default function ReplyPart() {
     </Fragment>
     )
 };
+
 const ReplyContainer = styled.div`
     background-color: white;
     font-family: "Microsoft Yahei";
@@ -45,4 +46,5 @@ const ReplyList = styled.div`
     font-weight:500;
     font-family: "Helvetica Neue";
     width: 100%;
+    border-bottom: 1px solid #E2E2E2;
 `

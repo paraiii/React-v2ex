@@ -1,7 +1,8 @@
-import React, { Fragment, useEffect, useState,  } from 'react';
+import React, { Fragment, useEffect, useRef, useState,  } from 'react';
 import styled from 'styled-components';
 import { TopicData } from '../../Api/TopicData';
 import { Topic } from '../../Types/topic';
+import parse from 'html-react-parser';
 
 export interface MainTopicProps {
     topicId: string
@@ -12,13 +13,14 @@ export const  MainTopic = (props: MainTopicProps) => {
     const { topicId } = props;
     const [topicData, setTopicData] = useState<Topic>();
 
+    // const yourHtmlString = '<topicData?.content_rendered>'
+
     useEffect (
         function() {
             TopicData(topicId).then(res => {
                 setTopicData(res.data);
             });
         }, []);
-
 
     return (
         <Fragment>
@@ -31,7 +33,7 @@ export const  MainTopic = (props: MainTopicProps) => {
                         ›
                     </TopicNode>
                     <TopicNode href={topicData?.node.url}>
-                        {topicData?.node.name}
+                        {topicData?.node.title}
                     </TopicNode>
                 </TopicNodeContainer>
                 <TopicHeader>
@@ -50,6 +52,9 @@ export const  MainTopic = (props: MainTopicProps) => {
                 </TopicHeader>
                 <TopicContent>
                     <div dangerouslySetInnerHTML={{__html: topicData?.content_rendered ?? ''}}>
+                    </div>
+                    <div>
+                    {/* {parse(yourHtmlString)} */}
                     </div>
                 </TopicContent>
                 {/* 把帖子内容按照格式显示出来，需要找更好的写法，这个只是替代写法 */}
@@ -144,13 +149,5 @@ const TopicFooterContainer = styled.a`
     font-family: "Times New Roman";
     font-size: 12px;
     line-height: 150%;
-
 `
-function ReactHtmlParser(content_rendered: string | undefined): React.ReactNode {
-    throw new Error('Function not implemented.');
-}
-
-function parse(content_rendered: string | undefined): React.ReactNode {
-    throw new Error('Function not implemented.');
-}
 

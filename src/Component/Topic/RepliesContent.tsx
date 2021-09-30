@@ -15,6 +15,12 @@ export const  RepliesContent = (props: RepliesContentProps) => {
     const [repliesData, setRepliesData] = useState<Reply[]>([]);
     const rows: JSX.Element[] = [];
 
+    const replyTime = (tiemstamp:number): string => {
+        var diff = Date.now() / 1000 - tiemstamp
+
+        return `${Math.floor(diff/60)} minutes ago`
+    }
+
     useEffect (
         function() {
             RepliesData(replyId).then(res => {
@@ -26,19 +32,20 @@ export const  RepliesContent = (props: RepliesContentProps) => {
         let replyRecord = repliesData[i];
 
         rows.push(
-            <tr>
-                <td>
-                    <ReplyImg src={replyRecord.member.avatar_normal} alt={replyRecord.member.username} />
-                </td>
-                <td>
-                    <ReplyContent>
-                        <ReplyUser href={replyRecord.member.url}>{replyRecord.member.username}</ReplyUser>
-                        <ReplyComment>{replyRecord.content}</ReplyComment>
-                    </ReplyContent>
-                </td>
-            </tr>
+            <table>
+                <tr>
+                    <td>
+                        <ReplyImg src={replyRecord.member.avatar_normal} alt={replyRecord.member.username} />
+                    </td>
+                        <ReplyContent>
+                            <ReplyUser href={replyRecord.member.url}>{replyRecord.member.username}</ReplyUser>
+                            <ReplyTime>{replyTime(replyRecord.last_modified)}</ReplyTime>
+                            <ReplyComment>{replyRecord.content}</ReplyComment>
+                        </ReplyContent>
+                </tr>
+            </table>
         )
-    }
+    };
 
     return (
         <div>
@@ -49,7 +56,7 @@ export const  RepliesContent = (props: RepliesContentProps) => {
             } 
         </div>
     )
-}
+};
 
 const ReplyUser = styled.a`
     margin: left;
@@ -62,22 +69,28 @@ const ReplyUser = styled.a`
     font-size: 12px;
 `
 const ReplyComment = styled.a`
-font-weight:500;
-color: #999;
-text-decoration: none;
-font-size: 13px;
-padding: 2px;
+    font-weight:500;
+    color: #999;
+    text-decoration: none;
+    font-size: 13px;
+    padding: 2px;
 `
+
 const ReplyImg = styled.img`
-border-radius: 4px;
-vertical-align: bottom;
-width: 60px;
-padding: 10px;
+    border-radius: 4px;
+    vertical-align: bottom;
+    width: 60px;
+    padding: 10px;
 `
-const ReplyContent = styled.div`
-margin: left;
-word-break: "break word";
-font-weight:500;
-font-family: "Helvetica Neue";
-width: 100%;
+const ReplyContent = styled.td`
+    margin: left;
+    word-break: "break word";
+    font-weight:500;
+    font-family: "Helvetica Neue";
+    width: 100%;
+`
+const ReplyTime = styled.div`
+    font-size: 11px;
+    color: #CCCCCC;
+    cursor: pointer;
 `
