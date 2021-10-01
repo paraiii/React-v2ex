@@ -1,9 +1,11 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { RepliesContent } from './RepliesContent';
 import { topicParams } from './Topic';
-import { RepliesComponent } from './RepliesTab';
+import { RepliesTab } from './RepliesTab';
+import { Reply } from '../../Types/reply';
+import { RepliesData } from '../../Api/RepliesData';
 
 export interface RepliesComponentProps {
     replyId: string
@@ -11,15 +13,23 @@ export interface RepliesComponentProps {
 
 export default function ReplyPart() {
     const { id } = useParams<topicParams>();
+    const [repliesData, setRepliesData] = useState<Reply[]>([]);
+    
+    useEffect (
+        function() {
+            RepliesData(id).then(res => {
+                setRepliesData(res.data);
+            });
+        }, []);
 
     return (
         <Fragment>
             <ReplyContainer>
                 <ReplyTab>
-                    <RepliesComponent replyId={id} />
+                    <RepliesTab replys={repliesData} />
                 </ReplyTab>
                 <ReplyList> 
-                    <RepliesContent replyId={id} />
+                    <RepliesContent replys={repliesData} />
                 </ReplyList>
             </ReplyContainer>
     </Fragment>

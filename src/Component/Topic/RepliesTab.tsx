@@ -3,41 +3,34 @@ import styled from 'styled-components';
 import { RepliesData } from '../../Api/RepliesData';
 import { Reply } from '../../Types/reply';
 
-export interface RepliesComponentProps {
-    replyId: string
+export interface RepliesTabProps {
+    replys: Reply[]
 }
 
 
-export const  RepliesComponent = (props: RepliesComponentProps) => {
+export const  RepliesTab = (props: RepliesTabProps) => {
 
-    const { replyId } = props;
-    const [replyData, setReplyData] = useState<Reply>();
+    const { replys } = props;
+    // const [replyData, setReplyData] = useState<Reply>();
     
-    useEffect (
-        function() {
-            RepliesData(replyId).then(res => {
-                setReplyData(res.data);
-            });
-        }, []);
+    // useEffect (
+    //     function() {
+    //         RepliesData(replys).then(res => {
+    //             setReplyData(res.data);
+    //         });
+    //     }, []);
 
+    const timestamp = replys.length !== 0 ? replys[replys.length-1].last_modified : Date.now()
+    const timeString = new Date(timestamp * 1000).toLocaleDateString("en-US");
+//用array排序的方法来做，对当前数组做排序
     return (
-        <Fragment>
-            <tr>
-                <td>
-                    <TopicReply>{replyData?.replies} </TopicReply>
-                </td>
-                <td>
-                    <TopicReply>{replyData?.created} </TopicReply>
-                </td>
-                replies
-                <td>
-                    {/* <TopicReply>{replyData?.member_id} aaaa</TopicReply> */}
-                </td>
-                <td>
-                    {/* <TopicNode href={replyData?.node.url}>{replyData?.node.name}</TopicNode> */}
-                </td>
-            </tr>
-    </Fragment>
+        <div>
+            <span> {replys.length} 条回复 </span>
+            <span> {timeString} </span>
+        replies
+            {/* <TopicReply>{replyData?.member_id} aaaa</TopicReply> */}
+            {/* <TopicNode href={replyData?.node.url}>{replyData?.node.name}</TopicNode> */}
+        </div>
     )
 };
 

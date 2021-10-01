@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { RepliesData } from '../../Api/RepliesData';
@@ -6,13 +5,12 @@ import { Reply } from '../../Types/reply';
 
 
 export interface RepliesContentProps {
-    replyId: string
+    replys: Reply[]
 }
 
 export const  RepliesContent = (props: RepliesContentProps) => {
 
-    const { replyId } = props;
-    const [repliesData, setRepliesData] = useState<Reply[]>([]);
+    const { replys} = props;
     const rows: JSX.Element[] = [];
 
     const replyTime = (tiemstamp:number): string => {
@@ -21,19 +19,12 @@ export const  RepliesContent = (props: RepliesContentProps) => {
         return `${Math.floor(diff/60)} minutes ago`
     }
 
-    useEffect (
-        function() {
-            RepliesData(replyId).then(res => {
-                setRepliesData(res.data);
-            });
-        }, []);
-
-    for (var i=0; i < repliesData.length; i++){
-        let replyRecord = repliesData[i];
+    for (var i=0; i < replys.length; i++){
+        let replyRecord = replys[i];
 
         rows.push(
             <table>
-                <tr>
+                <ReplyTr>
                     <td>
                         <ReplyImg src={replyRecord.member.avatar_normal} alt={replyRecord.member.username} />
                     </td>
@@ -42,7 +33,7 @@ export const  RepliesContent = (props: RepliesContentProps) => {
                             <ReplyTime>{replyTime(replyRecord.last_modified)}</ReplyTime>
                             <ReplyComment>{replyRecord.content}</ReplyComment>
                         </ReplyContent>
-                </tr>
+                </ReplyTr>
             </table>
         )
     };
@@ -94,3 +85,11 @@ const ReplyTime = styled.div`
     color: #CCCCCC;
     cursor: pointer;
 `
+const ReplyTr = styled.tr`
+    border-bottom: 1px solid;
+    color: #C7C7C7;
+    padding: 10px;
+    line-height: 150%;
+    width: 90%;
+`
+

@@ -88,6 +88,7 @@ const MainTopicContainer = styled.div`
     display: block;
     margin: 10px 300px 0 0;
     width: auto;
+    max-width: 100%;
 `
 const TopicTitle = styled.td`
     font-size: 24px;
@@ -141,7 +142,6 @@ const TopicFooter = styled.a`
     text-decoration: none;
     cursor: pointer;
 `
-
 const TopicFooterContainer = styled.a`
     text-align: left;
     background-color: #F9F9F9;
