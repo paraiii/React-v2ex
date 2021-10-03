@@ -2,7 +2,6 @@ import React, { Fragment, useEffect, useRef, useState,  } from 'react';
 import styled from 'styled-components';
 import { TopicData } from '../../Api/TopicData';
 import { Topic } from '../../Types/topic';
-import parse from 'html-react-parser';
 
 export interface MainTopicProps {
     topicId: string
@@ -13,7 +12,6 @@ export const  MainTopic = (props: MainTopicProps) => {
     const { topicId } = props;
     const [topicData, setTopicData] = useState<Topic>();
 
-    // const yourHtmlString = '<topicData?.content_rendered>'
 
     useEffect (
         function() {

@@ -11,7 +11,7 @@ export const mock: AllData = {
             avatar_mini: 'string',
             avatar_normal: 'string',
             id: 123,
-            created: 123
+            created: 123,
         },
         title: '求教：如果想挖优秀的 Python ，什么才算是有吸引力的条件?',
         image: 'https://cdn.v2ex.com/avatar/111a/37f8/160862_normal.png?m=1496204932',

@@ -1,31 +1,49 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { MemberData } from '../../Api/MemberData';
+import { TopicData } from '../../Api/TopicData';
 import { Member } from '../../Types/common';
+import { Topic } from '../../Types/topic';
 
+// export interface MemberInfoProps {
+//     memberUsername: string
+// }
+
+
+// export const  MemberTopic= (props: MemberInfoProps) => {
+//     const { memberUsername } = props;
+//     const [memberData, setMemberData] = useState<Member>();
+
+//     useEffect (
+//         function() {
+//             MemberData(memberUsername).then(res => {
+//                 setMemberData(res.data);
+//             });
+//         }, []);
 export interface MemberInfoProps {
     username: string
 }
 
+export const  MemberTopic = (props: MemberInfoProps) => {
 
-export const  MemberTopic= (props: MemberInfoProps) => {
     const { username } = props;
-    const [memberData, setMemberData] = useState<Member>();
+    const [topicData, setTopicData] = useState<Topic>();
+
 
     useEffect (
         function() {
-            MemberData(username).then(res => {
-                setMemberData(res.data);
+            TopicData(username).then(res => {
+                setTopicData(res.data);
             });
         }, []);
-
 
     return (
         <Fragment>
                 <tr> 
                     <td>
-                        <img src={memberData?.avatar_normal} alt={memberData?.username}/>
+                        <img src={topicData?.member.avatar_normal} alt={topicData?.username}/>
                    </td>
+                        <MemberNode> {topicData?.node.title}</MemberNode>
                     <td>
                         {/* <FormContent>
                             <ContentTitle href={`/topic/${content.id}`}>{content.title}</ContentTitle>
@@ -44,4 +62,12 @@ export const  MemberTopic= (props: MemberInfoProps) => {
                 </tr>
         </Fragment>
     )
-}
+};
+
+const MemberNode = styled.div`
+    margin: left;
+    word-break: "break word";
+    font-weight:500;
+    font-family: "Helvetica Neue";
+    width: 100%;
+`

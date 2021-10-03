@@ -8,9 +8,9 @@ export const RightSideBar = () => {
     return (
         <div className='side-content'>
             <SideBarContainer>
-            <SideBar />
-            <Ad />
-            <HotTopics />
+                <SideBar />
+                <Ad />
+                <HotTopics />
             </SideBarContainer>
         </div>
     )

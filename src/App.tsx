@@ -5,8 +5,9 @@ import styled from "styled-components";
 import { Header, Login, Footer, Home, SignUp } from "./Component";
 import { LocalizationContextProvider } from "./LocalizationContextProvider";
 import { V2exContextProvider } from './V2exContextProvider';
-import {Topic} from "./Component/Topic/Topic";
 import { MemberPart } from "./Component/Member/MemberPart";
+import { TopicPage } from "./Component/Topic/TopicPage";
+import { Topic } from "./Component/Topic/Topic";
 
 export const App = () => {
   return ( 

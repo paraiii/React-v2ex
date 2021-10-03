@@ -6,18 +6,21 @@ import { MemberReply } from './MemberReply';
 import { MemberTopic } from './MemberTopic';
 import { Member } from '../../Types/common';
 import { MemberData } from '../../Api/MemberData';
+import { topicParams } from '../Topic/Topic';
+// import { memberParams } from './Member';
 
 export interface memberParams {
     username: string,
+    id: string,
 }
 
 export const MemberPart= () => {
-    const { username } = useParams<memberParams>();
+    const { id } = useParams<memberParams>();
     // const [memberData, setMemberData] = useState<Member[]>([]);
 
     // useEffect (
     //     function() {
-    //         MemberData(username).then(res => {
+    //         MemberData(id).then(res => {
     //             setMemberData(res.data);
     //         });
     //     }, []);
@@ -25,9 +28,9 @@ export const MemberPart= () => {
     return ( 
         <div>
             <MemberContainer>
-                <MemberInfo username={username}/>
-                {/* <MemberTopic members={memberData}/>
-                <MemberReply members={memberData}/> */}
+                <MemberInfo users={id}/>
+                {/* <MemberTopic username={id}/>
+                <MemberReply memberUsername={id}/> */}
             </MemberContainer>
         </div>
     )

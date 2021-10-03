@@ -5,17 +5,17 @@ import { Member } from '../../Types/common';
 import { Topic } from '../../Types/topic';
 
 export interface MemberInfoProps {
-    username: string
+    memberUsername: string
 }
 
 
 export const  MemberReply= (props: MemberInfoProps) => {
-    const { username } = props;
+    const { memberUsername } = props;
     const [memberData, setMemberData] = useState<Member>();
 
     useEffect (
         function() {
-            MemberData(username).then(res => {
+            MemberData(memberUsername).then(res => {
                 setMemberData(res.data);
             });
         }, []);

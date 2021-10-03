@@ -42,7 +42,3 @@ export const HotList = () => {
 const HotListContainer = styled.div`
     background-color: white;
 `
-const BorderTr = styled.tr`
-    border-bottom: 1px solid;
-    color: #C7C7C7;
-`

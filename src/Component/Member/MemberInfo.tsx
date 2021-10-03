@@ -1,23 +1,95 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { MemberData } from '../../Api/MemberData';
+import { TopicData } from '../../Api/TopicData';
 import { Member } from '../../Types/common';
+import { Topic } from '../../Types/topic';
 
+// export interface MemberInfoProps {
+//     memberUsername: string
+// }
+
+// export const  MemberInfo = (props: MemberInfoProps) => {
+//     const { memberUsername } = props;
+
+//     const [memberData, setMemberData] = useState<Member>();
+//     useEffect (
+//         function() {
+//             MemberData(memberUsername).then(res => {
+//                 setMemberData(res.data);
+//             });
+//         }, []);
+
+// export interface MemberInfoProps {
+//     topicId: string
+// }
+
+// export const  MemberInfo = (props: MemberInfoProps) => {
+
+//     const { topicId } = props;
+//     const [topicData, setTopicData] = useState<Topic>();
+
+
+//     useEffect (
+//         function() {
+//             TopicData(topicId).then(res => {
+//                 setTopicData(res.data);
+//             });
+//         }, []);
 export interface MemberInfoProps {
-    username: string
+    users: string
 }
 
 export const  MemberInfo = (props: MemberInfoProps) => {
-    const { username } = props;
-    const rows: JSX.Element[] = [];
 
-    const [memberData, setMemberData] = useState<Member>();
+    const { users } = props;
+    const [usersData, setUserData] = useState<Member>();
+
+
     useEffect (
         function() {
-            MemberData(username).then(res => {
-                setMemberData(res.data);
+            MemberData(users).then(res => {
+                setUserData(res.data);
             });
         }, []);
+        
+
+    return (
+        <Fragment>
+                <StyledTr> 
+                    <td>
+                        <ContentImg src={usersData?.avatar_normal} alt={usersData?.username}/>
+                    </td>
+
+
+                    {/* <td>
+                        <ContentImg src={topicData?.member.avatar_normal} alt={topicData?.member.username}/>
+                    </td>
+                    <td>
+                        <p>{topicData?.member.username}</p>
+                        <ContentText>V2EX第 {topicData?.member.created} 号会员</ContentText> 
+                        <br />      
+                        <ContentUser>今日活跃度排名</ContentUser> 
+                    </td>
+                    <td>
+                        <FormContent>
+                            <ContentTitle >{topicData?.username}</ContentTitle>
+                            <ContentUser> <button> 加入特别关注 </button></ContentUser>
+                            <br />      
+                            
+                            <ContentUser> <button> Block </button></ContentUser>
+                            <br />      
+                            
+                        </FormContent>
+                    </td> */}
+                    {/* <td>
+                            <ContentReply href={content.content}>{content.replies}</ContentReply>
+                    </td> */}
+                    </StyledTr>
+            </Fragment>
+    )               
+};
+    
     // for (var i=0; i < members.length; i++){
     //     let memberRecord = members[i]
         
@@ -55,31 +127,7 @@ export const  MemberInfo = (props: MemberInfoProps) => {
     // </div>
     // )
 
-    return (
-        <Fragment>
-                <StyledTr> 
-                    <td>
-                        <ContentImg src={memberData?.avatar_normal} alt={memberData?.username}/>
-                </td>
-                    <td>
-                        <FormContent>
-                            <ContentTitle >{memberData?.username}</ContentTitle>
-                            <ContentUser> <button> 加入特别关注 </button></ContentUser>
-                            <br />      
-                            <ContentText>V2EX第 {memberData?.created} 号会员</ContentText> 
-                            <ContentUser> <button> Block </button></ContentUser>
-                            <br />      
-                            <ContentUser>今日活跃度排名</ContentUser> 
-                        </FormContent>
-                    </td>
-                    {/* <td>
-                            <ContentReply href={content.content}>{content.replies}</ContentReply>
-                    </td> */}
-                    </StyledTr>
-            </Fragment>
-    )               
-};
-
+    
 const FormContent = styled.div`
     margin: left;
     word-break: "break word";
