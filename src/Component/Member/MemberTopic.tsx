@@ -21,53 +21,131 @@ import { Topic } from '../../Types/topic';
 //             });
 //         }, []);
 export interface MemberInfoProps {
-    username: string
+    topicId: string
 }
 
 export const  MemberTopic = (props: MemberInfoProps) => {
 
-    const { username } = props;
+    const { topicId } = props;
     const [topicData, setTopicData] = useState<Topic>();
 
 
     useEffect (
         function() {
-            TopicData(username).then(res => {
+            TopicData(topicId).then(res => {
                 setTopicData(res.data);
             });
         }, []);
 
     return (
         <Fragment>
-                <tr> 
+            <MemberTopicContainer>
+                <TabTr> 
                     <td>
-                        <img src={topicData?.member.avatar_normal} alt={topicData?.username}/>
+                        <MemberImg src={topicData?.member.avatar_normal} alt={topicData?.username}/>
                    </td>
-                        <MemberNode> {topicData?.node.title}</MemberNode>
-                    <td>
-                        {/* <FormContent>
-                            <ContentTitle href={`/topic/${content.id}`}>{content.title}</ContentTitle>
-                            <br />      
-                            <ContentNode href={content.node.url}> {content.node.title}</ContentNode>        
-                            <ContentUser href={content.member.url}> {content.member.username}</ContentUser>
-                            <ContentText>{replyTime(content.last_modified)}</ContentText> 
-                            <ContentText>{translation.last_reply_from}</ContentText>
-                            <ContentUser>{content.last_reply_from}</ContentUser> 
-                            <ContentUser>{content.last_reply_by}</ContentUser>
-                        </FormContent>
+                   <td>
+                        <MemberNode> <p>{topicData?.node.title}</p></MemberNode>
                     </td>
                     <td>
-                            <ContentReply href={content.content}>{content.replies}</ContentReply> */}
+                        <MemberNode> <p>{topicData?.node.title}</p></MemberNode>
+                    </td>
+                    <td>
+                        <MemberNode> <p>{topicData?.node.title}</p></MemberNode>
+                    </td>
+                </TabTr>
+
+                <tr>
+                    <td>
+                        <MemberCreatedContainer>
+                            <MemberTitle>
+
+                            </MemberTitle>
+                            <MemberNode></MemberNode>
+                            <MemberName></MemberName>
+                            <ReplyTime></ReplyTime>
+                            <RepliedBy>最后回复来自</RepliedBy>
+                        </MemberCreatedContainer>
+                    </td>
+                    <td>
+             
                     </td>
                 </tr>
+            </MemberTopicContainer>
         </Fragment>
     )
 };
 
-const MemberNode = styled.div`
+const MemberTopicContainer = styled.div`
+    font-family: "Microsoft Yahei";
+    word-break: "break word";
+    background-color: white;
+    display: block;
+    margin: 10px 300px 0 0;
+    width: auto;
+    min-height: 300px;
+    box-shadow: 0 2px 3px #DBDBDB;
+`
+const TabTr = styled.tr`
+    font-size: 14px;
+    border-bottom: 1px solid #E2E2E2;
+    display: inline-block;
+    text-decoration: none;
+    margin-right: 15px;
+    padding: 0 5px 5px;
+    width: 100%;
+`
+const MemberImg = styled.img`
+    width: 24px;
+    border-radius: 24px;
+    margin: 10px;
+`
+const MemberNode = styled.a`
+    font-weight:500;
+    width: auto;
+    margin-right: 5px;
+    display: inline-block;
+    padding: 2px 10px;
+    float: right;
+`
+const MemberCreatedContainer = styled.div`
     margin: left;
     word-break: "break word";
     font-weight:500;
     font-family: "Helvetica Neue";
-    width: 100%;
+`
+const MemberTitle = styled.a`
+    margin: left;
+    word-break: "break word"
+    font-weight:500;
+    text-decoration: none;
+    color: #666A6F;
+`
+const MemberName = styled.a`
+    margin: left;
+    word-break: "break word"
+    font-weight:500;
+    color: #50555A;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 2px;
+    font-size: 12px;
+`
+const ReplyTime = styled.a`
+    word-break: "break word"
+    font-weight:500;
+    color: #999;
+    text-decoration: none;
+    font-size: 13px;
+    padding: 2px;
+`
+const RepliedBy = styled.a`
+    margin: left;
+    word-break: "break word"
+    font-weight:500;
+    color: #50555A;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 2px;
+    font-size: 12px;
 `

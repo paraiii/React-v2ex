@@ -22,9 +22,9 @@ export const  RightSideNode = (props: RightSideNodeProps) => {
                 <SideNodeTab>
                     Hottest Nodes
                 </SideNodeTab>
-                <SideNodeContent href={content.node.url}>
+                {/* <SideNodeContent href={content.node.url}>
                     {content.node.title}
-                </SideNodeContent>
+                </SideNodeContent> */}
              </SideNodeContainer>
             </SideContainer>
         </div>
@@ -48,7 +48,7 @@ const SideNodeTab = styled.div `
     border-color: #C7C7C7;
 `
 const SideNodeContent = styled.a`
-    background-color: white;
+   
 `
 const SideNodeContainer = styled.div `
     

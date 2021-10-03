@@ -20,49 +20,48 @@ import { Topic } from '../../Types/topic';
 //             });
 //         }, []);
 
-// export interface MemberInfoProps {
-//     topicId: string
-// }
-
-// export const  MemberInfo = (props: MemberInfoProps) => {
-
-//     const { topicId } = props;
-//     const [topicData, setTopicData] = useState<Topic>();
-
-
-//     useEffect (
-//         function() {
-//             TopicData(topicId).then(res => {
-//                 setTopicData(res.data);
-//             });
-//         }, []);
 export interface MemberInfoProps {
-    users: string
+    topicId: string
 }
 
 export const  MemberInfo = (props: MemberInfoProps) => {
 
-    const { users } = props;
-    const [usersData, setUserData] = useState<Member>();
+    const { topicId } = props;
+    const [topicData, setTopicData] = useState<Topic>();
 
 
     useEffect (
         function() {
-            MemberData(users).then(res => {
-                setUserData(res.data);
+            TopicData(topicId).then(res => {
+                setTopicData(res.data);
             });
         }, []);
+
+// export interface MemberInfoProps {
+//     users: string
+// }
+
+// export const  MemberInfo = (props: MemberInfoProps) => {
+
+//     const { users } = props;
+//     const [usersData, setUserData] = useState<Member>();
+
+
+//     useEffect (
+//         function() {
+//             MemberData(users).then(res => {
+//                 setUserData(res.data);
+//             });
+//         }, []);
         
 
     return (
         <Fragment>
                 <StyledTr> 
-                    <td>
-                        <ContentImg src={usersData?.avatar_normal} alt={usersData?.username}/>
-                    </td>
-
-
                     {/* <td>
+                        <ContentImg src={usersData?.avatar_normal} alt={usersData?.username}/>
+                    </td> */}
+                    <td>
                         <ContentImg src={topicData?.member.avatar_normal} alt={topicData?.member.username}/>
                     </td>
                     <td>
@@ -81,12 +80,12 @@ export const  MemberInfo = (props: MemberInfoProps) => {
                             <br />      
                             
                         </FormContent>
-                    </td> */}
+                    </td>
                     {/* <td>
                             <ContentReply href={content.content}>{content.replies}</ContentReply>
                     </td> */}
-                    </StyledTr>
-            </Fragment>
+                </StyledTr>
+        </Fragment>
     )               
 };
     
@@ -171,11 +170,12 @@ const ContentText = styled.a`
     padding: 2px;
 `
 const StyledTr = styled.tr`
-    border-bottom: 1px solid;
-    color: #C7C7C7;
-    padding: 10px;
-    line-height: 150%;
-    width: 90%;
+    background-color: white;
+    font-family: "Microsoft Yahei";
+    display: block;
+    margin: 10px 300px 0 0;
+    width: auto;
+    max-width: 100%;
 `
 const ContentImg = styled.img`
     border-radius: 4px;

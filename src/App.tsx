@@ -19,7 +19,7 @@ export const App = () => {
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={SignUp} />
               <Route exact path="/" component={Home} />
-              <Route exact path="/topic/:id" component={Topic} />
+              <Route exact path="/topic/:id" component={TopicPage} />
               <Route exact path="/member/:id" component={MemberPart} />
               <Line />
               <Footer />

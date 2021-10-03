@@ -36,7 +36,6 @@ export const  ReplyPart= () => {
 const ReplyContainer = styled.div`
     background-color: white;
     font-family: "Microsoft Yahei";
-    margin: 0 300px 0 0;
 `
 const ReplyTab = styled.div`
     font-size: 14px;

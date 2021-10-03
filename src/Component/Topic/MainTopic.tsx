@@ -33,13 +33,14 @@ export const  MainTopic = (props: MainTopicProps) => {
                     <TopicNode href={topicData?.node.url}>
                         {topicData?.node.title}
                     </TopicNode>
+                    <TopicImg src={topicData?.member.avatar_normal} alt={topicData?.member.username} />
                 </TopicNodeContainer>
                 <TopicHeader>
                     <tr>
                         <TopicTitle>
                             <p>{topicData?.title}</p>
                         </TopicTitle>
-                        <TopicImg src={topicData?.member.avatar_normal} alt={topicData?.member.username} />
+                        
                     </tr>
                     <TopicTab>
                         <button> ^ </button>
@@ -84,10 +85,11 @@ const MainTopicContainer = styled.div`
     background-color: white;
     font-family: "Microsoft Yahei";
     display: block;
-    margin: 10px 300px 0 0;
     width: auto;
     max-width: 100%;
 `
+//margin: 10px 300px 0 0;
+
 const TopicTitle = styled.td`
     font-size: 24px;
     font-weight: 500;

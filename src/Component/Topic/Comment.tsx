@@ -46,7 +46,7 @@ const CommentContainer = styled.div`
     background-color: white;
     font-family: "helvetica neue";
     display: block;
-    margin: 10px 300px 0 0;
+    margin: 10px 0 0 0;
     width: auto;
 
 `
