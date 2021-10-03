@@ -6,6 +6,7 @@ import { Header, Login, Footer, Home, SignUp } from "./Component";
 import { LocalizationContextProvider } from "./LocalizationContextProvider";
 import { V2exContextProvider } from './V2exContextProvider';
 import {Topic} from "./Component/Topic/Topic";
+import { MemberPart } from "./Component/Member/MemberPart";
 
 export const App = () => {
   return ( 
@@ -18,6 +19,7 @@ export const App = () => {
               <Route exact path="/signup" component={SignUp} />
               <Route exact path="/" component={Home} />
               <Route exact path="/topic/:id" component={Topic} />
+              <Route exact path="/member/:id" component={MemberPart} />
               <Line />
               <Footer />
           </div>

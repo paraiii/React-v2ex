@@ -10,7 +10,7 @@ export interface RepliesContentProps {
 
 export const  RepliesContent = (props: RepliesContentProps) => {
 
-    const { replys} = props;
+    const { replys } = props;
     const rows: JSX.Element[] = [];
 
     const replyTime = (tiemstamp:number): string => {

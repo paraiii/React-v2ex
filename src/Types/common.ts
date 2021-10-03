@@ -17,7 +17,8 @@ export interface Member {
     avatar_large: string,
     avatar_mini: string,
     avatar_normal: string,
-    id: number
+    id: number,
+    created: number,
 }
 export interface ContentData {
     members: Member []

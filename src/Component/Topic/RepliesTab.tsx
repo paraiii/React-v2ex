@@ -24,16 +24,18 @@ export const  RepliesTab = (props: RepliesTabProps) => {
     const timeString = new Date(timestamp * 1000).toLocaleDateString("en-US");
 //用array排序的方法来做，对当前数组做排序
     return (
-        <div>
-            <span> {replys.length} 条回复 </span>
+        <TopicReply>
+            <span> {replys.length} replies</span>
+            <span> • </span>
             <span> {timeString} </span>
-        replies
             {/* <TopicReply>{replyData?.member_id} aaaa</TopicReply> */}
             {/* <TopicNode href={replyData?.node.url}>{replyData?.node.name}</TopicNode> */}
-        </div>
+        </TopicReply>
     )
 };
 
-const TopicReply = styled.a`
-    color: #C7C7C7;
+const TopicReply = styled.div`
+    color: #9E9D9E;
+    font-size: 14px;
+    line-height: 150%;
 `

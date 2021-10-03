@@ -1,37 +1,38 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { Content } from '../../Types/contents';
-import { Translation } from '../../Types/translation';
+import { MemberData } from '../../Api/MemberData';
+import { Member } from '../../Types/common';
+import { Topic } from '../../Types/topic';
 
-
-interface contentLineProps {
-    content: Content,
-    translation: Translation,
+export interface MemberInfoProps {
+    username: string
 }
 
 
-export const ContentLine = (props: contentLineProps) => {
+export const  MemberReply= (props: MemberInfoProps) => {
+    const { username } = props;
+    const [memberData, setMemberData] = useState<Member>();
 
-    const { content, translation} = props;
-    //计算最后回复时间距离多久
-    const replyTime = (tiemstamp:number): string => {
-        var diff = Date.now() / 1000 - tiemstamp
+    useEffect (
+        function() {
+            MemberData(username).then(res => {
+                setMemberData(res.data);
+            });
+        }, []);
 
-        return `${Math.floor(diff/60)} minutes ago`
-    }
 
     return (
         <Fragment>
                 <StyledTr> 
                     <td>
-                        <ContentImg src={content.member.avatar_normal} alt={content.member.avatar_normal}/>
+                        <ContentImg src={memberData?.avatar_normal} alt={memberData?.username}/>
                    </td>
                     <td>
-                        <FormContent>
+                        {/* <FormContent>
                             <ContentTitle href={`/topic/${content.id}`}>{content.title}</ContentTitle>
                             <br />      
                             <ContentNode href={content.node.url}> {content.node.title}</ContentNode>        
-                            <ContentUser href={`/member/${content.id}`}> {content.member.username}</ContentUser>
+                            <ContentUser href={content.member.url}> {content.member.username}</ContentUser>
                             <ContentText>{replyTime(content.last_modified)}</ContentText> 
                             <ContentText>{translation.last_reply_from}</ContentText>
                             <ContentUser>{content.last_reply_from}</ContentUser> 
@@ -39,7 +40,7 @@ export const ContentLine = (props: contentLineProps) => {
                         </FormContent>
                     </td>
                     <td>
-                            <ContentReply href={content.content}>{content.replies}</ContentReply>
+                            <ContentReply href={content.content}>{content.replies}</ContentReply> */}
                     </td>
                 </StyledTr>
         </Fragment>
@@ -111,4 +112,5 @@ const ContentReply = styled.a`
     border-radius: 12px;
     text-decoration: none;
     margin-right: 5px;
+    text-decoration: none;
 `

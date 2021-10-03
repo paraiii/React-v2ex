@@ -7,11 +7,8 @@ import { RepliesTab } from './RepliesTab';
 import { Reply } from '../../Types/reply';
 import { RepliesData } from '../../Api/RepliesData';
 
-export interface RepliesComponentProps {
-    replyId: string
-}
 
-export default function ReplyPart() {
+export const  ReplyPart= () => {
     const { id } = useParams<topicParams>();
     const [repliesData, setRepliesData] = useState<Reply[]>([]);
     

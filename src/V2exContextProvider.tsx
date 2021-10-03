@@ -10,7 +10,8 @@ export const mock: AllData = {
             avatar_large: 'string',
             avatar_mini: 'string',
             avatar_normal: 'string',
-            id: 123
+            id: 123,
+            created: 123
         },
         title: '求教：如果想挖优秀的 Python ，什么才算是有吸引力的条件?',
         image: 'https://cdn.v2ex.com/avatar/111a/37f8/160862_normal.png?m=1496204932',
@@ -30,7 +31,9 @@ export const mock: AllData = {
             avatar_large: 'string',
             avatar_mini: 'string',
             avatar_normal: 'string',
-            id: 12334
+            id: 12334,
+            created: 123
+
         },
         title: '微信迁移wechat的朋友注意了， 转到wechat就无法登录网页版微信了，fuck',
         image: 'https://cdn.v2ex.com/avatar/cd15/3421/455199_normal.png?m=1630490634',
