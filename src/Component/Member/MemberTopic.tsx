@@ -39,6 +39,12 @@ export const  MemberTopic = (props: MemberInfoProps) => {
             });
         }, []);
 
+    const replyTime = (tiemstamp:any): string => {
+        var diff = Date.now() / 1000 - tiemstamp
+
+        return `${Math.floor(diff/60)} minutes ago`
+    }
+    
     return (
         <Fragment>
             <MemberTopicContainer>
@@ -47,28 +53,24 @@ export const  MemberTopic = (props: MemberInfoProps) => {
                         <MemberImg src={topicData?.member.avatar_normal} alt={topicData?.username}/>
                    </td>
                     <td>                    
-                        <MemberNode> 
-                        <p>{topicData?.node.title}</p>
-                        </MemberNode>
+                        <MemberMember> 
+                        <p>{topicData?.member.username}</p>
+                        </MemberMember>
                     </td>
                 </TabTr>
 
-                <tr>
-                    <td>
-                        <MemberCreatedContainer>
-                            <MemberTitle>
-
+                    <MemberCreatedContainer>
+                        <td>
+                            <MemberTitle href={topicData?.url}>
+                                {topicData?.title}
                             </MemberTitle>
-                            <MemberNode></MemberNode>
-                            <MemberName></MemberName>
-                            <ReplyTime></ReplyTime>
-                            <RepliedBy>最后回复来自</RepliedBy>
-                        </MemberCreatedContainer>
-                    </td>
-                    <td>
-             
-                    </td>
-                </tr>
+                            <br />
+                            <MemberNode>{topicData?.node.name} •</MemberNode>
+                            <MemberName>{topicData?.member.username} •</MemberName> 
+                            <ReplyTime>{replyTime(topicData?.last_modified)}</ReplyTime>
+                            <RepliedBy>最后回复来自{topicData?.last_reply_by}</RepliedBy>
+                        </td>
+                    </MemberCreatedContainer>
             </MemberTopicContainer>
         </Fragment>
     )
@@ -83,6 +85,7 @@ const MemberTopicContainer = styled.div`
     width: auto;
     min-height: 300px;
     box-shadow: 0 2px 3px #DBDBDB;
+
 `
 const TabTr = styled.tr`
     font-size: 14px;
@@ -98,17 +101,27 @@ const MemberImg = styled.img`
     border-radius: 24px;
     margin: 10px;
 `
-const MemberNode = styled.div`
+const MemberMember = styled.div`
     padding: 2px 10px;
     float: right;
     display: inline-block;
-    margin-right: 15px;
+`
+const MemberNode = styled.div`
+    display: inline-block;
+    background-color: #f5f5f5;
+    font-size: 12px;
+    line-height: 12px;
+    padding: 4px;
 `
 const MemberCreatedContainer = styled.div`
     margin: left;
     word-break: "break word";
     font-weight:500;
     font-family: "Helvetica Neue";
+    border-bottom: 1px solid #E2E2E2;
+    width: 100%;
+    padding: 10px;
+
 `
 const MemberTitle = styled.a`
     margin: left;

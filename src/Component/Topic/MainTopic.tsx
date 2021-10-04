@@ -40,6 +40,7 @@ export const  MainTopic = (props: MainTopicProps) => {
                         <TopicTitle>{topicData?.title}</TopicTitle>
                     </tr>
                     <TopicTab>
+                        ›
                         <TabItem href={topicData?.member.url}>{topicData?.member.username}</TabItem>
                     </TopicTab>
                 </TopicHeader>

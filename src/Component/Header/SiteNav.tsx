@@ -6,8 +6,8 @@ export const SiteNav = () => {
     return (
         <SiteNavContainer>
                 <SiteNavItem href="/">Home</SiteNavItem>
-                <SiteNavItem href="/login" >Login</SiteNavItem>
-                <SiteNavItem href="/signup">Sign up</SiteNavItem> 
+                {/* <SiteNavItem href="/login" >Login</SiteNavItem>
+                <SiteNavItem href="/signup">Sign up</SiteNavItem>  */}
         </SiteNavContainer>
     )
 }

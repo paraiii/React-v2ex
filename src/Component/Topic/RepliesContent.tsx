@@ -1,6 +1,4 @@
-import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { RepliesData } from '../../Api/RepliesData';
 import { Reply } from '../../Types/reply';
 
 
@@ -23,28 +21,28 @@ export const  RepliesContent = (props: RepliesContentProps) => {
         let replyRecord = replys[i];
 
         rows.push(
-            <table>
-                <ReplyTr>
-                    <td>
-                        <ReplyImg src={replyRecord.member.avatar_normal} alt={replyRecord.member.username} />
-                    </td>
-                        <ReplyContent>
-                            <ReplyUser href={replyRecord.member.url}>{replyRecord.member.username}</ReplyUser>
-                            <ReplyTime>{replyTime(replyRecord.last_modified)}</ReplyTime>
-                            <ReplyComment>{replyRecord.content}</ReplyComment>
-                        </ReplyContent>
-                </ReplyTr>
-            </table>
+            <ReplyTr>
+                <td>
+                    <ReplyImg src={replyRecord.member.avatar_normal} alt={replyRecord.member.username} />
+                </td>
+                    <ReplyContent>
+                        <ReplyUser href={replyRecord.member.url}>{replyRecord.member.username}</ReplyUser>
+                        <ReplyTime>{replyTime(replyRecord.last_modified)}</ReplyTime>
+                        <ReplyComment>{replyRecord.content}</ReplyComment>
+                    </ReplyContent>
+            </ReplyTr>
         )
     };
 
     return (
         <div>
+            <StyledTable>
             {
                 rows.map((row) => {
                     return row;
                 })
             } 
+            </StyledTable>
         </div>
     )
 };
@@ -92,4 +90,7 @@ const ReplyTr = styled.tr`
     line-height: 150%;
     width: 90%;
 `
-
+const StyledTable = styled.table`
+    width: 100%;
+    border-collapse: collapse;
+`

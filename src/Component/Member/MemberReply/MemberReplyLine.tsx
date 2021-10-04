@@ -1,7 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Reply } from '../../../Types/reply';
-import { Topic } from '../../../Types/topic';
 
 export interface MemberReplyLineProps {
     replys: Reply

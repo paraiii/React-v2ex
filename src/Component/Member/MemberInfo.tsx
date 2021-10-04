@@ -5,52 +5,35 @@ import { TopicData } from '../../Api/TopicData';
 import { Member } from '../../Types/common';
 import { Topic } from '../../Types/topic';
 
-// export interface MemberInfoProps {
-//     memberUsername: string
-// }
-
-// export const  MemberInfo = (props: MemberInfoProps) => {
-//     const { memberUsername } = props;
-
-//     const [memberData, setMemberData] = useState<Member>();
-//     useEffect (
-//         function() {
-//             MemberData(memberUsername).then(res => {
-//                 setMemberData(res.data);
-//             });
-//         }, []);
-
 export interface MemberInfoProps {
-    topicId: string
+    memberUsername: string
 }
 
 export const  MemberInfo = (props: MemberInfoProps) => {
+    const { memberUsername } = props;
 
-    const { topicId } = props;
-    const [topicData, setTopicData] = useState<Topic>();
-
-
+    const [memberData, setMemberData] = useState<Member>();
     useEffect (
         function() {
-            TopicData(topicId).then(res => {
-                setTopicData(res.data);
+            MemberData(memberUsername).then(res => {
+                setMemberData(res.data);
             });
         }, []);
 
 // export interface MemberInfoProps {
-//     users: string
+//     topicId: string
 // }
 
 // export const  MemberInfo = (props: MemberInfoProps) => {
 
-//     const { users } = props;
-//     const [usersData, setUserData] = useState<Member>();
+//     const { topicId } = props;
+//     const [topicData, setTopicData] = useState<Topic>();
 
 
 //     useEffect (
 //         function() {
-//             MemberData(users).then(res => {
-//                 setUserData(res.data);
+//             TopicData(topicId).then(res => {
+//                 setTopicData(res.data);
 //             });
 //         }, []);
         
@@ -59,13 +42,13 @@ export const  MemberInfo = (props: MemberInfoProps) => {
         <Fragment>
                 <StyledTr> 
                     <td>
-                        <ContentImg src={topicData?.member.avatar_normal} alt={topicData?.member.username}/>
+                        <ContentImg src={memberData?.avatar_normal} alt={memberData?.username}/>
                     </td>
                         <UserInfoContainer>
-                            <UserName>
+                            {/* <UserName>
                                 <h1>{topicData?.member.username}</h1>
                             </UserName>
-                            <InfoText>V2EX第 {topicData?.member.created} 号会员</InfoText> 
+                            <InfoText>V2EX第 {topicData?.member.created} 号会员</InfoText>  */}
                         </UserInfoContainer>
                 </StyledTr>
         </Fragment>

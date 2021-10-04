@@ -57,7 +57,7 @@ const SideNodeTab = styled.div `
     border-bottom: 1px solid;
     border-color: #C7C7C7;
     color: #CCCCCC;
-    
+    background-color: #F9F9F9;  
 `
 const NodeItem = styled.a`
     font-family: "Times New Roman";

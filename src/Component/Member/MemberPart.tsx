@@ -28,14 +28,19 @@ import { MemberReplyList } from './MemberReply/MemberReplyList';
 //     //         });
 //     //     }, []);
 //     const [repliesData, setRepliesData] = useState<Reply[]>([]);
-    
+
+export interface memberParams {
+    username: string,
+}
+
 export const  MemberPart = () => {
     const { id } = useParams<topicParams>();
+    const { username } = useParams<memberParams>();
 
     return ( 
         <div>
             <MemberContainer>
-                <MemberInfo topicId={id}/>
+                <MemberInfo memberUsername={username}/>
                 <MemberTopic topicId={id}/>
                 <MemberReplyList />
             </MemberContainer>

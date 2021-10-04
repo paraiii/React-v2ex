@@ -20,7 +20,7 @@ export const Header = () => {
                                     <MenuIcon />
                                 </IconButton>
                                 <Logo />
-                                <Search />
+                                {/* <Search /> */}
                                 <SiteNav />
                             </Toolbar>
                         </BarContainer>

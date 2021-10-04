@@ -5,7 +5,8 @@ import { RepliesData } from '../../../Api/RepliesData';
 import { Reply } from '../../../Types/reply';
 import { topicParams } from '../../Topic/Topic';
 import { MemberReply } from './MemberReply';
-import { ReplyTab } from '../ReplyTab';
+import { ReplyTab } from './ReplyTab';
+
 
 
 
