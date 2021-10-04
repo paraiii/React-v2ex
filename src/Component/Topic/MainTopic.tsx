@@ -37,16 +37,10 @@ export const  MainTopic = (props: MainTopicProps) => {
                 </TopicNodeContainer>
                 <TopicHeader>
                     <tr>
-                        <TopicTitle>
-                            <p>{topicData?.title}</p>
-                        </TopicTitle>
-                        
+                        <TopicTitle>{topicData?.title}</TopicTitle>
                     </tr>
                     <TopicTab>
-                        <button> ^ </button>
-                        <TabItem>Add to Favorites</TabItem>
                         <TabItem href={topicData?.member.url}>{topicData?.member.username}</TabItem>
-                        <TabItem>views</TabItem>
                     </TopicTab>
                 </TopicHeader>
                 <TopicContent>
@@ -88,9 +82,8 @@ const MainTopicContainer = styled.div`
     width: auto;
     max-width: 100%;
 `
-//margin: 10px 300px 0 0;
 
-const TopicTitle = styled.td`
+const TopicTitle = styled.a`
     font-size: 24px;
     font-weight: 500;
     line-height: 150%;

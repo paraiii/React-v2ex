@@ -18,22 +18,13 @@ export const Topic = () => {
                 <MainTopic topicId={id}/> 
                 <br />
                 <ReplyPart />
+                <br />
                 <Comment topicId={id}/>
             </TopicContainer>
         </Fragment>
     )
 }
-// const TopicContainer = styled.div`
-//     display: block;
-//     min-height: 600px;
-//     background-color:#E2E2E2;
-//     display: block;
-//     margin: 70px auto 0;
-//     width: auto;
-//     padding: 10px 70px;
-//     min-width: 600px;
-//     max-width: 1100px;
-// `
+
 const TopicContainer = styled.div`
     display: block;
     margin: 10px 300px 0 20px;

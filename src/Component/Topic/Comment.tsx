@@ -21,20 +21,22 @@ export const  Comment = (props: CommentProps) => {
     return (
         <Fragment>
             <CommentContainer>
-                <CommentTr>
-                    <td>
-                        <CommentDiv>
-                            <CommentUrl href={topicData?.url}><button>
-                                Add a New Comment</button>
-                            </CommentUrl>
-                        </CommentDiv>
-                    </td>
-                    <td>
-                        <CommentTipCont>
-                            <p>请尽量让自己的回复能够对别人有帮助</p>
-                        </CommentTipCont>
-                    </td>
-                </CommentTr>           
+                <CommentLine>
+                    <tr>
+                        <td>
+                            <CommentDiv>
+                                <CommentUrl href={topicData?.url}><button>
+                                    Add a New Comment</button>
+                                </CommentUrl>
+                            </CommentDiv>
+                        </td>
+                        <td>
+                            <CommentTipCont>
+                                <p>请尽量让自己的回复能够对别人有帮助</p>
+                            </CommentTipCont>
+                        </td>
+                    </tr>
+                </CommentLine>           
                 <CommentBackContainer>                        
                     <CommentBack href='/'>← V2EX</CommentBack>
                 </CommentBackContainer>
@@ -48,47 +50,28 @@ const CommentContainer = styled.div`
     display: block;
     margin: 10px 0 0 0;
     width: auto;
-
 `
-const CommentTr = styled.tr`
+const CommentLine = styled.div`
     border-bottom: 1px solid #E2E2E2;
     padding: 10px;
     line-height: 150%;
-    width: 90%;
-    
+    width: 100%;
 `
 const CommentDiv = styled.div`
     padding: 10px;
     line-height: 150%;
     width: 90%;
 `
-
 const CommentUrl = styled.a`
     text-decoration: none;
 `
-const CommentTipCont = styled.a`
+const CommentTipCont = styled.div`
     text-align: right;
     color: grey;
     line-height: 12px;
     display: inline-block;
     padding: 2px 10px;
-    margin-right: 5px;
-`
-
-const CommentSubmit = styled.div`
-    border-bottom: 1px solid #E2E2E2;
-    padding: 10px;
-    font-size: 14px;
-`
-const CommentText = styled.textarea`
-    width: 95%;
-    height: 150px;
-    border-radius: 3px;
-    padding: 10px;
-    border: 1px solid #ccc;
-`
-const CommentTextArea = styled.div`
-    padding: 10px;
+    font-size: 12px;
 `
 const CommentBackContainer = styled.div`
     text-align: right;
@@ -96,6 +79,5 @@ const CommentBackContainer = styled.div`
 const CommentBack= styled.a`
     text-decoration: none;
     color: #778087;
-`
-const CommentTip = styled.a`
+    margin: 10px;
 `

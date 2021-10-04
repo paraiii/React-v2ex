@@ -16,9 +16,9 @@ export const  MemberReplyLine = (props: MemberReplyLineProps) => {
                 <ReplyText>回复了</ReplyText>
                 <ReplyTopic href={replys.member.url}>{replys.member.username}</ReplyTopic>
                 <ReplyText>创建的主题 › </ReplyText>
-                {/* <ReplyTopic href={replyRecord.node.url}>{replyRecord.node.name} </ReplyTopic> */}
+                {/* <ReplyTopic href={replys.node.url}>{replyRecord.node.name} </ReplyTopic> */}
                 <ReplyText>›</ReplyText> 
-                {/* <ReplyTopic href={replyRecord.replies.url}>{replyRecord.replies.title}</ReplyTopic> */}
+                {/* <ReplyTopic href={replys.replies.url}>{replyRecord.replies.title}</ReplyTopic> */}
             </ReplyContainer>
             <TabTr>
                 <ReplyContent>

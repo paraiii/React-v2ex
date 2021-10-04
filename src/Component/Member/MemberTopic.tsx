@@ -20,6 +20,8 @@ import { Topic } from '../../Types/topic';
 //                 setMemberData(res.data);
 //             });
 //         }, []);
+
+
 export interface MemberInfoProps {
     topicId: string
 }
@@ -44,14 +46,10 @@ export const  MemberTopic = (props: MemberInfoProps) => {
                     <td>
                         <MemberImg src={topicData?.member.avatar_normal} alt={topicData?.username}/>
                    </td>
-                   <td>
-                        <MemberNode> <p>{topicData?.node.title}</p></MemberNode>
-                    </td>
-                    <td>
-                        <MemberNode> <p>{topicData?.node.title}</p></MemberNode>
-                    </td>
-                    <td>
-                        <MemberNode> <p>{topicData?.node.title}</p></MemberNode>
+                    <td>                    
+                        <MemberNode> 
+                        <p>{topicData?.node.title}</p>
+                        </MemberNode>
                     </td>
                 </TabTr>
 
@@ -100,13 +98,11 @@ const MemberImg = styled.img`
     border-radius: 24px;
     margin: 10px;
 `
-const MemberNode = styled.a`
-    font-weight:500;
-    width: auto;
-    margin-right: 5px;
-    display: inline-block;
+const MemberNode = styled.div`
     padding: 2px 10px;
     float: right;
+    display: inline-block;
+    margin-right: 15px;
 `
 const MemberCreatedContainer = styled.div`
     margin: left;
