@@ -6,12 +6,12 @@ import { Reply } from '../../../Types/reply';
 import { topicParams } from '../../Topic/Topic';
 import { MemberReply } from './MemberReply';
 
-export interface ReplyTabList {
+export interface ReplyTabProps {
     replyId: string
 }
 
 
-export const ReplyTab = (props: ReplyTabList) => {
+export const ReplyTab = (props: ReplyTabProps) => {
     const { replyId } = props;
     const [repliesData, setRepliesData] = useState<Reply>();
 

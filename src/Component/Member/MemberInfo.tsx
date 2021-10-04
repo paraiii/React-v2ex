@@ -20,23 +20,6 @@ export const  MemberInfo = (props: MemberInfoProps) => {
             });
         }, []);
 
-// export interface MemberInfoProps {
-//     topicId: string
-// }
-
-// export const  MemberInfo = (props: MemberInfoProps) => {
-
-//     const { topicId } = props;
-//     const [topicData, setTopicData] = useState<Topic>();
-
-
-//     useEffect (
-//         function() {
-//             TopicData(topicId).then(res => {
-//                 setTopicData(res.data);
-//             });
-//         }, []);
-        
 
     return (
         <Fragment>
@@ -45,10 +28,10 @@ export const  MemberInfo = (props: MemberInfoProps) => {
                         <ContentImg src={memberData?.avatar_normal} alt={memberData?.username}/>
                     </td>
                         <UserInfoContainer>
-                            {/* <UserName>
-                                <h1>{topicData?.member.username}</h1>
+                            <UserName>
+                                <h1>{memberData?.username}</h1>
                             </UserName>
-                            <InfoText>V2EX第 {topicData?.member.created} 号会员</InfoText>  */}
+                            <InfoText>V2EX第 {memberData?.created} 号会员</InfoText> 
                         </UserInfoContainer>
                 </StyledTr>
         </Fragment>
