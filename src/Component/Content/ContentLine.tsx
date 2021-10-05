@@ -31,7 +31,7 @@ export const ContentLine = (props: contentLineProps) => {
                             <ContentTitle href={`/topic/${content.id}`}>{content.title}</ContentTitle>
                             <br />      
                             <ContentNode href={content.node.url}> {content.node.title}</ContentNode>        
-                            <ContentUser href={`/member/${content.id}`}> {content.member.username}</ContentUser>
+                            <ContentUser href={`/member/${content.member.username}`}> {content.member.username}</ContentUser>
                             <ContentText>{replyTime(content.last_modified)}</ContentText> 
                             <ContentText>{translation.last_reply_from}</ContentText>
                             <ContentUser>{content.last_reply_from}</ContentUser> 

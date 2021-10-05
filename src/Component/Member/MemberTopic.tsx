@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { MemberData } from '../../Api/MemberData';
+import { MemberTopicData } from '../../Api/MemberTopicData';
 import { TopicData } from '../../Api/TopicData';
 import { Member } from '../../Types/common';
 import { Topic } from '../../Types/topic';
@@ -34,7 +35,7 @@ export const  MemberTopic = (props: MemberInfoProps) => {
 
     useEffect (
         function() {
-            TopicData(topicId).then(res => {
+            MemberTopicData(topicId).then(res => {
                 setTopicData(res.data);
             });
         }, []);

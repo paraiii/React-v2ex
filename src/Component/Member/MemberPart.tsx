@@ -40,7 +40,7 @@ export const  MemberPart = () => {
     return ( 
         <div>
             <MemberContainer>
-                <MemberInfo memberUsername={username}/>
+                <MemberInfo memberUsername={id}/>
                 <MemberTopic topicId={id}/>
                 <MemberReplyList />
             </MemberContainer>
