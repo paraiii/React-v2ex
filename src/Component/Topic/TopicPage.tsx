@@ -3,33 +3,19 @@ import styled from 'styled-components';
 import { Content } from '../../Types/contents';
 import { GetContentData } from '../../Api/ContentData';
 import { ContentLine } from '../Content/ContentLine';
-import { RightSideNode } from './RightSideNode';
 import { Topic } from './Topic';
+import { RightSideNodeLine } from './RightSideNodeLine';
+import { NodeData } from '../../Api/NodeData';
+import { useParams } from 'react-router-dom';
+import { RightSideNodes } from './RightSideNodes';
 
-interface contentLineProps {
-    content: Content,
-}
+
 export const TopicPage = () => {
-    const [contentDatas, setContentData] = useState([]);
-    const rows: JSX.Element[] = [];
-
-
-    useEffect(
-        function() {
-            GetContentData().then(res => {
-                setContentData(res.data);
-            });
-        }, []);
-
-    for(var i=0; i < contentDatas.length; i++){
-        rows.push(
-        )    
-    }
-    
+            
     return ( 
         <div>
             <TopicPageContainer>
-                <RightSideNode content={contentDatas[i]} />
+                <RightSideNodes />
                 <Topic />
             </TopicPageContainer>
         </div>

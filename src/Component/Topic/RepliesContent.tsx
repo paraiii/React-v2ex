@@ -16,7 +16,7 @@ export const  RepliesContent = (props: RepliesContentProps) => {
 
         return `${Math.floor(diff/60)} minutes ago`
     }
-
+    
     for (var i=0; i < replys.length; i++){
         let replyRecord = replys[i];
 

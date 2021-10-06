@@ -8,6 +8,7 @@ import { V2exContextProvider } from './V2exContextProvider';
 import { MemberPart } from "./Component/Member/MemberPart";
 import { TopicPage } from "./Component/Topic/TopicPage";
 import { Topic } from "./Component/Topic/Topic";
+import { RightSideNodes } from "./Component/Topic/RightSideNodes";
 
 export const App = () => {
   return ( 
@@ -21,6 +22,7 @@ export const App = () => {
               <Route exact path="/" component={Home} />
               <Route exact path="/topic/:id" component={TopicPage} />
               <Route exact path="/member/:id" component={MemberPart} />
+              <Route exact path="/nodes/:id" component={RightSideNodes} />
               <Line />
               <Footer />
           </div>

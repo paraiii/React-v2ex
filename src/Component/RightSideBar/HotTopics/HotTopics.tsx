@@ -7,7 +7,6 @@ export const HotTopics = () => {
         <div>
             <HotTab />
             <HotList />
-  
         </div>
     )
 };

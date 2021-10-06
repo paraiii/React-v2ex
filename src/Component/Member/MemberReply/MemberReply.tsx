@@ -58,13 +58,13 @@ export const  MemberReply= (props: MemberReplytProps) => {
         )
     }   
     return (
-            <div>
-                {
-                rows.map((row) => {
-                    return row;
-                })
-            } 
-            </div>
+        <div>
+            {
+            rows.map((row) => {
+                return row;
+            })
+        } 
+        </div>
         )
     };
 
