@@ -1,6 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { TopicData } from '../../Api/TopicData';
 import { Content } from '../../Types/contents';
 import { Topic } from '../../Types/topic';
 import { Ad } from '../RightSideBar/Ad';

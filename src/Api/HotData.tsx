@@ -1,8 +1,9 @@
 import axios from 'axios';
+import { config } from '../config';
 
 export const GetHotData = () => {
     return axios({
         method: "GET",
-        url: "http://localhost:4100/hot"
+        url: `${config["baseUrl"]}/hot`
     });
 }

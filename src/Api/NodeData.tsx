@@ -1,9 +1,9 @@
 import axios from 'axios';
+import { config } from '../config';
 
 export const NodeData = (name:string) => {
     return axios({
         method: "GET",
-        url: `http://localhost:4100/nodes`
-        //$-->string interpolation
+        url: `${config["baseUrl"]}/nodes`
     });
 }

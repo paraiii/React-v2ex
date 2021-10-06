@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useRef, useState,  } from 'react';
 import styled from 'styled-components';
-import { TopicData } from '../../Api/TopicData';
 import { Topic } from '../../Types/topic';
+import { TopicData } from '../../Api/TopicData';
 
 export interface MainTopicProps {
     topicId: string

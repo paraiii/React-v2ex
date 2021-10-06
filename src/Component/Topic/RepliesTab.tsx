@@ -1,6 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { RepliesData } from '../../Api/RepliesData';
 import { Reply } from '../../Types/reply';
 
 export interface RepliesTabProps {

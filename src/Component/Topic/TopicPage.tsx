@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { GetContentData } from '../../Api/ContentData';
 import { Content } from '../../Types/contents';
+import { GetContentData } from '../../Api/ContentData';
 import { ContentLine } from '../Content/ContentLine';
 import { RightSideNode } from './RightSideNode';
 import { Topic } from './Topic';

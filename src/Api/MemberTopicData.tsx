@@ -1,9 +1,9 @@
 import axios from 'axios';
+import { config } from '../config';
 
 export const MemberTopicData = (username:string) => {
     return axios({
         method: "GET",
-        url: `http://localhost:4100/member-topics/${username}`
-        //$-->string interpolation
+        url: `${config["baseUrl"]}/member-topics/${username}`
     });
 }

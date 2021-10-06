@@ -1,8 +1,9 @@
 import axios from 'axios';
+import { config } from '../config';
 
 export const RepliesData = (topic_id:string) => {
     return axios({
         method: "GET",
-        url: `http://localhost:4100/replies/${topic_id}`
+        url: `${config["baseUrl"]}/replies/${topic_id}`
     });
 }

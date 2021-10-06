@@ -1,8 +1,8 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import styled from 'styled-components';
-import { RepliesData } from '../../../Api/RepliesData';
 import { Reply } from '../../../Types/reply';
+import { RepliesData } from '../../../Api/RepliesData';
 import { topicParams } from '../../Topic/Topic';
 import { MemberReply } from './MemberReply';
 import { ReplyTab } from './ReplyTab';

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useCallback } from 'react';
 import styled from 'styled-components';
 import { Content } from '../../Types/contents';
 import { Translation } from '../../Types/translation';
@@ -9,17 +9,17 @@ interface contentLineProps {
     translation: Translation,
 }
 
+export const ContentLine : React.FC <contentLineProps> = ({content, translation} )=> {
+// export const ContentLine = (props: contentLineProps) => {
 
-export const ContentLine = (props: contentLineProps) => {
-
-    const { content, translation} = props;
+//     const { content, translation} = props;
     //计算最后回复时间距离多久
-    const replyTime = (tiemstamp:number): string => {
+    const replyTime = useCallback((tiemstamp:number): string => {
         var diff = Date.now() / 1000 - tiemstamp
 
         return `${Math.floor(diff/60)} minutes ago`
-    }
-
+    }, [])
+    
     return (
         <Fragment>
                 <StyledTr> 

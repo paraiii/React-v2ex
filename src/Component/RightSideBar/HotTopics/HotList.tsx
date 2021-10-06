@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { HotLine } from './HotLine';
 import { GetHotData } from '../../../Api/HotData';
+import { HotLine } from './HotLine';
 
 export const HotList = () => {
 
