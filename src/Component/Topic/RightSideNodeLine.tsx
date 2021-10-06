@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Ad } from '../RightSideBar/Ad';
 import { Node } from '../../Types/common';
@@ -14,25 +14,18 @@ export const RightSideNodeLine = (props: RightSideNodeLineProps) => {
 
     for (var i=0; i < nodes.length; i++){
         let nodesRecord = nodes[i];
-        
         rows.push (
             <SideNodeContent>
                 <NodeItem href={nodesRecord.url}>{nodesRecord.title}</NodeItem>
-
-                {/* <NodeItem href="https://www.v2ex.com/go/programmer">程序员</NodeItem>
-                <NodeItem href="https://www.v2ex.com/go/share" >分享发现</NodeItem>
-                <NodeItem href="https://www.v2ex.com/apple">Apple</NodeItem> 
-                <NodeItem href="https://www.v2ex.com/jobs">酷工作</NodeItem> 
-                <NodeItem href="https://www.v2ex.com/go/python">Python</NodeItem> 
-                <NodeItem href="https://www.v2ex.com/go/career">职场话题</NodeItem> 
-                <NodeItem href="https://www.v2ex.com/go/bb">带宽症候群</NodeItem> 
-                <NodeItem href="https://www.v2ex.com/go/android">Android</NodeItem> 
-                <NodeItem href="https://www.v2ex.com/go/iphone">iphone</NodeItem> 
-                <NodeItem href="https://www.v2ex.com/go/gts">全球工单系统</NodeItem> 
-                <NodeItem href="https://www.v2ex.com/go/mbp">MacBook Pro</NodeItem>  */}
             </SideNodeContent>
         )
     }
+    // const mapRightSideNodeLine = useCallback((nodes: any) => {
+    //     return 
+    //     <SideNodeContent>
+    //         <NodeItem href={nodes.url}>{nodes.title}</NodeItem>
+    //     </SideNodeContent>
+    // }, [])
     
     return (
         <Fragment>
@@ -42,11 +35,14 @@ export const RightSideNodeLine = (props: RightSideNodeLineProps) => {
                 <SideNodeTab>
                     Hottest Nodes
                 </SideNodeTab>
-                {
-                    rows.map((row) => {
-                        return row;
-                    })
-                } 
+                <NodeContainer>
+                    {
+                        rows.map((row) => {
+                            return row;
+                        })
+                    } 
+                </NodeContainer>
+
              </SideNodeContainer>
             </SideContainer>
         </Fragment>
@@ -60,6 +56,11 @@ const SideContainer = styled.div `
     margin-right:10px;
     margin-top: 10px;
 `
+
+const NodeContainer = styled.div `
+    margin-top: 5px;
+`
+
 const SideNodeTab = styled.div `
     text-align: left;
     border-top-left-radius: 3px;
@@ -89,7 +90,7 @@ const NodeItem = styled.a`
 const SideNodeContainer = styled.div `
     background-color: white;
 `
-const SideNodeContent = styled.div `
+const SideNodeContent = styled.a `
     padding: 5px;
     margin-top: 5px;
 
