@@ -21,7 +21,6 @@ export const RightSideNodes = () => {
         
     return (
         <RightSideNodeLine nodes={nodesData}/>
-
     )
 
 };

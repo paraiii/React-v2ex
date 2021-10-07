@@ -25,16 +25,6 @@ export const Contents = () => {
             })
         }, []);
     
-    // const rows: JSX.Element[] = [];
-    // for(var i=0; i < contentDatas.length; i++){
-    //     rows.push(
-    //         <ContentLine content={contentDatas[i]} translation={translations}></ContentLine>
-    //     )    
-    // }
-
-    // const mapContentDataToContentLine = (contentData : any) => {
-    //     return <ContentLine content={contentData} translation={translations}></ContentLine>
-    // }
     //加callback
     const mapContentDataToContentLine = useCallback((contentData : any) => {
         return <ContentLine content={contentData} translation={translations}></ContentLine>
@@ -44,10 +34,9 @@ export const Contents = () => {
         return <Loading></Loading> 
     }
 
-    // if (error !== "" ) {
-    //     return <Empty reason={error}></Empty> 
-    // }
-//42.55
+    if (error !== " " ) {
+        return <Empty reason={error}></Empty> 
+    }
 
     return (
         <div>

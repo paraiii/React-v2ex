@@ -1,16 +1,12 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { MemberData } from '../../Api/MemberData';
-import { TopicData } from '../../Api/TopicData';
 import { Member } from '../../Types/common';
-import { Topic } from '../../Types/topic';
 
 export interface MemberInfoProps {
     memberUsername: string
 }
-
-export const  MemberInfo = (props: MemberInfoProps) => {
-    const { memberUsername } = props;
+export const  MemberInfo: React.FC <MemberInfoProps> = ({memberUsername}) =>{
 
     const [memberData, setMemberData] = useState<Member>();
     useEffect (
@@ -20,20 +16,19 @@ export const  MemberInfo = (props: MemberInfoProps) => {
             });
         }, []);
 
-
     return (
         <Fragment>
-                <StyledTr> 
-                    <td>
-                        <ContentImg src={memberData?.avatar_normal} alt={memberData?.username}/>
-                    </td>
-                        <UserInfoContainer>
-                            <UserName>
-                                <h1>{memberData?.username}</h1>
-                            </UserName>
-                            <InfoText>V2EX第 {memberData?.created} 号会员</InfoText> 
-                        </UserInfoContainer>
-                </StyledTr>
+            <StyledTr> 
+                <td>
+                    <ContentImg src={memberData?.avatar_normal} alt={memberData?.username}/>
+                </td>
+                    <UserInfoContainer>
+                        <UserName>
+                            <h1>{memberData?.username}</h1>
+                        </UserName>
+                        <InfoText>V2EX第 {memberData?.id} 号会员</InfoText> 
+                    </UserInfoContainer>
+            </StyledTr>
         </Fragment>
     )               
 };
@@ -68,6 +63,7 @@ const StyledTr = styled.tr`
     margin: 10px 300px 0 0;
     width: auto;
     max-width: 100%;
+    min-height: 300px;
 `
 const ContentImg = styled.img`
     border-radius: 4px;

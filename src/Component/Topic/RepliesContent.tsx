@@ -6,9 +6,8 @@ export interface RepliesContentProps {
     replys: Reply[]
 }
 
-export const  RepliesContent = (props: RepliesContentProps) => {
+export const  RepliesContent : React.FC <RepliesContentProps> = ({replys}) => {
 
-    const { replys } = props;
     const rows: JSX.Element[] = [];
 
     const replyTime = (tiemstamp:number): string => {

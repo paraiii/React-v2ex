@@ -10,9 +10,7 @@ interface contentLineProps {
 }
 
 export const ContentLine : React.FC <contentLineProps> = ({content, translation} )=> {
-// export const ContentLine = (props: contentLineProps) => {
 
-//     const { content, translation} = props;
     //计算最后回复时间距离多久
     const replyTime = useCallback((tiemstamp:number): string => {
         var diff = Date.now() / 1000 - tiemstamp
@@ -22,26 +20,26 @@ export const ContentLine : React.FC <contentLineProps> = ({content, translation}
     
     return (
         <Fragment>
-                <StyledTr> 
-                    <td>
-                        <ContentImg src={content.member.avatar_normal} alt={content.member.avatar_normal}/>
-                   </td>
-                    <td>
-                        <FormContent>
-                            <ContentTitle href={`/topic/${content.id}`}>{content.title}</ContentTitle>
-                            <br />      
-                            <ContentNode href={content.node.url}> {content.node.title}</ContentNode>        
-                            <ContentUser href={`/member/${content.member.username}`}> {content.member.username}</ContentUser>
-                            <ContentText>{replyTime(content.last_modified)}</ContentText> 
-                            <ContentText>{translation.last_reply_from}</ContentText>
-                            <ContentUser>{content.last_reply_from}</ContentUser> 
-                            <ContentUser>{content.last_reply_by}</ContentUser>
-                        </FormContent>
-                    </td>
-                    <td>
-                            <ContentReply href={content.content}>{content.replies}</ContentReply>
-                    </td>
-                </StyledTr>
+            <StyledTr> 
+                <td>
+                    <ContentImg src={content.member.avatar_normal} alt={content.member.avatar_normal}/>
+                </td>
+                <td>
+                    <FormContent>
+                        <ContentTitle href={`/topic/${content.id}`}>{content.title}</ContentTitle>
+                        <br />      
+                        <ContentNode href={content.node.url}> {content.node.title}</ContentNode>        
+                        <ContentUser href={`/member/${content.member.username}`}> {content.member.username}</ContentUser>
+                        <ContentText>{replyTime(content.last_modified)}</ContentText> 
+                        <ContentText>{translation.last_reply_from}</ContentText>
+                        <ContentUser>{content.last_reply_from}</ContentUser> 
+                        <ContentUser>{content.last_reply_by}</ContentUser>
+                    </FormContent>
+                </td>
+                <td>
+                        <ContentReply href={content.content}>{content.replies}</ContentReply>
+                </td>
+            </StyledTr>
         </Fragment>
     )
 }

@@ -1,27 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { MemberData } from '../../Api/MemberData';
 import { MemberTopicData } from '../../Api/MemberTopicData';
-import { TopicData } from '../../Api/TopicData';
-import { Member } from '../../Types/common';
 import { Topic } from '../../Types/topic';
-
-// export interface MemberInfoProps {
-//     memberUsername: string
-// }
-
-
-// export const  MemberTopic= (props: MemberInfoProps) => {
-//     const { memberUsername } = props;
-//     const [memberData, setMemberData] = useState<Member>();
-
-//     useEffect (
-//         function() {
-//             MemberData(memberUsername).then(res => {
-//                 setMemberData(res.data);
-//             });
-//         }, []);
-
 
 export interface MemberInfoProps {
     topicId: string

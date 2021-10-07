@@ -24,7 +24,7 @@ export const LocalizationContext = React.createContext(translationItems.get("cn"
 interface LocalizationContextProviderProps {
     children: React.ReactNode
 }
-
+// export const LocalizationContextProvider : React.FC <LocalizationContextProviderProps> = (children) => {
 export const LocalizationContextProvider = (props: LocalizationContextProviderProps) => {
     const {children} = props
     const [languageCode] = useState("cn")

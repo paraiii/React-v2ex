@@ -1,14 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { Content } from '../../Types/contents';
-import { GetContentData } from '../../Api/ContentData';
-import { ContentLine } from '../Content/ContentLine';
 import { Topic } from './Topic';
-import { RightSideNodeLine } from './RightSideNodeLine';
-import { NodeData } from '../../Api/NodeData';
-import { useParams } from 'react-router-dom';
 import { RightSideNodes } from './RightSideNodes';
-
 
 export const TopicPage = () => {
             

@@ -47,11 +47,7 @@ export const  MainTopic = (props: MainTopicProps) => {
                 <TopicContent>
                     <div dangerouslySetInnerHTML={{__html: topicData?.content_rendered ?? ''}}>
                     </div>
-                    <div>
-                    {/* {parse(yourHtmlString)} */}
-                    </div>
                 </TopicContent>
-                {/* 把帖子内容按照格式显示出来，需要找更好的写法，这个只是替代写法 */}
                 <TopicFooterContainer>
                     <TopicFooter> Add to Favorites</TopicFooter>
                     <TopicFooter> Tweet</TopicFooter>

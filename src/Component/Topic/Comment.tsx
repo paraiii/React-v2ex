@@ -7,8 +7,7 @@ export interface CommentProps {
     topicId: string
 }
 
-export const  Comment = (props: CommentProps) => {
-    const { topicId } = props;
+export const  Comment : React.FC <CommentProps> = ({topicId}) => { 
     const [topicData, setTopicData] = useState<Topic>();
     
     useEffect (

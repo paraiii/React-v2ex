@@ -2,31 +2,41 @@ import React, { Fragment, useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Ad } from '../RightSideBar/Ad';
 import { Node } from '../../Types/common';
+import { NodeData } from '../../Api/NodeData';
+import { useParams } from 'react-router-dom';
+import { nodeParams } from './RightSideNodes';
 
 
  export interface RightSideNodeLineProps {
     nodes: Node[]
 }
 
+
 export const RightSideNodeLine = (props: RightSideNodeLineProps) => {
     const {nodes} = props;
-    const rows: JSX.Element[] = [];
+    const [nodesData, setNodeData] = useState<Node[]>([]);
+    const { id } = useParams<nodeParams>();
 
+
+    useEffect(
+        function() {
+            NodeData(id).then(res => {
+                setNodeData(res.data);
+            });
+        }, []);
+    
+    const rows: JSX.Element[] = [];
     for (var i=0; i < nodes.length; i++){
         let nodesRecord = nodes[i];
-        rows.push (
-            <SideNodeContent>
+            rows.push (
                 <NodeItem href={nodesRecord.url}>{nodesRecord.title}</NodeItem>
-            </SideNodeContent>
-        )
+
+            )
     }
-    // const mapRightSideNodeLine = useCallback((nodes: any) => {
-    //     return 
-    //     <SideNodeContent>
-    //         <NodeItem href={nodes.url}>{nodes.title}</NodeItem>
-    //     </SideNodeContent>
+    // const mapRightSideNodeLine = useCallback((nodesData: any) => {
+    //     return <NodeItem href={nodesData.url}>{nodesData.title}</NodeItem>
     // }, [])
-    
+
     return (
         <Fragment>
             <SideContainer>
@@ -36,11 +46,16 @@ export const RightSideNodeLine = (props: RightSideNodeLineProps) => {
                     Hottest Nodes
                 </SideNodeTab>
                 <NodeContainer>
-                    {
-                        rows.map((row) => {
-                            return row;
-                        })
-                    } 
+                    <SideNodeContent>
+                        {
+                            rows.map((row) => {
+                                return row;
+                            })
+                            // nodesData.map((nodesData) => {
+                            //     return mapRightSideNodeLine(nodesData);
+                            // })
+                        } 
+                    </SideNodeContent>
                 </NodeContainer>
 
              </SideNodeContainer>
@@ -58,7 +73,8 @@ const SideContainer = styled.div `
 `
 
 const NodeContainer = styled.div `
-    margin-top: 5px;
+    display: block;
+    margin-top: 10px;
 `
 
 const SideNodeTab = styled.div `

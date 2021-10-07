@@ -7,7 +7,6 @@ import { LocalizationContextProvider } from "./LocalizationContextProvider";
 import { V2exContextProvider } from './V2exContextProvider';
 import { MemberPart } from "./Component/Member/MemberPart";
 import { TopicPage } from "./Component/Topic/TopicPage";
-import { Topic } from "./Component/Topic/Topic";
 import { RightSideNodes } from "./Component/Topic/RightSideNodes";
 
 export const App = () => {
