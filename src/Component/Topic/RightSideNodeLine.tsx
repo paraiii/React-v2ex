@@ -46,16 +46,14 @@ export const RightSideNodeLine = (props: RightSideNodeLineProps) => {
                     Hottest Nodes
                 </SideNodeTab>
                 <NodeContainer>
-                    <SideNodeContent>
-                        {
-                            rows.map((row) => {
-                                return row;
-                            })
-                            // nodesData.map((nodesData) => {
-                            //     return mapRightSideNodeLine(nodesData);
-                            // })
-                        } 
-                    </SideNodeContent>
+                    {
+                        rows.map((row) => {
+                            return row;
+                        })
+                        // nodesData.map((nodesData) => {
+                        //     return mapRightSideNodeLine(nodesData);
+                        // })
+                    } 
                 </NodeContainer>
 
              </SideNodeContainer>
@@ -106,9 +104,3 @@ const NodeItem = styled.a`
 const SideNodeContainer = styled.div `
     background-color: white;
 `
-const SideNodeContent = styled.a `
-    padding: 5px;
-    margin-top: 5px;
-
-`
-
