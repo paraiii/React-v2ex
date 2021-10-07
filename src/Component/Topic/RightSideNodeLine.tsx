@@ -14,16 +14,16 @@ import { nodeParams } from './RightSideNodes';
 
 export const RightSideNodeLine = (props: RightSideNodeLineProps) => {
     const {nodes} = props;
-    const [nodesData, setNodeData] = useState<Node[]>([]);
-    const { id } = useParams<nodeParams>();
+    // const [nodesData, setNodeData] = useState<Node[]>([]);
+    // const { id } = useParams<nodeParams>();
 
 
-    useEffect(
-        function() {
-            NodeData(id).then(res => {
-                setNodeData(res.data);
-            });
-        }, []);
+    // useEffect(
+    //     function() {
+    //         NodeData(id).then(res => {
+    //             setNodeData(res.data);
+    //         });
+    //     }, []);
     
     const rows: JSX.Element[] = [];
     for (var i=0; i < nodes.length; i++){
