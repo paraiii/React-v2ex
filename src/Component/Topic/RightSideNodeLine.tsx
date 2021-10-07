@@ -11,7 +11,6 @@ import { nodeParams } from './RightSideNodes';
     nodes: Node[]
 }
 
-
 export const RightSideNodeLine = (props: RightSideNodeLineProps) => {
     const {nodes} = props;
     // const [nodesData, setNodeData] = useState<Node[]>([]);
@@ -30,7 +29,6 @@ export const RightSideNodeLine = (props: RightSideNodeLineProps) => {
         let nodesRecord = nodes[i];
             rows.push (
                 <NodeItem href={nodesRecord.url}>{nodesRecord.title}</NodeItem>
-
             )
     }
     // const mapRightSideNodeLine = useCallback((nodesData: any) => {
