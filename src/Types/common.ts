@@ -5,7 +5,9 @@ export interface Node {
     name: string,
     title: string,
     url: string,
-    id: number
+    id: number,
+    stars: number,
+    topics: number,
 }
 export interface NodeData {
     nodes: Node []

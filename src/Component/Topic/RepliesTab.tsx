@@ -9,7 +9,6 @@ export interface RepliesTabProps {
 export const  RepliesTab = (props: RepliesTabProps) => {
 
     const { replys } = props;
-
     const timestamp = replys.length !== 0 ? replys[replys.length-1].last_modified : Date.now()
     const timeString = new Date(timestamp * 1000).toLocaleDateString("en-US");
 //用array排序的方法来做，对当前数组做排序

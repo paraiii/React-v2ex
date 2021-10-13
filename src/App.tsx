@@ -2,12 +2,13 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import React  from "react";
 import './App.css'; 
 import styled from "styled-components";
-import { Header, Login, Footer, Home, SignUp } from "./Component";
+import { Header, Login, Footer, Home, SignUp, Contents, Content } from "./Component";
 import { LocalizationContextProvider } from "./LocalizationContextProvider";
 import { V2exContextProvider } from './V2exContextProvider';
 import { MemberPart } from "./Component/Member/MemberPart";
 import { TopicPage } from "./Component/Topic/TopicPage";
 import { RightSideNodes } from "./Component/Topic/RightSideNodes";
+import { NodeTopics } from "./Component/NodeTopic/NodeTopics";
 
 export const App = () => {
   return ( 
@@ -21,7 +22,7 @@ export const App = () => {
               <Route exact path="/" component={Home} />
               <Route exact path="/topic/:id" component={TopicPage} />
               <Route exact path="/member/:id" component={MemberPart} />
-              <Route exact path="/nodes/:id" component={RightSideNodes} />
+              <Route exact path="/nodes/:id" component={Content} />
               <Line />
               <Footer />
           </div>

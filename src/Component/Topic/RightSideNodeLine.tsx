@@ -13,6 +13,10 @@ import { nodeParams } from './RightSideNodes';
 
 export const RightSideNodeLine = (props: RightSideNodeLineProps) => {
     const {nodes} = props;
+    const filteredNodes = nodes.sort((a, b) => b.topics - a.topics).slice(0, 50)
+    // nodes.sort(n => n.topics ).slice(0,50);
+    //对node做filter，基于topics主题数量，取前20个
+
     // const [nodesData, setNodeData] = useState<Node[]>([]);
     // const { id } = useParams<nodeParams>();
 
@@ -25,10 +29,12 @@ export const RightSideNodeLine = (props: RightSideNodeLineProps) => {
     //     }, []);
     
     const rows: JSX.Element[] = [];
-    for (var i=0; i < nodes.length; i++){
-        let nodesRecord = nodes[i];
+    for (var i=0; i < filteredNodes.length; i++){
+        let nodesRecord = filteredNodes[i];
             rows.push (
-                <NodeItem href={nodesRecord.url}>{nodesRecord.title}</NodeItem>
+                // <NodeItem href={nodesRecord.url}>{nodesRecord.title}</NodeItem>
+                <NodeItem href={`/nodes/${nodesRecord.id}`}>{nodesRecord.title}</NodeItem>
+
             )
     }
     // const mapRightSideNodeLine = useCallback((nodesData: any) => {

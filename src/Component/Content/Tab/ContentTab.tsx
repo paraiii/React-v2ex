@@ -6,19 +6,19 @@ export const ContentTab = () => {
     return (
          <Fragment>   
                 <HeaderContainer>
-                    <ContentItem href="/tech">技术</ContentItem>
-                    <ContentItem href="/creative">创意</ContentItem>
-                    <ContentItem href="/play" >好玩</ContentItem>
-                    <ContentItem href="/apple">Apple</ContentItem> 
-                    <ContentItem href="/jobs">酷工作</ContentItem> 
-                    <ContentItem href="/deals">交易</ContentItem> 
-                    <ContentItem href="/city">城市</ContentItem> 
-                    <ContentItem href="/qna">问与答</ContentItem> 
-                    <ContentItem href="/hot">最热</ContentItem> 
-                    <ContentItem href="/r2">R2</ContentItem> 
-                    <ContentItem href="/nodes">节点</ContentItem> 
-                    <ContentItem href="/members">关注</ContentItem> 
-                    <ContentItem href="/all">全部</ContentItem> 
+                    <ContentItem href="/nodes/tech">技术</ContentItem>
+                    <ContentItem href="/nodes/creative">创意</ContentItem>
+                    <ContentItem href="/nodes/play" >好玩</ContentItem>
+                    <ContentItem href="/nodes/apple">Apple</ContentItem> 
+                    <ContentItem href="/nodes/jobs">酷工作</ContentItem> 
+                    <ContentItem href="/nodes/deals">交易</ContentItem> 
+                    <ContentItem href="/nodes/city">城市</ContentItem> 
+                    <ContentItem href="/nodes/qna">问与答</ContentItem> 
+                    <ContentItem href="/nodes/hot">最热</ContentItem> 
+                    <ContentItem href="/nodes/r2">R2</ContentItem> 
+                    <ContentItem href="/nodes/nodes">节点</ContentItem> 
+                    <ContentItem href="/nodes/members">关注</ContentItem> 
+                    <ContentItem href="/nodes/all">全部</ContentItem> 
                 </HeaderContainer>  
         </Fragment>
     )

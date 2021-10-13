@@ -124,7 +124,11 @@ const TopicContent = styled.div`
     line-height: 1.6;
     text-align: left;
     padding: 10px;
+    img {   
+        width: 100%
+    }
 `
+
 const TopicFooter = styled.a`
     margin-left: 10px;
     font-weight:500;

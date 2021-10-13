@@ -5,24 +5,46 @@ import { useTranslations } from '../../hooks/useTranslations';
 import { ContentLine } from './ContentLine';
 import { Loading } from '../Loading/loading';
 import { Empty } from '../Empty/empty';
+import { useParams } from 'react-router';
+import { NodeTopicsData } from '../../Api/NodeTopicsData';
+
+export interface NodetopicsDataParams {
+    id: string,
+}
 
 export const Contents = () => {
+    const { id }  = useParams<NodetopicsDataParams>()
     const [ loading, setLoading ] = useState(true);
     const [ error, setError ] = useState(" ");
     const translations = useTranslations ();
     const [contentDatas, setContentData] = useState([]);
-
-
+ 
     useEffect(
         function() {
-            GetContentData().then(res => {
-                setContentData(res.data);
-                setLoading(false);
-            }).catch((e) => {
-               
-                setLoading(false); 
-                setError("failed to load data");
-            })
+            if (id != null) {
+                debugger
+                NodeTopicsData(id).then(res => {
+                    setContentData(res.data);
+                    setLoading(false);
+                }).catch((e) => {
+    
+                // GetContentData().then(res => {
+                //     setContentData(res.data);
+                //     setLoading(false);
+                // }).catch((e) => {
+                    setLoading(false); 
+                    setError("failed to load data");
+                }) 
+            } else {
+                GetContentData().then(res => {
+                    setContentData(res.data);
+                    setLoading(false);
+                }).catch((e) => {
+                    setLoading(false); 
+                    setError("failed to load data");
+                })
+            }
+            
         }, []);
     
     //加callback
@@ -57,4 +79,6 @@ const StyledTable = styled.table`
     width: 100%;
     border-collapse: collapse;
 `
+
+
 
