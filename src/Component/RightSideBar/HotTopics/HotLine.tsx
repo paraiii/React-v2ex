@@ -19,7 +19,8 @@ export const HotLine = (props: hotLineProps) => {
                         <HotListImg src={hotList.member.avatar_normal} alt={hotList.member.avatar_normal}></HotListImg>
                     </td>
                     <td>
-                        <HotListContent href={hotList.url}>{hotList.title}</HotListContent>
+                        <HotListContent href={`/topic/${hotList.id}`}>{hotList.title}</HotListContent>
+                        
                     </td>
                 </tr>
             </HotContainer>

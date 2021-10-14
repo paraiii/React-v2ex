@@ -22,16 +22,10 @@ export const Contents = () => {
     useEffect(
         function() {
             if (id != null) {
-                debugger
                 NodeTopicsData(id).then(res => {
                     setContentData(res.data);
                     setLoading(false);
                 }).catch((e) => {
-    
-                // GetContentData().then(res => {
-                //     setContentData(res.data);
-                //     setLoading(false);
-                // }).catch((e) => {
                     setLoading(false); 
                     setError("failed to load data");
                 }) 

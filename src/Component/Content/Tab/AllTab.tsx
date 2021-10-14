@@ -6,15 +6,15 @@ export const AllTab = () => {
     return (
         <Fragment>
             <AllTabContain>
-                <AllTabItem href="/go/share">分享发现</AllTabItem> 
-                <AllTabItem href="/go/create">分享创造</AllTabItem> 
-                <AllTabItem href="/go/qna">问与答</AllTabItem> 
-                <AllTabItem href="/go/jobs">酷工作</AllTabItem>
-                <AllTabItem href="/go/programmer">程序员</AllTabItem> 
-                <AllTabItem href="/go/career">职场话题</AllTabItem>  
-                <AllTabItem href="/go/ideas">奇思妙想</AllTabItem> 
-                <AllTabItem href="/new/qna">我要提问</AllTabItem>  
-                <AllTabItem href="/go/deals">优惠信息</AllTabItem>
+                <AllTabItem href="/nodes/share">分享发现</AllTabItem> 
+                <AllTabItem href="/nodes/create">分享创造</AllTabItem> 
+                <AllTabItem href="/nodes/qna">问与答</AllTabItem> 
+                <AllTabItem href="/nodes/jobs">酷工作</AllTabItem>
+                <AllTabItem href="/nodes/programmer">程序员</AllTabItem> 
+                <AllTabItem href="/nodes/career">职场话题</AllTabItem>  
+                <AllTabItem href="/nodes/ideas">奇思妙想</AllTabItem> 
+                <AllTabItem href="/nodes/qna">我要提问</AllTabItem>  
+                <AllTabItem href="/nodes/deals">优惠信息</AllTabItem>
             </AllTabContain>
         </Fragment>
     )

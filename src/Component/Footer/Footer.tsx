@@ -5,15 +5,8 @@ export const Footer = () => {
     return (
         <div className="footer">   
                 <FooterContainer>
-                    <FooterItem href="/creative">关于</FooterItem>
-                    <FooterItem href="/play" >帮助文档</FooterItem>
-                    <FooterItem href="/play" >FAQ</FooterItem>
-                    <FooterItem href="/play" >API</FooterItem>          
-                    <FooterItem href="/tech">我们的愿景</FooterItem> 
-                    <FooterItem href="/tech">广告投放</FooterItem> 
-                    <FooterItem href="/tech">感谢</FooterItem> 
-                    <FooterItem href="/tech">实用小工具</FooterItem> 
-                    <br />
+                    {/* <FooterItem href="/aout">关于</FooterItem>
+                    <br /> */}
                     <text>♥ Do have faith in what you're doing.</text>
                     <br />
                     <text>V2EX Clone Made By Paraiii</text>

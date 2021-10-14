@@ -2,6 +2,8 @@ import React, { Fragment, useEffect, useRef, useState,  } from 'react';
 import styled from 'styled-components';
 import { Topic } from '../../Types/topic';
 import { TopicData } from '../../Api/TopicData';
+import { Loading } from '../Loading/loading';
+import { Empty } from '../Empty/empty';
 
 export interface MainTopicProps {
     topicId: string
@@ -11,15 +13,29 @@ export const  MainTopic = (props: MainTopicProps) => {
 
     const { topicId } = props;
     const [topicData, setTopicData] = useState<Topic>();
+    const [ loading, setLoading ] = useState(true);
+    const [ error, setError ] = useState(" ");
 
 
     useEffect (
         function() {
             TopicData(topicId).then(res => {
                 setTopicData(res.data);
-            });
+                setLoading(false);
+            }).catch((e) => {
+                setLoading(false); 
+                setError("failed to load data");
+            })
         }, []);
-
+        
+        if (loading) {
+            return <Loading></Loading> 
+        }
+    
+        if (error !== " " ) {
+            return <Empty reason={error}></Empty> 
+        }
+        
     return (
         <Fragment>
             <MainTopicContainer>

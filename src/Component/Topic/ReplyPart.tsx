@@ -6,17 +6,35 @@ import { topicParams } from './Topic';
 import { RepliesTab } from './RepliesTab';
 import { Reply } from '../../Types/reply';
 import { RepliesData } from '../../Api/RepliesData';
+import { Loading } from '../Loading/loading';
+import { Empty } from '../Empty/empty';
 
 export const  ReplyPart= () => {
     const { id } = useParams<topicParams>();
     const [repliesData, setRepliesData] = useState<Reply[]>([]);
-    
+    const [ loading, setLoading ] = useState(true);
+    const [ error, setError ] = useState(" ");
+
+
     useEffect (
         function() {
             RepliesData(id).then(res => {
                 setRepliesData(res.data);
-            });
+                setLoading(false);
+            }).catch((e) => {
+                setLoading(false); 
+                setError("failed to load data");
+            })
         }, []);
+        
+        if (loading) {
+            return <Loading></Loading> 
+        }
+    
+        if (error !== " " ) {
+            return <Empty reason={error}></Empty> 
+        }
+
 
     return (
         <Fragment>
