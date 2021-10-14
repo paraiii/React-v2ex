@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { NodeData } from "../../Api/NodeData";
 import { RightSideNodeLine } from "./RightSideNodeLine";
 import {Node} from '../../Types/common';
+import { NodeData } from "../../Api/NodeData";
 
 export interface nodeParams {
     id: string,

@@ -1,10 +1,6 @@
 import React, { Fragment, useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { Ad } from '../RightSideBar/Ad';
 import { Node } from '../../Types/common';
-import { NodeData } from '../../Api/NodeData';
-import { useParams } from 'react-router-dom';
-import { nodeParams } from './RightSideNodes';
 
 
  export interface RightSideNodeLineProps {

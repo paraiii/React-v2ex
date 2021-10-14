@@ -1,9 +1,9 @@
 import React, { Fragment, useEffect, useRef, useState,  } from 'react';
 import styled from 'styled-components';
 import { Topic } from '../../Types/topic';
-import { TopicData } from '../../Api/TopicData';
 import { Loading } from '../Loading/loading';
 import { Empty } from '../Empty/empty';
+import { TopicData } from '../../Api/TopicData';
 
 export interface MainTopicProps {
     topicId: string
@@ -35,7 +35,7 @@ export const  MainTopic = (props: MainTopicProps) => {
         if (error !== " " ) {
             return <Empty reason={error}></Empty> 
         }
-        
+
     return (
         <Fragment>
             <MainTopicContainer>
