@@ -20,7 +20,7 @@ export const App = () => {
               <Route exact path="/" component={Home} />
               <Route exact path="/topic/:id" component={TopicPage} />
               <Route exact path="/member/:id" component={MemberPart} />
-              <Route exact path="/nodes/:id" component={Content} />
+              <Route exact path="/nodes/:id" component={Home} />
               <Line />
               <Footer />
           </div>
