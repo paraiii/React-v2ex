@@ -39,7 +39,7 @@ export const Contents = () => {
                 })
             }
             
-        }, []);
+        }, [id]);
     
     //加callback
     const mapContentDataToContentLine = useCallback((contentData : any) => {
