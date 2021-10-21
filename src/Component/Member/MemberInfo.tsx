@@ -14,7 +14,7 @@ export const  MemberInfo: React.FC <MemberInfoProps> = ({memberUsername}) =>{
             MemberData(memberUsername).then(res => {
                 setMemberData(res.data);
             });
-        }, []);
+        }, [memberUsername]);
 
     return (
         <Fragment>

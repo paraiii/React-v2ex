@@ -25,7 +25,7 @@ export const  ReplyPart= () => {
                 setLoading(false); 
                 setError("failed to load data");
             })
-        }, []);
+        }, [id]);
         
         if (loading) {
             return <Loading></Loading> 

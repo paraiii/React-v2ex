@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useRef, useState,  } from 'react';
+import React, { Fragment, useEffect, useState,  } from 'react';
 import styled from 'styled-components';
 import { Topic } from '../../Types/topic';
 import { Loading } from '../Loading/loading';
