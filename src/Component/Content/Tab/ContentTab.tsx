@@ -14,10 +14,7 @@ export const ContentTab = () => {
                     <ContentItem href="/nodes/deals">交易</ContentItem> 
                     <ContentItem href="/nodes/city">城市</ContentItem> 
                     <ContentItem href="/nodes/qna">问与答</ContentItem> 
-                    <ContentItem href="/nodes/hot">最热</ContentItem> 
                     <ContentItem href="/nodes/nodes">节点</ContentItem> 
-                    <ContentItem href="/nodes/members">关注</ContentItem> 
-                    {/* <ContentItem href="/nodes">全部</ContentItem>  */}
                 </HeaderContainer>  
         </Fragment>
     )

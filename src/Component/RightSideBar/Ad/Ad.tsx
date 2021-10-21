@@ -5,7 +5,6 @@ import { V2exContext } from '../../../V2exContextProvider';
 export const Ad = () => {
 
     const state = useContext(V2exContext)
-    const ad = state.ad;
 
     return (
         <div>
@@ -16,7 +15,6 @@ export const Ad = () => {
             </AdDes>
             <AdImgContainer>
                 <AdImg>
-                    <img src={state.ad[0].image}></img>
                 </AdImg>
                 <br />
                 <AdImg>{state.ad[0].content}</AdImg>

@@ -17,7 +17,7 @@ export const RightSideNodes = () => {
             NodeData(id).then(res => {
                 setNodeData(res.data);
             });
-        }, []);
+        }, [id]);
         
     return (
         <RightSideNodeLine nodes={nodesData}/>

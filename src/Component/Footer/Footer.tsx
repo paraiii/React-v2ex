@@ -5,8 +5,6 @@ export const Footer = () => {
     return (
         <div className="footer">   
                 <FooterContainer>
-                    {/* <FooterItem href="/aout">关于</FooterItem>
-                    <br /> */}
                     <text>♥ Do have faith in what you're doing.</text>
                     <br />
                     <text>V2EX Clone Made By Paraiii</text>
@@ -30,13 +28,6 @@ const FooterContainer = styled.div`
     margin: 0 auto;
 `
 
-const FooterItem = styled.a`
-    margin-right: 10px;
-    word-break: "break word";
-    font-weight:500;
-    color: #375F8A;
-    text-decoration: none;
-    cursor: pointer;
-`
+
 
 

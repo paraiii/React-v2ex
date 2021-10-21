@@ -15,7 +15,7 @@ export const  Comment : React.FC <CommentProps> = ({topicId}) => {
             TopicData(topicId).then(res => {
                 setTopicData(res.data);
             });
-        }, []);
+        }, [topicId]);
 
     return (
         <Fragment>

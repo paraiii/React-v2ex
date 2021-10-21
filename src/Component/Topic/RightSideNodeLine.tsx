@@ -13,29 +13,9 @@ export const RightSideNodeLine = (props: RightSideNodeLineProps) => {
     // nodes.sort(n => n.topics ).slice(0,50);
     //对node做filter，基于topics主题数量，取前50个
 
-    // const [nodesData, setNodeData] = useState<Node[]>([]);
-    // const { id } = useParams<nodeParams>();
-
-
-    // useEffect(
-    //     function() {
-    //         NodeData(id).then(res => {
-    //             setNodeData(res.data);
-    //         });
-    //     }, []);
-    
-    const rows: JSX.Element[] = [];
-    for (var i=0; i < filteredNodes.length; i++){ 
-        let nodesRecord = filteredNodes[i];
-            rows.push (
-                // <NodeItem href={nodesRecord.url}>{nodesRecord.title}</NodeItem>
-                <NodeItem href={`/nodes/${nodesRecord.name}`}>{nodesRecord.title}</NodeItem>
-
-            )
-    }
-    // const mapRightSideNodeLine = useCallback((nodesData: any) => {
-    //     return <NodeItem href={nodesData.url}>{nodesData.title}</NodeItem>
-    // }, [])
+    const mapToNodeItem = useCallback((nodeRecord: Node) => {
+        return <NodeItem href={`/nodes/${nodeRecord.name}`}>{nodeRecord.title}</NodeItem>
+    }, [])
 
     return (
         <Fragment>
@@ -46,12 +26,9 @@ export const RightSideNodeLine = (props: RightSideNodeLineProps) => {
                 </SideNodeTab>
                 <NodeContainer>
                     {
-                        rows.map((row) => {
-                            return row;
+                        filteredNodes.map((node) => {
+                            return mapToNodeItem(node);
                         })
-                        // nodesData.map((nodesData) => {
-                        //     return mapRightSideNodeLine(nodesData);
-                        // })
                     } 
                 </NodeContainer>
 

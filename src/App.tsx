@@ -7,15 +7,13 @@ import { LocalizationContextProvider } from "./LocalizationContextProvider";
 import { V2exContextProvider } from './V2exContextProvider';
 import { MemberPart } from "./Component/Member/MemberPart";
 import { TopicPage } from "./Component/Topic/TopicPage";
-import { RightSideNodes } from "./Component/Topic/RightSideNodes";
-import { NodeTopics } from "./Component/NodeTopic/NodeTopics";
 
 export const App = () => {
   return ( 
     <V2exContextProvider>
       <LocalizationContextProvider>
         <Router>
-          <div className="App">
+          <div>
               <Header />
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={SignUp} />

@@ -20,7 +20,7 @@ const HomeContainer = styled.div`
     margin: 70px auto 0;
     width: auto;
     padding: 10px 70px;
-    min-width: 600px;
+    min-width: 95%;
     max-width: 1100px;
 `
 

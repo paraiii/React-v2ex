@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { SideBar } from './SideBar';
-import { Ad } from './Ad';
 import { HotTopics } from './HotTopics';
 
 export const RightSideBar = () => {
@@ -9,7 +8,6 @@ export const RightSideBar = () => {
         <div className='side-content'>
             <SideBarContainer>
                 <SideBar />
-                <Ad />
                 <HotTopics />
             </SideBarContainer>
         </div>

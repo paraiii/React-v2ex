@@ -18,7 +18,7 @@ export const  MemberTopic = (props: MemberInfoProps) => {
             MemberTopicData(topicId).then(res => {
                 setTopicData(res.data);
             });
-        }, []);
+        }, [topicId]);
 
     const replyTime = (tiemstamp:any): string => {
         var diff = Date.now() / 1000 - tiemstamp
