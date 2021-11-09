@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import React  from "react";
 import './App.css'; 
 import styled from "styled-components";
-import { Header, Login, Footer, Home, SignUp, Content } from "./Component";
+import { Header, Login, Footer, Home, SignUp } from "./Component";
 import { LocalizationContextProvider } from "./LocalizationContextProvider";
 import { V2exContextProvider } from './V2exContextProvider';
 import { MemberPart } from "./Component/Member/MemberPart";

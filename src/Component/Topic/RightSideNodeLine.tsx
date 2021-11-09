@@ -31,8 +31,7 @@ export const RightSideNodeLine = (props: RightSideNodeLineProps) => {
                         })
                     } 
                 </NodeContainer>
-
-             </SideNodeContainer>
+              </SideNodeContainer>
             </SideContainer>
         </Fragment>
     )

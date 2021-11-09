@@ -26,7 +26,7 @@ export const  MainTopic = (props: MainTopicProps) => {
                 setLoading(false); 
                 setError("failed to load data");
             })
-        }, [topicId]);
+    }, [topicId]);
         
         if (loading) {
             return <Loading></Loading> 
