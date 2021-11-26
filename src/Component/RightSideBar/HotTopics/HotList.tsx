@@ -16,9 +16,7 @@ export const HotList = () => {
     useEffect(
         function() {
             GetHotData().then(res => {
-                debugger
                 setHotData(res.data);
-                debugger
                 setLoading(false);
             }).catch((e) => {
                 setLoading(false); 
