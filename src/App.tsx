@@ -15,12 +15,12 @@ export const App = () => {
         <Router>
           <div>
               <Header />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/signup" component={SignUp} />
-              <Route exact path="/" component={Home} />
-              <Route exact path="/topic/:id" component={TopicPage} />
-              <Route exact path="/member/:id" component={MemberPart} />
-              <Route exact path="/nodes/:id" component={Home} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<SignUp />} />
+              <Route path="/" element={<Home />} />
+              <Route path="/topic/:id" element={<TopicPage />} />
+              <Route path="/member/:id" element={<MemberPart />} />
+              <Route path="/nodes/:id" element={<Home />} />
               <Line />
               <Footer />
           </div>
